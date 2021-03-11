@@ -12,6 +12,7 @@ namespace InmobiliariaASPMVC.Web
     {
         protected void Application_Start()
         {
+            AutoMapperConfig.Init();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -1,4 +1,5 @@
 ﻿using InmobiliariaASPMVC.Windows.Mapeador;
+using InmobiliariaASPMVC.Windows.Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,11 @@ namespace InmobiliariaASPMVC.Windows
         [STAThread]
         static void Main()
         {
+            DI.Inicialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AutoMapperConfig.Init();
-            Application.Run(new FrmMenuPrincipal());
+            Application.Run(DI.Create<FrmMenuPrincipal>());
         }
     }
 }

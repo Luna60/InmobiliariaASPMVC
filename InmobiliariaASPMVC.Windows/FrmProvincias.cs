@@ -1,7 +1,9 @@
-﻿using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
+﻿using AutoMapper;
+using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
 using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Servicios.Servicios;
 using InmobiliariaASPMVC.Servicios.Servicios.Facades;
+using InmobiliariaASPMVC.Windows.Ninject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +18,12 @@ namespace InmobiliariaASPMVC.Windows
 {
     public partial class FrmProvincias : Form
     {
-        public FrmProvincias()
+        public FrmProvincias(IServiciosProvincias servicio)
         {
             InitializeComponent();
+            _servicio = servicio;
         }
+        private IMapper _mapper;
 
         private IServiciosProvincias _servicio;
         private List<ProvinciaListDto> _lista;
@@ -32,7 +36,8 @@ namespace InmobiliariaASPMVC.Windows
         {
             try
             {
-                _servicio = new ServiciosProvincias();
+                _mapper = InmobiliariaASPMVC.Mapeador.Mapeador.CrearMapper();
+                //_servicio = new ServiciosProvincias();
                 _lista = _servicio.GetLista();
                 MostrarDatosEnGrilla();
             }
@@ -48,16 +53,17 @@ namespace InmobiliariaASPMVC.Windows
             dgvDatos.Rows.Clear();
             foreach (var provincia in _lista)
             {
-                var r = CrearFila(provincia);
+                DataGridViewRow r = ConstruirFila();
+                SetearFila(r, provincia);
                 AgregarFila(r);
+
             }
         }
 
-        DataGridViewRow CrearFila(ProvinciaListDto provincia)//1;25
+        private DataGridViewRow ConstruirFila()
         {
             DataGridViewRow r = new DataGridViewRow();
             r.CreateCells(dgvDatos);
-            SetearFila(r, provincia);
             return r;
         }
 
@@ -69,12 +75,127 @@ namespace InmobiliariaASPMVC.Windows
         private void SetearFila(DataGridViewRow r, ProvinciaListDto provincia)
         {
             r.Cells[cmnProvincia.Index].Value = provincia.NombreProvincia;
+
             r.Tag = provincia;
         }
 
         private void QuitarFilaDeGrilla(DataGridViewRow r)
         {
             dgvDatos.Rows.Remove(r);
+        }
+
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            FrmProvinciaAE frm = DI.Create<FrmProvinciaAE>();
+            frm.Text = "Agregar Nueva Provincia";
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    ProvinciaEditDto provinciaEditDto = frm.GetProvincia();
+                    if (_servicio.Existe(provinciaEditDto))
+                    {
+                        MessageBox.Show("Registro repetido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    _servicio.Guardar(provinciaEditDto);
+                    DataGridViewRow r = ConstruirFila();
+                    var provinciaListDto = _mapper.Map<ProvinciaListDto>(provinciaEditDto);
+                    SetearFila(r, provinciaListDto);
+                    AgregarFila(r);
+                    MessageBox.Show("Registro agregado...", "Mensaje", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private void tsbBorrar_Click(object sender, EventArgs e)
+        {
+            if (dgvDatos.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            var r = dgvDatos.SelectedRows[0];
+            var provinciaDto = r.Tag as ProvinciaListDto;
+            DialogResult dr = MessageBox.Show($"¿Desea dar de baja la Provincia {provinciaDto.NombreProvincia}?",
+                "Confirmar Baja",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.No)
+            {
+                return;
+            }
+
+            try
+            {
+                _servicio.Borrar(provinciaDto.ProvinciaId);
+                dgvDatos.Rows.Remove(r);
+                MessageBox.Show("Registro borrado...", "Mensaje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvDatos.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            var r = dgvDatos.SelectedRows[0];
+            var provinciaDto = r.Tag as ProvinciaListDto;
+            var provinciaDtoCopia = (ProvinciaListDto)provinciaDto.Clone();
+            FrmProvinciaAE frm = DI.Create<FrmProvinciaAE>();
+            frm.Text = "Editar Provincia";
+            ProvinciaEditDto provinciaEditDto = _mapper.Map<ProvinciaEditDto>(provinciaDto);
+            frm.SetProvincia(provinciaEditDto);
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            provinciaEditDto = frm.GetProvincia();
+            if (_servicio.Existe(provinciaEditDto))
+            {
+                MessageBox.Show("Registro repetido...", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SetearFila(r, provinciaDtoCopia);
+                return;
+            }
+            try
+            {
+                _servicio.Guardar(provinciaEditDto);
+                var provinciaListDto = _mapper.Map<ProvinciaListDto>(provinciaEditDto);
+                SetearFila(r, provinciaListDto);
+                MessageBox.Show("Registro modificado...", "Mensaje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SetearFila(r, provinciaDtoCopia);
+
+
+            }
+
         }
     }
 }

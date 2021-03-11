@@ -16,9 +16,9 @@ namespace InmobiliariaASPMVC.Web.Controllers
     {
         private readonly IServiciosProvincias _servicio;
         private readonly IMapper _mapper;
-        public ProvinciasController()
+        public ProvinciasController(IServiciosProvincias servicio)
         {
-            _servicio = new ServiciosProvincias();
+            _servicio = servicio;
             _mapper = Mapeador.Mapeador.CrearMapper();/*AutoMapperConfig.Mapper;*/
         }
         // GET: Provincia

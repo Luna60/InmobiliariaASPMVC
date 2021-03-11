@@ -45,6 +45,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -65,6 +68,12 @@
     <Compile Include="FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProvinciaAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProvinciaAE.Designer.cs">
+      <DependentUpon>FrmProvinciaAE.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProvincias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,10 +81,15 @@
       <DependentUpon>FrmProvincias.cs</DependentUpon>
     </Compile>
     <Compile Include="Mapeador\AutoMapperConfig.cs" />
+    <Compile Include="Ninject\Bindings.cs" />
+    <Compile Include="Ninject\DI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProvinciaAE.resx">
+      <DependentUpon>FrmProvinciaAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProvincias.resx">
       <DependentUpon>FrmProvincias.cs</DependentUpon>
@@ -126,6 +140,10 @@
     <None Include="Resources\Buscarr.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InmobiliariaASPMVC.Datos\InmobiliariaASPMVC.Datos.csproj">
+      <Project>{ED966B70-F633-426C-8718-CFD4CDEFC323}</Project>
+      <Name>InmobiliariaASPMVC.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InmobiliariaASPMVC.Entidades\InmobiliariaASPMVC.Entidades.csproj">
       <Project>{c54d727f-c5a3-4ce5-aa84-0c61581d807a}</Project>
       <Name>InmobiliariaASPMVC.Entidades</Name>
@@ -138,6 +156,9 @@
       <Project>{c4753c89-cf75-4088-8343-874f1b83e2ff}</Project>
       <Name>InmobiliariaASPMVC.Servicios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

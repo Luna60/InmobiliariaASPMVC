@@ -15,19 +15,27 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
     {
         private readonly InmobiliariaDbContext _context;
         private readonly IMapper _mapper;
-        public RepositorioProvincias()
+
+        public RepositorioProvincias(InmobiliariaDbContext context)
         {
-            _context = new InmobiliariaDbContext();
+            _context = context;
             _mapper = Mapeador.Mapeador.CrearMapper();
         }
+
+        //public RepositorioProvincias()
+        //{
+        //    _context = new InmobiliariaDbContext();
+        //    _mapper = Mapeador.Mapeador.CrearMapper();
+        //}
 
         public void Borrar(int? id)
         {
             try
             {
-                var provinciaInDb = _context.Provincias.Find(id);
+                var provinciaInDb = _context.Provincias
+                    .SingleOrDefault(p => p.ProvinciaId==id);
                 _context.Entry(provinciaInDb).State = EntityState.Deleted;
-                _context.SaveChanges();
+                //_context.SaveChanges();
             }
             catch (Exception)
             {
@@ -92,10 +100,12 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 }
                 else
                 {
-                    var provinciaInDb = _context.Provincias.Find(provincia.ProvinciaId);
+                    var provinciaInDb = _context.Provincias
+                        .SingleOrDefault(p=>p.ProvinciaId==provincia.ProvinciaId);
                     provinciaInDb.NombreProvincia = provincia.NombreProvincia;
+                    _context.Entry(provinciaInDb).State = EntityState.Modified;
                 }
-                _context.SaveChanges();
+                //_context.SaveChanges();
             }
             catch (Exception)
             {

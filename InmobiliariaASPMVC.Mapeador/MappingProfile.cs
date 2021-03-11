@@ -29,6 +29,8 @@ namespace InmobiliariaASPMVC.Mapeador
             CreateMap<Provincia, ProvinciaEditDto>().ReverseMap();
             CreateMap<ProvinciaListDto, ProvinciaListViewModel>().ReverseMap();
             CreateMap<ProvinciaEditDto, ProvinciaEditViewModel>().ReverseMap();
+            CreateMap<ProvinciaEditDto, ProvinciaListDto>().ReverseMap();
+
         }
     }
 }

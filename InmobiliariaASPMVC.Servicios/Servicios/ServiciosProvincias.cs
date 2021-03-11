@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using InmobiliariaASPMVC.Datos;
 using InmobiliariaASPMVC.Datos.Repositorios;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
 using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
@@ -17,12 +18,20 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
     {
         private readonly IRepositorioProvincias _repositorio;
         private readonly IMapper _mapper;
-        public ServiciosProvincias()
-        {
-            _repositorio = new RepositorioProvincias();
-            _mapper = Mapeador.Mapeador.CrearMapper();
+        private readonly IUnitOfWork _unitOfWork;
 
+        public ServiciosProvincias(IRepositorioProvincias repositorio, IUnitOfWork unitOfWork)
+        {
+            _repositorio = repositorio;
+            _mapper = Mapeador.Mapeador.CrearMapper();
+            _unitOfWork = unitOfWork;
         }
+        //public ServiciosProvincias()
+        //{
+        //    _repositorio = new RepositorioProvincias();
+        //    _mapper = Mapeador.Mapeador.CrearMapper();
+
+        //}
         public void Borrar(int? id)
         {
             try
@@ -82,6 +91,9 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             {
                 Provincia provincia = _mapper.Map<Provincia>(provinciaDto);
                 _repositorio.Guardar(provincia);
+                _unitOfWork.Save();
+                provinciaDto.ProvinciaId = provincia.ProvinciaId;
+
             }
             catch (Exception e)
             {

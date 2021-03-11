@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InmobiliariaASPMVC.Windows.Ninject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace InmobiliariaASPMVC.Windows
 
         private void btnProvincias_Click(object sender, EventArgs e)
         {
-            FrmProvincias frm = new FrmProvincias();
+            FrmProvincias frm = DI.Create<FrmProvincias>();
             frm.ShowDialog(this);
         }
     }
