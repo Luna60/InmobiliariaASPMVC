@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaASPMVC.Entidades", "InmobiliariaASPMVC.Entidades\InmobiliariaASPMVC.Entidades.csproj", "{C54D727F-C5A3-4CE5-AA84-0C61581D807A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaASPMVC.Datos", "InmobiliariaASPMVC.Datos\InmobiliariaASPMVC.Datos.csproj", "{ED966B70-F633-426C-8718-CFD4CDEFC323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaASPMVC.Servicios", "InmobiliariaASPMVC.Servicios\InmobiliariaASPMVC.Servicios.csproj", "{C4753C89-CF75-4088-8343-874F1B83E2FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaASPMVC.Windows", "InmobiliariaASPMVC.Windows\InmobiliariaASPMVC.Windows.csproj", "{110B1A9C-814F-4819-9F52-CC2DDB60D7C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaASPMVC.Web", "InmobiliariaASPMVC.Web\InmobiliariaASPMVC.Web.csproj", "{022E14C6-A5CA-4E78-8828-5F832BE1797F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaASPMVC.Mapeador", "InmobiliariaASPMVC.Mapeador\InmobiliariaASPMVC.Mapeador.csproj", "{255D30E2-FCE9-49BD-8C69-3BDDD1DEBD90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C54D727F-C5A3-4CE5-AA84-0C61581D807A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54D727F-C5A3-4CE5-AA84-0C61581D807A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54D727F-C5A3-4CE5-AA84-0C61581D807A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54D727F-C5A3-4CE5-AA84-0C61581D807A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED966B70-F633-426C-8718-CFD4CDEFC323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED966B70-F633-426C-8718-CFD4CDEFC323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED966B70-F633-426C-8718-CFD4CDEFC323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED966B70-F633-426C-8718-CFD4CDEFC323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4753C89-CF75-4088-8343-874F1B83E2FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4753C89-CF75-4088-8343-874F1B83E2FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4753C89-CF75-4088-8343-874F1B83E2FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4753C89-CF75-4088-8343-874F1B83E2FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110B1A9C-814F-4819-9F52-CC2DDB60D7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110B1A9C-814F-4819-9F52-CC2DDB60D7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110B1A9C-814F-4819-9F52-CC2DDB60D7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110B1A9C-814F-4819-9F52-CC2DDB60D7C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022E14C6-A5CA-4E78-8828-5F832BE1797F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022E14C6-A5CA-4E78-8828-5F832BE1797F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022E14C6-A5CA-4E78-8828-5F832BE1797F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022E14C6-A5CA-4E78-8828-5F832BE1797F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{255D30E2-FCE9-49BD-8C69-3BDDD1DEBD90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255D30E2-FCE9-49BD-8C69-3BDDD1DEBD90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255D30E2-FCE9-49BD-8C69-3BDDD1DEBD90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255D30E2-FCE9-49BD-8C69-3BDDD1DEBD90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2804700-7CF0-4E03-8C1C-D994BC31B79D}
+	EndGlobalSection
+EndGlobal
