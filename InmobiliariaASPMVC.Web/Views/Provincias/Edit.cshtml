@@ -1,0 +1,43 @@
+﻿@model InmobiliariaASPMVC.Entidades.ViewModels.Provincia.ProvinciaEditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Desea Editar la Provincia?</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    @*<h4>ProvinciaEditViewModel</h4>*@
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @*//Forma de reservar el id Provincia en la Vista, hay que recordar que esto viene todo lleno
+    //y cuando vuelve al servidor, el estado lo pierde, entonces yo debo reservar el Id de Provincia,
+    //eso lo logro mediante un HiddenFor..*@
+    @Html.HiddenFor(model => model.ProvinciaId)
+    @*//Los Hidden son campos ocultos, entonces reservo esto,
+    //para despues tenerlo alla, y si quiera que el modelo
+    //este completo, tambien podria hacer un Hidden de NombreProvincia.*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NombreProvincia, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NombreProvincia, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NombreProvincia, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Guardar" class="btn btn-warning" />
+            @Html.ActionLink("Volver", "Index", "", new { @class = "btn btn-success" })
+        </div>
+    </div>
+</div>
+}
+
+

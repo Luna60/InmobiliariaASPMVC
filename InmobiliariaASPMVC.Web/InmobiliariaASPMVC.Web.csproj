@@ -176,6 +176,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Provincias\Index.cshtml" />
     <Content Include="Views\Provincias\Create.cshtml" />
+    <Content Include="Views\Provincias\Delete.cshtml" />
+    <Content Include="Views\Provincias\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

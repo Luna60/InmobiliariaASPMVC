@@ -12,7 +12,7 @@ namespace InmobiliariaASPMVC.Web
         //Esto lo que hace es disparar el Mapeador
         public static IMapper Mapper { get; set; }
 
-        public static void Init() 
+        public static void Init()
         {
             var config = new MapperConfiguration(cfg =>
             {

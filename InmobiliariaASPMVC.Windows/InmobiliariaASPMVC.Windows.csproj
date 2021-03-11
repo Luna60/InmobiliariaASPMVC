@@ -71,6 +71,7 @@
     <Compile Include="FrmProvincias.Designer.cs">
       <DependentUpon>FrmProvincias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapeador\AutoMapperConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
@@ -128,6 +129,10 @@
     <ProjectReference Include="..\InmobiliariaASPMVC.Entidades\InmobiliariaASPMVC.Entidades.csproj">
       <Project>{c54d727f-c5a3-4ce5-aa84-0c61581d807a}</Project>
       <Name>InmobiliariaASPMVC.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InmobiliariaASPMVC.Mapeador\InmobiliariaASPMVC.Mapeador.csproj">
+      <Project>{255D30E2-FCE9-49BD-8C69-3BDDD1DEBD90}</Project>
+      <Name>InmobiliariaASPMVC.Mapeador</Name>
     </ProjectReference>
     <ProjectReference Include="..\InmobiliariaASPMVC.Servicios\InmobiliariaASPMVC.Servicios.csproj">
       <Project>{c4753c89-cf75-4088-8343-874f1b83e2ff}</Project>

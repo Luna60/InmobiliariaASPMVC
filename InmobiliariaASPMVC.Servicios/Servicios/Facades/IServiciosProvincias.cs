@@ -11,7 +11,7 @@ namespace InmobiliariaASPMVC.Servicios.Servicios.Facades
     public interface IServiciosProvincias
     {
         List<ProvinciaListDto> GetLista();
-        Provincia GetProvinciaPorId(int? id);
+        ProvinciaEditDto GetProvinciaPorId(int? id);
         void Guardar(ProvinciaEditDto provincia);
         void Borrar(int? id);
         bool Existe(ProvinciaEditDto provincia);

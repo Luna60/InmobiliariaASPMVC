@@ -61,11 +61,17 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             }
         }
 
-        public Provincia GetProvinciaPorId(int? id)
+        public ProvinciaEditDto GetProvinciaPorId(int? id)
         {
             try
             {
-                return _context.Provincias.SingleOrDefault(p => p.ProvinciaId == id);
+                //El SingleOrDefault me esta devolviendo una Provincia, yo lo debo pasar a ProvinciaEditDto, 
+                //Me fijo si en el MappingProfile, esta CreateMap<Provincia, ProvinciaEditDto>().ReverseMap();, de
+                //estar entonces, vuelvo y... le digo que me pase de Provincia a ProvinciaEditDto, basandose en 
+                //lo que le pasan en _context.Provincias.SingleOrDefault(p => p.ProvinciaId == id).
+
+                return _mapper
+                    .Map<ProvinciaEditDto>(_context.Provincias.SingleOrDefault(p => p.ProvinciaId == id));
             }
             catch (Exception)
             {

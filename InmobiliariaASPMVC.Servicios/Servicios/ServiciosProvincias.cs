@@ -25,7 +25,15 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
         }
         public void Borrar(int? id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _repositorio.Borrar(id);
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
         }
 
         public bool Existe(ProvinciaEditDto provinciaDto)//ahora es un provinciaDto, porque lo debo pasar a la capa
@@ -55,9 +63,17 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public Provincia GetProvinciaPorId(int? id)
+        public ProvinciaEditDto GetProvinciaPorId(int? id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _repositorio.GetProvinciaPorId(id);
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
         }
 
         public void Guardar(ProvinciaEditDto provinciaDto)
