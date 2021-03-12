@@ -67,14 +67,13 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
         {
             try
             {
-                if (provincia.ProvinciaId == 0)
+                if (provincia.ProvinciaId == 0)//si entra es porque se esta creando 
                 {
                     _context.Provincias.Add(provincia);
                 }
                 else
                 {
-                    var provinciaInDb = _context.Provincias
-                        .SingleOrDefault(p => p.ProvinciaId == provincia.ProvinciaId);
+                    var provinciaInDb = _context.Provincias.SingleOrDefault(p => p.ProvinciaId == provincia.ProvinciaId);
                     provinciaInDb.NombreProvincia = provincia.NombreProvincia;
                     _context.Entry(provinciaInDb).State = EntityState.Modified;
                 }
@@ -115,7 +114,6 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 p.ProvinciaId==provincia.ProvinciaId);
 
         }
-
 
 
     }
