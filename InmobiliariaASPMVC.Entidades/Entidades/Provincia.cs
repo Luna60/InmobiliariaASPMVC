@@ -11,7 +11,8 @@ namespace InmobiliariaASPMVC.Entidades.Entidades
     public class Provincia
     {
         public int ProvinciaId { get; set; }
-        [DisplayName (@"Provincias")]
+
+        //[DisplayName (@"Provincias")]
         public string NombreProvincia { get; set; }
     }
 }

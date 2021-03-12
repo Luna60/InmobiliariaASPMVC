@@ -1,8 +1,4 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(InmobiliariaASPMVC.Web.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(InmobiliariaASPMVC.Web.App_Start.NinjectWebCommon), "Stop")]
-
-namespace InmobiliariaASPMVC.Web.App_Start
-{
+using InmobiliariaASPMVC.Web;
     using System;
     using System.Web;
     using InmobiliariaASPMVC.Datos;
@@ -11,10 +7,15 @@ namespace InmobiliariaASPMVC.Web.App_Start
     using InmobiliariaASPMVC.Servicios.Servicios;
     using InmobiliariaASPMVC.Servicios.Servicios.Facades;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
+
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
+
+namespace InmobiliariaASPMVC.Web
+{
 
     public static class NinjectWebCommon 
     {

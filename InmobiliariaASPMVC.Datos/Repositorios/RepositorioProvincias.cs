@@ -28,33 +28,6 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
         //    _mapper = Mapeador.Mapeador.CrearMapper();
         //}
 
-        public void Borrar(int? id)
-        {
-            try
-            {
-                var provinciaInDb = _context.Provincias
-                    .SingleOrDefault(p => p.ProvinciaId==id);
-                _context.Entry(provinciaInDb).State = EntityState.Deleted;
-                //_context.SaveChanges();
-            }
-            catch (Exception)
-            {
-
-                throw new Exception("Error al querer Borrar la Provincia");
-            }
-        }
-
-        public bool Existe(Provincia provincia)
-        {
-
-                if (provincia.ProvinciaId == 0)
-                {
-                    return _context.Provincias.Any(p => p.NombreProvincia == provincia.NombreProvincia);
-                }
-                return _context.Provincias.Any(p => p.NombreProvincia == provincia.NombreProvincia && 
-                p.ProvinciaId==provincia.ProvinciaId);
-
-        }
         public List<ProvinciaListDto> GetLista()
         {
             try
@@ -89,8 +62,8 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
         }
 
         public void Guardar(Provincia provincia)//para saber la diferencia entre si un dato es nuevo o editado
-            //se debe mirar en el id que tiene, ya que si ese id, nunca estuvo en la lista, significa que ese dato es nuevo,
-            //de lo contrario es editado
+                                                //se debe mirar en el id que tiene, ya que si ese id, nunca estuvo en la lista, significa que ese dato es nuevo,
+                                                //de lo contrario es editado
         {
             try
             {
@@ -101,7 +74,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 else
                 {
                     var provinciaInDb = _context.Provincias
-                        .SingleOrDefault(p=>p.ProvinciaId==provincia.ProvinciaId);
+                        .SingleOrDefault(p => p.ProvinciaId == provincia.ProvinciaId);
                     provinciaInDb.NombreProvincia = provincia.NombreProvincia;
                     _context.Entry(provinciaInDb).State = EntityState.Modified;
                 }
@@ -113,5 +86,37 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 throw new Exception("Error al querer Agregar/Editar la Provincia");
             }
         }
+
+
+        public void Borrar(int? id)
+        {
+            try
+            {
+                var provinciaInDb = _context.Provincias
+                    .SingleOrDefault(p => p.ProvinciaId==id);
+                _context.Entry(provinciaInDb).State = EntityState.Deleted;
+                //_context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Error al querer Borrar la Provincia");
+            }
+        }
+
+        public bool Existe(Provincia provincia)
+        {
+
+                if (provincia.ProvinciaId == 0)
+                {
+                    return _context.Provincias.Any(p => p.NombreProvincia == provincia.NombreProvincia);
+                }
+                return _context.Provincias.Any(p => p.NombreProvincia == provincia.NombreProvincia && 
+                p.ProvinciaId==provincia.ProvinciaId);
+
+        }
+
+
+
     }
 }

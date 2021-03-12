@@ -41,9 +41,10 @@ namespace InmobiliariaASPMVC.Windows
                 _lista = _servicio.GetLista();
                 MostrarDatosEnGrilla();
             }
-            catch (Exception)
+            catch (Exception exception)
             {
 
+                Console.WriteLine(exception);
                 throw;
             }
         }

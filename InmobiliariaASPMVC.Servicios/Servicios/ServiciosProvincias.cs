@@ -32,33 +32,6 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
         //    _mapper = Mapeador.Mapeador.CrearMapper();
 
         //}
-        public void Borrar(int? id)
-        {
-            try
-            {
-                _repositorio.Borrar(id);
-            }
-            catch (Exception e)
-            {
-
-                throw new Exception(e.Message);
-            }
-        }
-
-        public bool Existe(ProvinciaEditDto provinciaDto)//ahora es un provinciaDto, porque lo debo pasar a la capa
-            //de Datos, y ahi lo voy a pasar como una Entidad de Modelo de dominio
-        {
-            try
-            {
-                Provincia provincia = _mapper.Map<Provincia>(provinciaDto);
-                return _repositorio.Existe(provincia);
-            }
-            catch (Exception e)
-            {
-
-                throw new Exception(e.Message);
-            }
-        }
 
         public List<ProvinciaListDto> GetLista()
         {
@@ -101,5 +74,39 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                 throw new Exception(e.Message);
             }
         }
+
+
+        public void Borrar(int? id)
+        {
+            try
+            {
+                _repositorio.Borrar(id);
+                _unitOfWork.Save();
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool Existe(ProvinciaEditDto provinciaDto)//ahora es un provinciaDto, porque lo debo pasar a la capa
+            //de Datos, y ahi lo voy a pasar como una Entidad de Modelo de dominio
+        {
+            try
+            {
+                Provincia provincia = _mapper.Map<Provincia>(provinciaDto);
+                return _repositorio.Existe(provincia);
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+        }
+
+
+
+
     }
 }
