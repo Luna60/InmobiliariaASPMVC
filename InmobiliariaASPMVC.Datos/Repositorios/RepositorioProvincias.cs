@@ -111,7 +111,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     return _context.Provincias.Any(p => p.NombreProvincia == provincia.NombreProvincia);
                 }
                 return _context.Provincias.Any(p => p.NombreProvincia == provincia.NombreProvincia && 
-                p.ProvinciaId==provincia.ProvinciaId);
+                p.ProvinciaId!=provincia.ProvinciaId);
 
         }
 
