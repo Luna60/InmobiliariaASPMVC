@@ -10,8 +10,9 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Cliente
     {
         public int ClienteId { get; set; }
         public string Apellido { get; set; }
+        public string NroDocumento { get; set; }
         public string Localidad { get; set; }
         public string Provincia { get; set; }
-
+        public string TelefonoMovil { get; set; }
     }
 }

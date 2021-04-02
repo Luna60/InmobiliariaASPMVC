@@ -1,7 +1,14 @@
 ﻿using AutoMapper;
+using InmobiliariaASPMVC.Entidades.DTOs.Cliente;
+using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
+//using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
 using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
 using InmobiliariaASPMVC.Entidades.Entidades;
+using InmobiliariaASPMVC.Entidades.ViewModels.Cliente;
+using InmobiliariaASPMVC.Entidades.ViewModels.Localidad;
+//using InmobiliariaASPMVC.Entidades.ViewModels.Propiedad;
 using InmobiliariaASPMVC.Entidades.ViewModels.Provincia;
+using System;
 
 namespace InmobiliariaASPMVC.Mapeador
 {
@@ -10,7 +17,13 @@ namespace InmobiliariaASPMVC.Mapeador
         public MappingProfile()
         {
             LoadProvinciasMapping();
+            LoadLocalidadesMapping();
+            //LoadPropiedadesMapping();
+            LoadClientesMapping();
+
         }
+
+
         //Que significa que cree un mapa?? Va a venir y va a leer cuando acceda a los datos.
         //Cuando el repositorio acceda a la lista de Provincias, en RepositorioProvincia=>GetLista, le esta llegando a ella
         // una lista de Provincia y esta va a pasarla a lista de ProvinciaListDto, esta debe convertir de Provincia a 
@@ -26,5 +39,22 @@ namespace InmobiliariaASPMVC.Mapeador
             CreateMap<ProvinciaEditDto, ProvinciaEditViewModel>().ReverseMap();
             CreateMap<ProvinciaEditDto, ProvinciaListDto>().ReverseMap();
         }
+
+        private void LoadLocalidadesMapping()
+        {
+            CreateMap<LocalidadListDto, LocalidadListViewModel>();
+            //CreateMap<Localidad, LocalidadListDto>();
+        }
+        //private void LoadPropiedadesMapping()
+        //{
+        //    CreateMap<PropiedadListDto, PropiedadListViewModel>();
+
+        //}
+        private void LoadClientesMapping()
+        {
+            CreateMap<ClienteListDto, ClienteListViewModel>();
+
+        }
+
     }
 }

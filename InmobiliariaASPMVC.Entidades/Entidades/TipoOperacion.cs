@@ -10,7 +10,7 @@ namespace InmobiliariaASPMVC.Entidades.Entidades
     {
         public int TipoOperacionId { get; set; }
 
-        public string Descripcion { get; set; }
+        public string DescripcionTO { get; set; }
 
     }
 }

@@ -26,7 +26,8 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
         {
             try
             {
-                var listaDto = _context.Localidades.Include(l => l.Provincia)
+                var listaDto = _context.Localidades
+                    .Include(l => l.Provincia)
                     .Select(l => new LocalidadListDto
                     {
                         LocalidadId = l.LocalidadId,

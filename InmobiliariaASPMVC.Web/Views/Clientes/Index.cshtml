@@ -1,0 +1,74 @@
+﻿@model IEnumerable<InmobiliariaASPMVC.Entidades.ViewModels.Cliente.ClienteListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+
+    <a href="@Url.Action("Create","Clientes")" class="btn btn-primary" style="float:right">Nuevo</a>
+    <h2>Lista de Clientes</h2>
+    @*<a href="@Url.Action("Create","Provincias")">Nuevo</a>*@@*otra forma de poner el boton nuevo, pero sin recuadro*@
+    @*<a href="#" class="btn btn-primary" style="float:right">Nuevo</a>*@@*otra forma*@
+
+</div>
+
+<hr />
+@*con este bloque logro que aparesca el mensaje de Exito, luego de Agregar una Localidad*@
+
+@if (TempData["Msg"] != null)
+{
+    var msg = TempData["Msg"].ToString();
+    <div class="alert alert-sucess alert-dismisible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Exito! </strong>@msg
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NroDocumento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Localidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoMovil)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Apellido)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NroDocumento)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Localidad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Provincia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TelefonoMovil)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ClienteId }, new { @class = "btn btn-warning" }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ClienteId }, new { @class = "btn btn-info" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ClienteId }, new { @class = "btn btn-danger" })
+    </td>
+</tr>
+    }
+
+</table>

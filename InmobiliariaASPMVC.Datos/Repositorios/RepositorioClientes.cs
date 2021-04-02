@@ -28,12 +28,14 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 var listaDto = _context.Clientes
                     .Include(c => c.Provincia)
                     .Include(c => c.Localidad)
-                    .Select(l => new ClienteListDto
+                    .Select(c => new ClienteListDto
                     {
-                        ClienteId = l.ClienteId,
-                        Apellido = l.Apellido,
-                        Provincia = l.Provincia.NombreProvincia,
-                        Localidad = l.Localidad.NombreLocalidad
+                        ClienteId = c.ClienteId,
+                        Apellido = c.Apellido,
+                        NroDocumento = c.NroDocumento,
+                        Provincia = c.Provincia.NombreProvincia,
+                        Localidad = c.Localidad.NombreLocalidad,
+                        TelefonoMovil = c.TelefonoMovil
                     }).ToList();
                 return listaDto;
             }
