@@ -32,8 +32,8 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     {
                         ClienteId = l.ClienteId,
                         Apellido = l.Apellido,
-                        Localidad = l.Localidad.NombreLocalidad,
-                        Provincia = l.Provincia.NombreProvincia
+                        Provincia = l.Provincia.NombreProvincia,
+                        Localidad = l.Localidad.NombreLocalidad
                     }).ToList();
                 return listaDto;
             }

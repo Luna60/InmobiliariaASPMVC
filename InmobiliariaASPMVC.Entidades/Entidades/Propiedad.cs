@@ -11,7 +11,7 @@ namespace InmobiliariaASPMVC.Entidades.Entidades
         public int PropiedadId { get; set; }
 
         public string Descripcion { get; set; }
-        public string Disponible { get; set; }
+        public bool Disponible { get; set; }
 
         public int TipoPropiedadId { get; set; }
         //como tengo un Id de otra tabla, lo debo de apuntar a la tabla correspondiente

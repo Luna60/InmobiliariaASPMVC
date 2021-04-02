@@ -17,9 +17,25 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
+        public ServiciosPropiedades(IRepositorioPropiedades repositorio, IUnitOfWork unitOfWork)
+        {
+            _repositorio = repositorio;
+            _mapper = Mapeador.Mapeador.CrearMapper();
+            _unitOfWork = unitOfWork;
+
+        }
+
         public List<PropiedadListDto> GetLista()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _repositorio.GetLista();
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
         }
     }
 }
