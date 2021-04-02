@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Datos.EntityTypeConfiguration
 {
-    public class ClienteEntityTypeConfigration : EntityTypeConfiguration<Cliente>
+    public class LocalidadEntityTypeConfiguration: EntityTypeConfiguration<Localidad>
     {
-        public ClienteEntityTypeConfigration()
+        public LocalidadEntityTypeConfiguration()
         {
-            ToTable("Clientes");
+            ToTable("Localidades");
         }
-
-
     }
 }

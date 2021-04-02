@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
 {
-    public interface IRepositorioCliente
+    public interface IRepositoriosClientes
     {
         List<ClienteListDto> GetLista();
 

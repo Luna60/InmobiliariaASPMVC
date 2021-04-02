@@ -13,11 +13,11 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
 {
     public class ServiciosLocalidades : IServicioLocalidades
     {
-        private readonly IRepositorioLocalidades _repositorio;
+        private readonly IRepositoriosLocalidades _repositorio;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiciosLocalidades(IRepositorioLocalidades repositorio, IUnitOfWork unitOfWork)
+        public ServiciosLocalidades(IRepositoriosLocalidades repositorio, IUnitOfWork unitOfWork)
         {
             _repositorio = repositorio;
             _mapper = Mapeador.Mapeador.CrearMapper();

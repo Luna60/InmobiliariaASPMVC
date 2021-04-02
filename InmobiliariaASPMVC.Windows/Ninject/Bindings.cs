@@ -19,7 +19,7 @@ namespace InmobiliariaASPMVC.Windows.Ninject
             Bind<InmobiliariaDbContext>().ToSelf().InSingletonScope();
             Bind<IUnitOfWork>().To<UnitOfWork>();
 
-            Bind<IRepositorioProvincias>().To<RepositorioProvincias>();
+            Bind<IRepositoriosProvincias>().To<RepositoriosProvincias>();
             Bind<IServiciosProvincias>().To<ServiciosProvincias>();
 
 

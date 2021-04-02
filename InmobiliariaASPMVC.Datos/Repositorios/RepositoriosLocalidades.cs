@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Datos.Repositorios
 {
-    public class RepositorioLocalidades : IRepositorioLocalidades
+    public class RepositoriosLocalidades : IRepositoriosLocalidades
     {
         private readonly InmobiliariaDbContext _context;
         private readonly IMapper _mapper;
 
-        public RepositorioLocalidades(InmobiliariaDbContext context)
+        public RepositoriosLocalidades(InmobiliariaDbContext context)
         {
             _context = context;
             _mapper = Mapeador.Mapeador.CrearMapper();

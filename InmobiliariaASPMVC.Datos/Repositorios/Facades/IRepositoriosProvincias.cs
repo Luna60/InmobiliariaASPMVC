@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
 {
-    public interface IRepositorioProvincias
+    public interface IRepositoriosProvincias
     {
         List<ProvinciaListDto> GetLista();
         ProvinciaEditDto GetProvinciaPorId(int? id);
