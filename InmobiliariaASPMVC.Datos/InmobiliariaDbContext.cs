@@ -27,5 +27,7 @@ namespace InmobiliariaASPMVC.Datos
         }
 
         public DbSet<Provincia> Provincias { get; set; }
+        public DbSet<Localidad> Localidades { get; set; }
+
     }
 }
