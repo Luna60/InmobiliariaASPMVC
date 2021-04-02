@@ -9,6 +9,8 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Propiedad
     public class PropiedadListDto
     {
         public int PropiedadId { get; set; }
+        public string Cliente { get; set; }
+        public string Disponible { get; set; }
         public string Descripcion { get; set; }
         public string TipoPropiedad { get; set; }
         public string TipoOperacion { get; set; }

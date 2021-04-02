@@ -54,15 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityTypeConfiguration\ClienteEntityTypeConfigration.cs" />
     <Compile Include="EntityTypeConfiguration\LocalidadEntityTypeConfigration.cs" />
     <Compile Include="EntityTypeConfiguration\PropiedadEntityTypeConfigration.cs" />
     <Compile Include="EntityTypeConfiguration\ProvinciaEntityTypeConfigration.cs" />
     <Compile Include="InmobiliariaDbContext.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\Facades\IRepositorioCliente.cs" />
     <Compile Include="Repositorios\Facades\IRepositorioLocalidades.cs" />
     <Compile Include="Repositorios\Facades\IRepositorioPropiedades.cs" />
     <Compile Include="Repositorios\Facades\IRepositorioProvincias.cs" />
+    <Compile Include="Repositorios\RepositorioClientes.cs" />
     <Compile Include="Repositorios\RepositorioLocalidades.cs" />
     <Compile Include="Repositorios\RepositorioPropiedades.cs" />
     <Compile Include="Repositorios\RepositorioProvincias.cs" />
