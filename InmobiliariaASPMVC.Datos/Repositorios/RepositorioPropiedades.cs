@@ -32,6 +32,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     .Select(p => new PropiedadListDto
                     {
                         PropiedadId = p.PropiedadId,
+                        Disponible = p.Disponible,
                         TipoPropiedad = p.TipoPropiedad.Descripcion,
                         TipoOperacion = p.TipoOperacion.Descripcion,
                         Provincia = p.Provincia.NombreProvincia,

@@ -11,8 +11,10 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Propiedad
     {
         public int PropiedadId { get; set; }
 
-        [Display(Name = "Descripciones")]
+        [Display(Name = "Descripcion")]
         public string Descripcion { get; set; }
+        [Display(Name = "Disponible")]
+        public string Disponible { get; set; }
 
         [Display(Name = "Tipos de Propiedades")]
         public string TipoPropiedad { get; set; }
