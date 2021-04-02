@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\Facades\IServicioLocalidades.cs" />
+    <Compile Include="Servicios\Facades\IServicioPropiedades.cs" />
     <Compile Include="Servicios\Facades\IServiciosProvincias.cs" />
+    <Compile Include="Servicios\ServiciosPropiedades.cs" />
     <Compile Include="Servicios\ServiciosLocalidades.cs" />
     <Compile Include="Servicios\ServiciosProvincias.cs" />
   </ItemGroup>
