@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Entidades.DTOs.Cliente;
 using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
+using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
 //using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
 using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
 using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Entidades.ViewModels.Cliente;
 using InmobiliariaASPMVC.Entidades.ViewModels.Localidad;
+using InmobiliariaASPMVC.Entidades.ViewModels.Propiedad;
 //using InmobiliariaASPMVC.Entidades.ViewModels.Propiedad;
 using InmobiliariaASPMVC.Entidades.ViewModels.Provincia;
 using System;
@@ -18,7 +20,7 @@ namespace InmobiliariaASPMVC.Mapeador
         {
             LoadProvinciasMapping();
             LoadLocalidadesMapping();
-            //LoadPropiedadesMapping();
+            LoadPropiedadesMapping();
             LoadClientesMapping();
 
         }
@@ -45,11 +47,11 @@ namespace InmobiliariaASPMVC.Mapeador
             CreateMap<LocalidadListDto, LocalidadListViewModel>();
             //CreateMap<Localidad, LocalidadListDto>();
         }
-        //private void LoadPropiedadesMapping()
-        //{
-        //    CreateMap<PropiedadListDto, PropiedadListViewModel>();
+        private void LoadPropiedadesMapping()
+        {
+            CreateMap<PropiedadListDto, PropiedadListViewModel>();
 
-        //}
+        }
         private void LoadClientesMapping()
         {
             CreateMap<ClienteListDto, ClienteListViewModel>();
