@@ -16,5 +16,12 @@ namespace InmobiliariaASPMVC.Windows
             FrmProvincias frm = DI.Create<FrmProvincias>();
             frm.ShowDialog(this);
         }
+
+        private void btnLocalidades_Click(object sender, EventArgs e)
+        {
+            FrmLocalidades frm = DI.Create<FrmLocalidades>();
+            frm.ShowDialog(this);
+
+        }
     }
 }

@@ -55,26 +55,44 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 p.NombreLocalidad == localidad.NombreLocalidad && p.LocalidadId != localidad.LocalidadId);
         }
 
-        public List<LocalidadListDto> GetLista()
+        public List<LocalidadListDto> GetLista(string provincia)
         {
             try
             {
-                var listaDto = _context.Localidades
-                    .Include(l => l.Provincia)
-                    .Select(l => new LocalidadListDto
-                    {
-                        LocalidadId = l.LocalidadId,
-                        NombreLocalidad = l.NombreLocalidad,
-                        Provincia = l.Provincia.NombreProvincia
-                    }).ToList();
-                return listaDto;
+                if (provincia == null)
+                {
+                    var lista = _context.Localidades.Include(p => p.Provincia)
+                .Select(p => new LocalidadListDto
+                {
+                    LocalidadId = p.LocalidadId,
+                    NombreLocalidad = p.NombreLocalidad,
+                    Provincia = p.Provincia.NombreProvincia,
+                }).ToList();
+                    return lista;
+
+                }
+                else
+                {
+                    var lista = _context.Localidades.Include(p => p.Provincia)
+                        .Where(p => p.Provincia.NombreProvincia == provincia)
+                        .Select(p => new LocalidadListDto
+                        {
+                            LocalidadId = p.LocalidadId,
+                            NombreLocalidad = p.NombreLocalidad,
+                            Provincia = p.Provincia.NombreProvincia,
+                        }).ToList();
+                    return lista;
+
+                }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
                 throw new Exception("Error al intentar leer las Localidades");
             }
         }
+
+
 
         public LocalidadEditDto GetLocalidadPorId(int? id)
         {

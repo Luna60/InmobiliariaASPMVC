@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.btnProvincias = new System.Windows.Forms.Button();
+            this.btnLocalidades = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProvincias
             // 
-            this.btnProvincias.Location = new System.Drawing.Point(29, 38);
+            this.btnProvincias.Location = new System.Drawing.Point(105, 46);
             this.btnProvincias.MaximumSize = new System.Drawing.Size(93, 38);
             this.btnProvincias.MinimumSize = new System.Drawing.Size(93, 38);
             this.btnProvincias.Name = "btnProvincias";
@@ -43,14 +44,27 @@
             this.btnProvincias.UseVisualStyleBackColor = true;
             this.btnProvincias.Click += new System.EventHandler(this.btnProvincias_Click);
             // 
+            // btnLocalidades
+            // 
+            this.btnLocalidades.Location = new System.Drawing.Point(105, 126);
+            this.btnLocalidades.MaximumSize = new System.Drawing.Size(93, 38);
+            this.btnLocalidades.MinimumSize = new System.Drawing.Size(93, 38);
+            this.btnLocalidades.Name = "btnLocalidades";
+            this.btnLocalidades.Size = new System.Drawing.Size(93, 38);
+            this.btnLocalidades.TabIndex = 1;
+            this.btnLocalidades.Text = "Localidades";
+            this.btnLocalidades.UseVisualStyleBackColor = true;
+            this.btnLocalidades.Click += new System.EventHandler(this.btnLocalidades_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 281);
+            this.ClientSize = new System.Drawing.Size(297, 295);
+            this.Controls.Add(this.btnLocalidades);
             this.Controls.Add(this.btnProvincias);
-            this.MaximumSize = new System.Drawing.Size(686, 320);
-            this.MinimumSize = new System.Drawing.Size(686, 320);
+            this.MaximumSize = new System.Drawing.Size(313, 334);
+            this.MinimumSize = new System.Drawing.Size(313, 334);
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal:";
@@ -61,6 +75,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnProvincias;
+        private System.Windows.Forms.Button btnLocalidades;
     }
 }
 

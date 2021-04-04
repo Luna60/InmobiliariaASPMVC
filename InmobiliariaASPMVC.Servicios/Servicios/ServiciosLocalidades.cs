@@ -49,11 +49,11 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public List<LocalidadListDto> GetLista()
+        public List<LocalidadListDto> GetLista(string provincia)
         {
             try
             {
-                return _repositorio.GetLista();
+                return _repositorio.GetLista(provincia);
             }
             catch (Exception e)
             {
@@ -81,6 +81,8 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                 Localidad localidad = _mapper.Map<Localidad>(localidadDto);
                 _repositorio.Guardar(localidad);
                 _unitOfWork.Save();
+                localidadDto.LocalidadId = localidad.LocalidadId;
+
             }
             catch (Exception e)
             {

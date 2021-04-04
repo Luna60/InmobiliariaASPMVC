@@ -10,7 +10,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
 {
     public interface IRepositoriosLocalidades
     {
-        List<LocalidadListDto> GetLista();
+        List<LocalidadListDto> GetLista(string provincia);
         void Guardar(Localidad localidad);
         LocalidadEditDto GetLocalidadPorId(int? id);
         void Borrar(int provinciaVmLocalidadId);
