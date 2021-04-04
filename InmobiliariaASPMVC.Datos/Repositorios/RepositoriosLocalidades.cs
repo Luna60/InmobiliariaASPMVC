@@ -25,6 +25,25 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
 
         }
 
+        public void Borrar(int provinciaVmLocalidadId)
+        {
+            try
+            {
+                var localidadInDb = _context.Localidades.SingleOrDefault(p => p.LocalidadId == provinciaVmLocalidadId);
+                if (localidadInDb == null)
+                {
+                    throw new Exception("Localidad inexistente...");
+
+                }
+
+                _context.Entry(localidadInDb).State = EntityState.Deleted;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error al intentar borrar una Localidad");
+            }
+        }
+
         public bool Existe(Localidad localidad)
         {
             if (localidad.LocalidadId == 0)
@@ -54,6 +73,20 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             {
 
                 throw new Exception("Error al intentar leer las Localidades");
+            }
+        }
+
+        public LocalidadEditDto GetLocalidadPorId(int? id)
+        {
+            try
+            {
+                return _mapper
+                    .Map<LocalidadEditDto>(_context.Localidades
+                        .SingleOrDefault(p => p.LocalidadId == id));
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error al intentar leer la Localidad");
             }
         }
 

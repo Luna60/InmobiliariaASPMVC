@@ -23,6 +23,19 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
 
         }
 
+        public void Borrar(int provinciaVmLocalidadId)
+        {
+            try
+            {
+                _repositorio.Borrar(provinciaVmLocalidadId);
+                _unitOfWork.Save();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public bool Existe(LocalidadEditDto localidadEditDto)
         {
             try
@@ -45,6 +58,18 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             catch (Exception e)
             {
 
+                throw new Exception(e.Message);
+            }
+        }
+
+        public LocalidadEditDto GetLocalidadPorId(int? id)
+        {
+            try
+            {
+                return _repositorio.GetLocalidadPorId(id);
+            }
+            catch (Exception e)
+            {
                 throw new Exception(e.Message);
             }
         }

@@ -67,7 +67,9 @@ namespace InmobiliariaASPMVC.Mapeador
         private void LoadLocalidadesMapping()
         {
             CreateMap<LocalidadListDto, LocalidadListViewModel>();
-            //CreateMap<Localidad, LocalidadListDto>();
+            CreateMap<LocalidadEditViewModel, LocalidadEditDto>().ReverseMap();
+            CreateMap<LocalidadEditDto, Localidad>().ReverseMap();
+            CreateMap<LocalidadEditDto, LocalidadListDto>();
         }
         private void LoadPropiedadesMapping()
         {
