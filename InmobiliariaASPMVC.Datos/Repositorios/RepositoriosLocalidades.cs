@@ -14,6 +14,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
 {
     public class RepositoriosLocalidades : IRepositoriosLocalidades
     {
+
         private readonly InmobiliariaDbContext _context;
         private readonly IMapper _mapper;
 
