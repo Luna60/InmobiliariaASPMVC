@@ -1,4 +1,5 @@
 ﻿using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
+using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
 using System;
 using System.Collections.Generic;
 using System.Linq;

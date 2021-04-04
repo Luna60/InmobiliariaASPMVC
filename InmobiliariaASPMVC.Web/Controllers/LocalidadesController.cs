@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
+using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
 using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Entidades.ViewModels.Localidad;
 using InmobiliariaASPMVC.Entidades.ViewModels.Provincia;
@@ -156,12 +157,14 @@ namespace InmobiliariaASPMVC.Web.Controllers
             }
 
             LocalidadListDto localidadDto = _mapper.Map<LocalidadListDto>(_servicio.GetLocalidadPorId(id));
+
             if (localidadDto == null)
             {
                 return HttpNotFound(" Localidad inexistente :/ ");
             }
 
             LocalidadListViewModel localidadVm = _mapper.Map<LocalidadListViewModel>(localidadDto);
+
             return View(localidadVm);
         }
 
@@ -173,6 +176,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
             {
                 LocalidadListDto localidadDto = _mapper
                     .Map<LocalidadListDto>(_servicio.GetLocalidadPorId(localidadVm.LocalidadId));
+
                 localidadVm = _mapper.Map<LocalidadListViewModel>(localidadDto);
 
                 _servicio.Borrar(localidadVm.LocalidadId);
