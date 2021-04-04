@@ -3,6 +3,7 @@ using InmobiliariaASPMVC.Datos;
 using InmobiliariaASPMVC.Datos.Repositorios;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
 using InmobiliariaASPMVC.Entidades.DTOs.Cliente;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Servicios.Servicios.Facades;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,19 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
 
         }
 
+        public bool Existe(ClienteEditDto clienteEditDto)
+        {
+            try
+            {
+                Cliente cliente = _mapper.Map<Cliente>(clienteEditDto);
+                return _repositorio.Existe(cliente);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public List<ClienteListDto> GetLista()
         {
             try
@@ -39,5 +53,18 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
+        public void Guardar(ClienteEditDto clienteDto)
+        {
+            try
+            {
+                Cliente cliente = _mapper.Map<Cliente>(clienteDto);
+                _repositorio.Guardar(cliente);
+                _unitOfWork.Save();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

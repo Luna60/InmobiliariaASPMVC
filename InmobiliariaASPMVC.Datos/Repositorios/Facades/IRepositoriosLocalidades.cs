@@ -1,4 +1,5 @@
 ﻿using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,10 @@ namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
     public interface IRepositoriosLocalidades
     {
         List<LocalidadListDto> GetLista();
+        void Guardar(Localidad localidad);
         //ProvinciaEditDto GetProvinciaPorId(int? id);
-        //void Guardar(Provincia provincia);
         //void Borrar(int? id);
-        //bool Existe(Provincia provincia);
+        bool Existe(Localidad localidad);
 
     }
 }

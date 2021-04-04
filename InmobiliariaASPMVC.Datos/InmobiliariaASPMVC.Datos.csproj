@@ -65,10 +65,16 @@
     <Compile Include="Repositorios\Facades\IRepositoriosLocalidades.cs" />
     <Compile Include="Repositorios\Facades\IRepositoriosPropiedades.cs" />
     <Compile Include="Repositorios\Facades\IRepositoriosProvincias.cs" />
+    <Compile Include="Repositorios\Facades\IRepositoriosTiposDocumentos.cs" />
+    <Compile Include="Repositorios\Facades\IRepositoriosTiposOperaciones.cs" />
+    <Compile Include="Repositorios\Facades\IRepositoriosTiposPropiedades.cs" />
     <Compile Include="Repositorios\RepositoriosClientes.cs" />
     <Compile Include="Repositorios\RepositoriosLocalidades.cs" />
     <Compile Include="Repositorios\RepositoriosPropiedades.cs" />
     <Compile Include="Repositorios\RepositoriosProvincias.cs" />
+    <Compile Include="Repositorios\RepositoriosTiposDocumentos.cs" />
+    <Compile Include="Repositorios\RepositoriosTiposOperaciones.cs" />
+    <Compile Include="Repositorios\RepositoriosTiposPropiedades.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

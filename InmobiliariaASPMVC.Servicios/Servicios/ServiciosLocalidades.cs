@@ -2,12 +2,10 @@
 using InmobiliariaASPMVC.Datos;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
 using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Servicios.Servicios.Facades;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Servicios.Servicios
 {
@@ -25,6 +23,19 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
 
         }
 
+        public bool Existe(LocalidadEditDto localidadEditDto)
+        {
+            try
+            {
+                Localidad localidad = _mapper.Map<Localidad>(localidadEditDto);
+                return _repositorio.Existe(localidad);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public List<LocalidadListDto> GetLista()
         {
             try
@@ -37,5 +48,20 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                 throw new Exception(e.Message);
             }
         }
+
+        public void Guardar(LocalidadEditDto localidadDto)
+        {
+            try
+            {
+                Localidad localidad = _mapper.Map<Localidad>(localidadDto);
+                _repositorio.Guardar(localidad);
+                _unitOfWork.Save();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
     }
 }

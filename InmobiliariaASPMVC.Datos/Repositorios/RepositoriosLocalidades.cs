@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InmobiliariaASPMVC.Entidades.Entidades;
 
 namespace InmobiliariaASPMVC.Datos.Repositorios
 {
@@ -22,6 +23,18 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             _mapper = Mapeador.Mapeador.CrearMapper();
 
         }
+
+        public bool Existe(Localidad localidad)
+        {
+            if (localidad.LocalidadId == 0)
+            {
+                return _context.Localidades.Any(p => p.NombreLocalidad == localidad.NombreLocalidad);
+            }
+
+            return _context.Localidades.Any(p =>
+                p.NombreLocalidad == localidad.NombreLocalidad && p.LocalidadId != localidad.LocalidadId);
+        }
+
         public List<LocalidadListDto> GetLista()
         {
             try
@@ -40,6 +53,31 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             {
 
                 throw new Exception("Error al intentar leer las Localidades");
+            }
+        }
+
+        public void Guardar(Localidad localidad)
+        {
+            try
+            {
+                if (localidad.LocalidadId == 0)
+                {
+                    _context.Localidades.Add(localidad);
+                }
+                else
+                {
+                    var localidadInDb = _context
+                        .Localidades
+                        .SingleOrDefault(p => p.LocalidadId == localidad.LocalidadId);
+                    localidadInDb.NombreLocalidad = localidad.NombreLocalidad;
+                    localidadInDb.ProvinciaId = localidad.ProvinciaId;
+                    localidadInDb.LocalidadId = localidad.LocalidadId;
+                    _context.Entry(localidadInDb).State = EntityState.Modified;
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error al intentar guardar la Localidad");
             }
         }
     }

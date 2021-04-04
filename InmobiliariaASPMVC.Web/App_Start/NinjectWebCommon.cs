@@ -78,6 +78,15 @@ namespace InmobiliariaASPMVC.Web
             kernel.Bind<IServiciosClientes>().To<ServiciosClientes>().InRequestScope();
             kernel.Bind<IRepositoriosClientes>().To<RepositoriosClientes>().InRequestScope();
 
+            kernel.Bind<IServiciosTiposPropiedades>().To<ServiciosTiposPropiedades>().InRequestScope();
+            kernel.Bind<IRepositoriosTiposPropiedades>().To<RepositoriosTiposPropiedades>().InRequestScope();
+
+            kernel.Bind<IServiciosTiposOperaciones>().To<ServiciosTiposOperaciones>().InRequestScope();
+            kernel.Bind<IRepositoriosTiposOperaciones>().To<RepositoriosTiposOperaciones>().InRequestScope();
+
+            kernel.Bind<IServiciosTiposDocumentos>().To<ServiciosTiposDocumentos>().InRequestScope();
+            kernel.Bind<IRepositoriosTiposDocumentos>().To<RepositoriosTiposDocumentos>().InRequestScope();
+
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
             kernel.Bind(typeof(InmobiliariaDbContext)).ToSelf().InSingletonScope();
 

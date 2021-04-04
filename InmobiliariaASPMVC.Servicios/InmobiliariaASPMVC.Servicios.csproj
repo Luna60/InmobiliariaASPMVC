@@ -49,10 +49,16 @@
     <Compile Include="Servicios\Facades\IServiciosClientes.cs" />
     <Compile Include="Servicios\Facades\IServiciosPropiedades.cs" />
     <Compile Include="Servicios\Facades\IServiciosProvincias.cs" />
+    <Compile Include="Servicios\Facades\IServiciosTiposDocumentos.cs" />
+    <Compile Include="Servicios\Facades\IServiciosTiposOperaciones.cs" />
+    <Compile Include="Servicios\Facades\IServiciosTiposPropiedades.cs" />
     <Compile Include="Servicios\ServiciosClientes.cs" />
     <Compile Include="Servicios\ServiciosLocalidades.cs" />
     <Compile Include="Servicios\ServiciosPropiedades.cs" />
     <Compile Include="Servicios\ServiciosProvincias.cs" />
+    <Compile Include="Servicios\ServiciosTiposDocumentos.cs" />
+    <Compile Include="Servicios\ServiciosTiposOperaciones.cs" />
+    <Compile Include="Servicios\ServiciosTiposPropiedades.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InmobiliariaASPMVC.Datos\InmobiliariaASPMVC.Datos.csproj">

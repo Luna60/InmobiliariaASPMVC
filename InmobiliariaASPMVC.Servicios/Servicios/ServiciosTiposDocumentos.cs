@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Datos;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
-using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
-using InmobiliariaASPMVC.Entidades.Entidades;
+using InmobiliariaASPMVC.Entidades.DTOs.TipoDocumento;
 using InmobiliariaASPMVC.Servicios.Servicios.Facades;
 using System;
 using System.Collections.Generic;
@@ -12,13 +11,14 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Servicios.Servicios
 {
-    public class ServiciosPropiedades : IServiciosPropiedades
+    public class ServiciosTiposDocumentos : IServiciosTiposDocumentos
     {
-        private readonly IRepositoriosPropiedades _repositorio;
+        private readonly IRepositoriosTiposDocumentos _repositorio;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiciosPropiedades(IRepositoriosPropiedades repositorio, IUnitOfWork unitOfWork)
+
+        public ServiciosTiposDocumentos(IRepositoriosTiposDocumentos repositorio, IUnitOfWork unitOfWork)
         {
             _repositorio = repositorio;
             _mapper = Mapeador.Mapeador.CrearMapper();
@@ -26,20 +26,20 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
 
         }
 
-        public bool Existe(PropiedadEditDto propiedadEditDto)
+        public TipoDocumentoEditDto GetipoDocumentoPorId(int? id)
         {
             try
             {
-                Propiedad propiedad = _mapper.Map<Propiedad>(propiedadEditDto);
-                return _repositorio.Existe(propiedad);
+                return _repositorio.GetTipoDocumentoPorId(id);
             }
             catch (Exception e)
             {
+
                 throw new Exception(e.Message);
             }
         }
 
-        public List<PropiedadListDto> GetLista()
+        public List<TipoDocumentoListDto> GetLista()
         {
             try
             {
@@ -52,9 +52,6 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public void Guardar(PropiedadEditDto propiedadDto)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

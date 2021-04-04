@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Datos;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
-using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
-using InmobiliariaASPMVC.Entidades.Entidades;
+using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
 using InmobiliariaASPMVC.Servicios.Servicios.Facades;
 using System;
 using System.Collections.Generic;
@@ -12,13 +11,14 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Servicios.Servicios
 {
-    public class ServiciosPropiedades : IServiciosPropiedades
+    public class ServiciosTiposOperaciones : IServiciosTiposOperaciones
     {
-        private readonly IRepositoriosPropiedades _repositorio;
+        private readonly IRepositoriosTiposOperaciones _repositorio;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiciosPropiedades(IRepositoriosPropiedades repositorio, IUnitOfWork unitOfWork)
+
+        public ServiciosTiposOperaciones(IRepositoriosTiposOperaciones repositorio, IUnitOfWork unitOfWork)
         {
             _repositorio = repositorio;
             _mapper = Mapeador.Mapeador.CrearMapper();
@@ -26,20 +26,7 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
 
         }
 
-        public bool Existe(PropiedadEditDto propiedadEditDto)
-        {
-            try
-            {
-                Propiedad propiedad = _mapper.Map<Propiedad>(propiedadEditDto);
-                return _repositorio.Existe(propiedad);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
-
-        public List<PropiedadListDto> GetLista()
+        public List<TipoOperacionListDto> GetLista()
         {
             try
             {
@@ -52,9 +39,20 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public void Guardar(PropiedadEditDto propiedadDto)
+        public TipoOperacionEditDto GetTipoOperacionPorId(int? id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _repositorio.GetTipoOperacionPorId(id);
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
         }
+
+
+
     }
 }
