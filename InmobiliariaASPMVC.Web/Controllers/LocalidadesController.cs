@@ -28,9 +28,9 @@ namespace InmobiliariaASPMVC.Web.Controllers
         }
 
         // GET: Localidad
-        public ActionResult Index()
+        public ActionResult Index(string provincia = null)
         {
-            var listaDto = _servicio.GetLista();
+            var listaDto = _servicio.GetLista(provincia);
             var listaVm = _mapper.Map<List<LocalidadListViewModel>>(listaDto);
             return View(listaVm);
         }
