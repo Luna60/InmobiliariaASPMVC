@@ -7,6 +7,7 @@ using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
 using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Entidades.ViewModels.Localidad;
 using InmobiliariaASPMVC.Entidades.ViewModels.Provincia;
+using InmobiliariaASPMVC.Entidades.ViewModels.TipoDocumento;
 
 namespace InmobiliariaASPMVC.Mapeador
 {
@@ -40,6 +41,11 @@ namespace InmobiliariaASPMVC.Mapeador
         {
             CreateMap<TipoDocumento, TipoDocumentoListDto>();
             CreateMap<TipoDocumento, TipoDocumentoEditDto>().ReverseMap();
+
+            CreateMap<TipoDocumentoListDto, TipoDocumentoListViewModel>().ReverseMap();
+            CreateMap<TipoDocumentoEditDto, TipoDocumentoEditViewModel>().ReverseMap();
+            CreateMap<TipoDocumentoEditDto, TipoDocumentoListDto>().ReverseMap();
+
         }
 
 

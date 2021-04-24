@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoDocumento;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +22,31 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             _mapper = Mapeador.Mapeador.CrearMapper();
         }
 
+        public void Borrar(int? id)
+        {
+            try
+            {
+                var tipoDocInDb = _context.TiposDocumentos
+                    .SingleOrDefault(tp => tp.TipoDocumentoId == id);
+                _context.Entry(tipoDocInDb).State = EntityState.Deleted;
+                //_context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al borrar un Tipo de Documento");
+            }
+        }
 
+        public bool Existe(TipoDocumento tipoDocumento)
+        {
+            if (tipoDocumento.TipoDocumentoId == 0)
+            {
+                return _context.TiposDocumentos.Any(tp => tp.DescripcionTD == tipoDocumento.DescripcionTD);
+            }
+
+            return _context.TiposDocumentos.Any(tp =>
+                tp.DescripcionTD == tipoDocumento.DescripcionTD && tp.TipoDocumentoId != tipoDocumento.TipoDocumentoId);
+        }
 
         public List<TipoDocumentoListDto> GetLista()
         {
@@ -53,6 +79,33 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
 
                 throw new Exception("Error al querer traer el Tipo de Documento");
             }
+        }
+
+        public void Guardar(TipoDocumento tipoDocumento)
+        {
+            try
+            {
+                if (tipoDocumento.TipoDocumentoId == 0)
+                {
+                    _context.TiposDocumentos.Add(tipoDocumento);
+                }
+                else
+                {
+                    var tipoDocInDb = _context.TiposDocumentos
+                        .SingleOrDefault(tp => tp.TipoDocumentoId == tipoDocumento.TipoDocumentoId);
+                    tipoDocInDb.DescripcionTD = tipoDocumento.DescripcionTD;
+                    _context.Entry(tipoDocInDb).State = EntityState.Modified;
+                }
+
+                //_context.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Error al agregar/editar un Tipo de Documento");
+            }
+
         }
     }
 }

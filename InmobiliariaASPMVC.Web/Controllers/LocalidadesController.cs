@@ -35,7 +35,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
             return View(listaVm);
         }
 
-        //Crear Localidad
+        //Crear Localidades
         [HttpGet]
         public ActionResult Create()
         {

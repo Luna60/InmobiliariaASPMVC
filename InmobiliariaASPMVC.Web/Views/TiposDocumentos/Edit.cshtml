@@ -1,0 +1,34 @@
+﻿@model InmobiliariaASPMVC.Entidades.ViewModels.TipoDocumento.TipoDocumentoEditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Desea Editar el Tipo de Documento?</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.TipoDocumentoId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DescripcionTD, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DescripcionTD, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DescripcionTD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-warning" />
+                @Html.ActionLink("Volver", "Index", "", new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
+}

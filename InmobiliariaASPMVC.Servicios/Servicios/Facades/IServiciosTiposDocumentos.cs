@@ -10,7 +10,10 @@ namespace InmobiliariaASPMVC.Servicios.Servicios.Facades
     public interface IServiciosTiposDocumentos
     {
         List<TipoDocumentoListDto> GetLista();
-        TipoDocumentoEditDto GetipoDocumentoPorId(int? id);
+        TipoDocumentoEditDto GetTipoDocumentoPorId(int? id);
+        void Guardar(TipoDocumentoEditDto tipoDocumento);
+        void Borrar(int? id);
+        bool Existe(TipoDocumentoEditDto tipoDocumento);
 
     }
 }

@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Entidades.DTOs.TipoDocumento
 {
-    public class TipoDocumentoListDto
+    public class TipoDocumentoListDto : ICloneable
     {
         public int TipoDocumentoId { get; set; }
         public string DescripcionTD { get; set; }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
 
     }
 }
