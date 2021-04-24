@@ -146,10 +146,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalidadesController.cs" />
-    <Compile Include="Controllers\PropiedadesController.cs" />
     <Compile Include="Controllers\ProvinciasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,11 +195,7 @@
     <Content Include="Views\Provincias\Delete.cshtml" />
     <Content Include="Views\Provincias\Edit.cshtml" />
     <Content Include="Views\Localidades\Index.cshtml" />
-    <Content Include="Views\Clientes\Index.cshtml" />
-    <Content Include="Views\Propiedades\Index.cshtml" />
     <Content Include="Views\Localidades\Create.cshtml" />
-    <Content Include="Views\Propiedades\Create.cshtml" />
-    <Content Include="Views\Clientes\Create.cshtml" />
     <Content Include="Views\Localidades\Edit.cshtml" />
     <Content Include="Views\Localidades\Delete.cshtml" />
   </ItemGroup>

@@ -1,17 +1,12 @@
 ﻿using AutoMapper;
-using InmobiliariaASPMVC.Entidades.DTOs.Cliente;
 using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
-using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
 using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoDocumento;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
 using InmobiliariaASPMVC.Entidades.Entidades;
-using InmobiliariaASPMVC.Entidades.ViewModels.Cliente;
 using InmobiliariaASPMVC.Entidades.ViewModels.Localidad;
-using InmobiliariaASPMVC.Entidades.ViewModels.Propiedad;
 using InmobiliariaASPMVC.Entidades.ViewModels.Provincia;
-using System;
 
 namespace InmobiliariaASPMVC.Mapeador
 {
@@ -21,8 +16,8 @@ namespace InmobiliariaASPMVC.Mapeador
         {
             LoadProvinciasMapping();
             LoadLocalidadesMapping();
-            LoadPropiedadesMapping();
-            LoadClientesMapping();
+            //LoadPropiedadesMapping();
+            //LoadClientesMapping();
             LoadTipoPropiedadMapping();
             LoadTipoOperacionMapping();
             LoadTipoDocumentoMapping();
@@ -71,16 +66,16 @@ namespace InmobiliariaASPMVC.Mapeador
             CreateMap<LocalidadEditDto, Localidad>().ReverseMap();
             CreateMap<LocalidadEditDto, LocalidadListDto>();
         }
-        private void LoadPropiedadesMapping()
-        {
-            CreateMap<PropiedadListDto, PropiedadListViewModel>();
+        //private void LoadPropiedadesMapping()
+        //{
+        //    CreateMap<PropiedadListDto, PropiedadListViewModel>();
 
-        }
-        private void LoadClientesMapping()
-        {
-            CreateMap<ClienteListDto, ClienteListViewModel>();
+        //}
+        //private void LoadClientesMapping()
+        //{
+        //    CreateMap<ClienteListDto, ClienteListViewModel>();
 
-        }
+        //}
 
     }
 }

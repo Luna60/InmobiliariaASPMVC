@@ -28,11 +28,11 @@ namespace InmobiliariaASPMVC.Datos
 
         public DbSet<Provincia> Provincias { get; set; }
         public DbSet<Localidad> Localidades { get; set; }
-        public DbSet<Propiedad> Propiedades { get; set; }
+        //public DbSet<Propiedad> Propiedades { get; set; }
         public DbSet<TipoPropiedad> TiposPropiedades { get; set; }
         public DbSet<TipoOperacion> TiposOperaciones { get; set; }
         public DbSet<TipoDocumento> TiposDocumentos{ get; set; }
-        public DbSet<Cliente> Clientes { get; set; }
+        //public DbSet<Cliente> Clientes { get; set; }
 
     }
 }
