@@ -1,21 +1,24 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Datos;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
-using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
+using InmobiliariaASPMVC.Entidades.DTOs.Cliente;
 using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Servicios.Servicios.Facades;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Servicios.Servicios
 {
-    public class ServiciosLocalidades : IServicioLocalidades
+    public class ServiciosClientes : IServiciosClientes
     {
-        private readonly IRepositoriosLocalidades _repositorio;
+        private readonly IRepositoriosClientes _repositorio;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiciosLocalidades(IRepositoriosLocalidades repositorio, IUnitOfWork unitOfWork)
+        public ServiciosClientes(IRepositoriosClientes repositorio, IUnitOfWork unitOfWork)
         {
             _repositorio = repositorio;
             _mapper = Mapeador.Mapeador.CrearMapper();
@@ -23,11 +26,11 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
 
         }
 
-        public void Borrar(int provinciaVmLocalidadId)
+        public void Borrar(int ClienteId)
         {
             try
             {
-                _repositorio.Borrar(provinciaVmLocalidadId);
+                _repositorio.Borrar(ClienteId);
                 _unitOfWork.Save();
             }
             catch (Exception e)
@@ -36,12 +39,12 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public bool Existe(LocalidadEditDto localidadEditDto)
+        public bool Existe(ClienteEditDto clienteEditDto)
         {
             try
             {
-                Localidad localidad = _mapper.Map<Localidad>(localidadEditDto);
-                return _repositorio.Existe(localidad);
+                Cliente cliente = _mapper.Map<Cliente>(clienteEditDto);
+                return _repositorio.Existe(cliente);
             }
             catch (Exception e)
             {
@@ -49,20 +52,19 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public List<LocalidadListDto> GetLista(string provincia)
+        public ClienteEditDto GetClientePorId(int? id)
         {
             try
             {
-                return _repositorio.GetLista(provincia);
+                return _repositorio.GetClientePorId(id);
             }
             catch (Exception e)
             {
-
                 throw new Exception(e.Message);
             }
         }
 
-        public List<LocalidadListDto> GetLista()
+        public List<ClienteListDto> GetLista()
         {
             try
             {
@@ -75,26 +77,14 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public LocalidadEditDto GetLocalidadPorId(int? id)
+        public void Guardar(ClienteEditDto clienteDto)
         {
             try
             {
-                return _repositorio.GetLocalidadPorId(id);
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
-
-        public void Guardar(LocalidadEditDto localidadDto)
-        {
-            try
-            {
-                Localidad localidad = _mapper.Map<Localidad>(localidadDto);
-                _repositorio.Guardar(localidad);
+                Cliente cliente = _mapper.Map<Cliente>(clienteDto);
+                _repositorio.Guardar(cliente);
                 _unitOfWork.Save();
-                localidadDto.LocalidadId = localidad.LocalidadId;
+                clienteDto.ClienteId = cliente.ClienteId;
 
             }
             catch (Exception e)
@@ -102,6 +92,5 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                 throw new Exception(e.Message);
             }
         }
-
     }
 }

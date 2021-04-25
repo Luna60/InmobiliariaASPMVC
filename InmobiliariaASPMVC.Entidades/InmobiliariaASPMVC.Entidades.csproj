@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\Cliente\ClienteEditDto.cs" />
+    <Compile Include="DTOs\Cliente\ClienteListDto.cs" />
     <Compile Include="DTOs\Localidad\LocalidadEditDto.cs" />
     <Compile Include="DTOs\Localidad\LocalidadListDto.cs" />
     <Compile Include="DTOs\Provincia\ProvinciaEditDto.cs" />
@@ -52,12 +54,15 @@
     <Compile Include="DTOs\TipoOperacion\TipoOperacionListDto.cs" />
     <Compile Include="DTOs\TipoPropiedad\TipoPropiedadEditDto.cs" />
     <Compile Include="DTOs\TipoPropiedad\TipoPropiedadListDto.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Localidad.cs" />
     <Compile Include="Entidades\Provincia.cs" />
     <Compile Include="Entidades\TipoDocumento.cs" />
     <Compile Include="Entidades\TipoOperacion.cs" />
     <Compile Include="Entidades\TipoPropiedad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Cliente\ClienteEditViewModel.cs" />
+    <Compile Include="ViewModels\Cliente\ClienteListViewModel.cs" />
     <Compile Include="ViewModels\Localidad\LocalidadEditViewModel.cs" />
     <Compile Include="ViewModels\Localidad\LocalidadListViewModel.cs" />
     <Compile Include="ViewModels\Provincia\ProvinciaEditViewModel.cs" />

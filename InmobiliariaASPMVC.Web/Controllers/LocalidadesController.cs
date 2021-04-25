@@ -66,6 +66,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
             if (_servicio.Existe(localidadDto))
             {
                 ModelState.AddModelError(string.Empty, "Localidad existente :/ ");
+
                 localidadEditVm.Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 

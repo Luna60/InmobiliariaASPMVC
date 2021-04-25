@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using InmobiliariaASPMVC.Entidades.DTOs.Cliente;
 using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
 using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoDocumento;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
 using InmobiliariaASPMVC.Entidades.Entidades;
+using InmobiliariaASPMVC.Entidades.ViewModels.Cliente;
 using InmobiliariaASPMVC.Entidades.ViewModels.Localidad;
 using InmobiliariaASPMVC.Entidades.ViewModels.Provincia;
 using InmobiliariaASPMVC.Entidades.ViewModels.TipoDocumento;
@@ -18,7 +20,7 @@ namespace InmobiliariaASPMVC.Mapeador
             LoadProvinciasMapping();
             LoadLocalidadesMapping();
             //LoadPropiedadesMapping();
-            //LoadClientesMapping();
+            LoadClientesMapping();
             LoadTipoPropiedadMapping();
             LoadTipoOperacionMapping();
             LoadTipoDocumentoMapping();
@@ -61,7 +63,7 @@ namespace InmobiliariaASPMVC.Mapeador
             CreateMap<Provincia, ProvinciaListDto>();
             CreateMap<Provincia, ProvinciaEditDto>().ReverseMap();
             CreateMap<ProvinciaListDto, ProvinciaListViewModel>().ReverseMap();
-            CreateMap<ProvinciaEditDto, ProvinciaEditViewModel>().ReverseMap();
+            CreateMap<ProvinciaEditDto, ProvinciaEditViewModel>().ReverseMap();//
             CreateMap<ProvinciaEditDto, ProvinciaListDto>().ReverseMap();
         }
 
@@ -77,11 +79,17 @@ namespace InmobiliariaASPMVC.Mapeador
         //    CreateMap<PropiedadListDto, PropiedadListViewModel>();
 
         //}
-        //private void LoadClientesMapping()
-        //{
-        //    CreateMap<ClienteListDto, ClienteListViewModel>();
+        private void LoadClientesMapping()
+        {
+            //CreateMap<Cliente, ClienteListDto>();
+            //CreateMap<Cliente, ClienteEditDto>().ReverseMap();
 
-        //}
+            CreateMap<ClienteListDto, ClienteListViewModel>();
+            CreateMap<ClienteEditViewModel, ClienteEditDto>().ReverseMap();
+            CreateMap<ClienteEditDto, Cliente>().ReverseMap();
+            CreateMap<ClienteEditDto, ClienteListDto>();
+
+        }
 
     }
 }

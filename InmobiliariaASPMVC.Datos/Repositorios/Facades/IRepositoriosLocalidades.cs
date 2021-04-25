@@ -15,6 +15,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
         LocalidadEditDto GetLocalidadPorId(int? id);
         void Borrar(int provinciaVmLocalidadId);
         bool Existe(Localidad localidad);
+        List<LocalidadListDto> GetLista();
 
     }
 }
