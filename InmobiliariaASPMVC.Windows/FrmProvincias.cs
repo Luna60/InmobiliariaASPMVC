@@ -105,7 +105,7 @@ namespace InmobiliariaASPMVC.Windows
                     var provinciaListDto = _mapper.Map<ProvinciaListDto>(provinciaEditDto);
                     SetearFila(r, provinciaListDto);
                     AgregarFila(r);
-                    MessageBox.Show("Registro agregado...", "Mensaje", MessageBoxButtons.OK,
+                    MessageBox.Show("Registro agregado :) ", "Mensaje", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 catch (Exception exception)
@@ -140,7 +140,7 @@ namespace InmobiliariaASPMVC.Windows
             {
                 _servicio.Borrar(provinciaDto.ProvinciaId);
                 dgvDatos.Rows.Remove(r);
-                MessageBox.Show("Registro borrado...", "Mensaje",
+                MessageBox.Show("Registro borrado :) ", "Mensaje",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exception)

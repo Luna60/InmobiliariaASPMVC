@@ -21,14 +21,14 @@ namespace InmobiliariaASPMVC.Web.Controllers
 
         private readonly IServiciosClientes _servicio;
         private readonly IServiciosProvincias _servicioProvincia;
-        private readonly ServiciosLocalidades _servicioLocalidad;
-        private readonly ServiciosTiposDocumentos _servicioTipoDocumento;
+        private readonly IServicioLocalidades _servicioLocalidad;
+        private readonly IServiciosTiposDocumentos _servicioTipoDocumento;
 
         private readonly IMapper _mapper;
 
 
         public ClientesController(IServiciosClientes servicio, IServiciosProvincias servicioProvincia,
-            ServiciosLocalidades servicioLocalidad, ServiciosTiposDocumentos servicioTipoDocumento)
+            IServicioLocalidades servicioLocalidad, IServiciosTiposDocumentos servicioTipoDocumento)
         {
             _servicio = servicio;
             _servicioProvincia = servicioProvincia;
@@ -41,9 +41,9 @@ namespace InmobiliariaASPMVC.Web.Controllers
 
 
         // GET: Clientes
-        public ActionResult Index()
+        public ActionResult Index(string provincia)
         {
-            var listaDto = _servicio.GetLista();
+            var listaDto = _servicio.GetLista(provincia);
             var listaVm = _mapper.Map<List<ClienteListViewModel>>(listaDto);
             return View(listaVm);
         }
@@ -57,7 +57,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
                 Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista()),
                 Localidad = _mapper
-                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista()),
+                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista(null)),
                 TipoDocumento = _mapper
                     .Map<List<TipoDocumentoListViewModel>>(_servicioTipoDocumento.GetLista())
 
@@ -78,7 +78,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
                 clienteEditVm.Localidad = _mapper
-                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista());
+                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista(null));
 
                 clienteEditVm.TipoDocumento = _mapper
                     .Map<List<TipoDocumentoListViewModel>>(_servicioTipoDocumento.GetLista());
@@ -96,7 +96,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
                 clienteEditVm.Localidad = _mapper
-                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista());
+                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista(null));
 
                 clienteEditVm.TipoDocumento = _mapper
                     .Map<List<TipoDocumentoListViewModel>>(_servicioTipoDocumento.GetLista());
@@ -119,7 +119,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
                 clienteEditVm.Localidad = _mapper
-                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista());
+                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista(null));
 
                 clienteEditVm.TipoDocumento = _mapper
                     .Map<List<TipoDocumentoListViewModel>>(_servicioTipoDocumento.GetLista());
@@ -148,7 +148,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
                 .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
             clienteVm.Localidad = _mapper
-                .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista());
+                .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista(null));
 
             clienteVm.TipoDocumento = _mapper
                 .Map<List<TipoDocumentoListViewModel>>(_servicioTipoDocumento.GetLista());
@@ -167,7 +167,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
                 clienteVm.Localidad = _mapper
-                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista());
+                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista(null));
 
                 clienteVm.TipoDocumento = _mapper
                     .Map<List<TipoDocumentoListViewModel>>(_servicioTipoDocumento.GetLista());
@@ -185,7 +185,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
                 clienteVm.Localidad = _mapper
-                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista());
+                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista(null));
 
                 clienteVm.TipoDocumento = _mapper
                     .Map<List<TipoDocumentoListViewModel>>(_servicioTipoDocumento.GetLista());
@@ -210,7 +210,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
                 clienteVm.Localidad = _mapper
-                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista());
+                    .Map<List<LocalidadListViewModel>>(_servicioLocalidad.GetLista(null));
 
                 clienteVm.TipoDocumento = _mapper
                     .Map<List<TipoDocumentoListViewModel>>(_servicioTipoDocumento.GetLista());
@@ -221,7 +221,7 @@ namespace InmobiliariaASPMVC.Web.Controllers
 
         }
 
-
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -150,6 +150,7 @@
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalidadesController.cs" />
+    <Compile Include="Controllers\PropiedadesController.cs" />
     <Compile Include="Controllers\ProvinciasController.cs" />
     <Compile Include="Controllers\TiposDocumentosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -209,11 +210,16 @@
     <Content Include="Views\Clientes\Create.cshtml" />
     <Content Include="Views\Clientes\Edit.cshtml" />
     <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Propiedades\Index.cshtml" />
+    <Content Include="Views\Propiedades\Create.cshtml" />
+    <Content Include="Views\Propiedades\Edit.cshtml" />
+    <Content Include="Views\Propiedades\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Localidad\" />
+    <Folder Include="Views\Propiedad\" />
     <Folder Include="Views\Provincia\" />
     <Folder Include="Views\TipoDocumento\" />
   </ItemGroup>

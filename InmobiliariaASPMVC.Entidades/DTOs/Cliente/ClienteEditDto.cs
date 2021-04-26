@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,27 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Cliente
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
-        public int TipoDocumento { get; set; }
+        public int TipoDocumentoId { get; set; }
         public string NroDocumento { get; set; }
         public string Direccion { get; set; }
 
-        public int Localidad { get; set; }
+        public int LocalidadId { get; set; }
         public int ProvinciaId { get; set; }
 
         public string TelefonoFijo { get; set; }
         public string TelefonoMovil { get; set; }
         public string CorreoElectronico { get; set; }
 
+        public ClienteEditDto clienteDto;
+
+        public ClienteEditDto GetLocalidad()
+        {
+            return clienteDto;
+        }
+
+        public ClienteEditDto GetTipoDocumento()
+        {
+            return clienteDto;
+        }
     }
 }

@@ -52,7 +52,6 @@
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(221, 20);
             this.txtProvincia.TabIndex = 3;
-            this.txtProvincia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnCerrar
             // 

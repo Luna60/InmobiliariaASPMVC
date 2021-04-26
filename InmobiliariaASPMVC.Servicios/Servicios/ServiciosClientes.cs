@@ -64,11 +64,11 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public List<ClienteListDto> GetLista()
+        public List<ClienteListDto> GetLista(string provincia)
         {
             try
             {
-                return _repositorio.GetLista();
+                return _repositorio.GetLista(provincia);
             }
             catch (Exception e)
             {
@@ -76,6 +76,19 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                 throw new Exception(e.Message);
             }
         }
+
+        //public List<ClienteListDto> GetLista()
+        //{
+        //    try
+        //    {
+        //        return _repositorio.GetLista();
+        //    }
+        //    catch (Exception e)
+        //    {
+
+        //        throw new Exception(e.Message);
+        //    }
+        //}
 
         public void Guardar(ClienteEditDto clienteDto)
         {

@@ -11,10 +11,6 @@ namespace InmobiliariaASPMVC.Windows
             InitializeComponent();
         }
         private ProvinciaEditDto provinciaDto;
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

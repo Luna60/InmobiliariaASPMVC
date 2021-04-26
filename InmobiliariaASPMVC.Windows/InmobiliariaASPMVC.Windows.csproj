@@ -62,6 +62,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarCliente.Designer.cs">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarPropiedad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarPropiedad.Designer.cs">
+      <DependentUpon>FrmBuscarPropiedad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClienteAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClienteAE.Designer.cs">
+      <DependentUpon>FrmClienteAE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLocalidadAE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +110,18 @@
     <Compile Include="FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPropiedadAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPropiedadAE.Designer.cs">
+      <DependentUpon>FrmPropiedadAE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPropiedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPropiedades.Designer.cs">
+      <DependentUpon>FrmPropiedades.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProvinciaAE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,14 +134,38 @@
     <Compile Include="FrmProvincias.Designer.cs">
       <DependentUpon>FrmProvincias.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTiposDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposDocumentos.Designer.cs">
+      <DependentUpon>FrmTiposDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTiposDocumentosAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTiposDocumentosAE.Designer.cs">
+      <DependentUpon>FrmTiposDocumentosAE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Herper\Herper.cs" />
     <Compile Include="Mapeador\AutoMapperConfig.cs" />
     <Compile Include="Ninject\Bindings.cs" />
     <Compile Include="Ninject\DI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBuscarCliente.resx">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarLocalidad.resx">
       <DependentUpon>FrmBuscarLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarPropiedad.resx">
+      <DependentUpon>FrmBuscarPropiedad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClienteAE.resx">
+      <DependentUpon>FrmClienteAE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLocalidadAE.resx">
       <DependentUpon>FrmLocalidadAE.cs</DependentUpon>
@@ -116,11 +176,23 @@
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPropiedadAE.resx">
+      <DependentUpon>FrmPropiedadAE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPropiedades.resx">
+      <DependentUpon>FrmPropiedades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProvinciaAE.resx">
       <DependentUpon>FrmProvinciaAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProvincias.resx">
       <DependentUpon>FrmProvincias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposDocumentos.resx">
+      <DependentUpon>FrmTiposDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTiposDocumentosAE.resx">
+      <DependentUpon>FrmTiposDocumentosAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

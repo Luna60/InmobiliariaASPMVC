@@ -13,5 +13,9 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Localidad
             return this.MemberwiseClone();
         }
 
+        public object GetTipoOperacion()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

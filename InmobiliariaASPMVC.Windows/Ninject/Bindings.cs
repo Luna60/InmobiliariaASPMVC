@@ -25,6 +25,22 @@ namespace InmobiliariaASPMVC.Windows.Ninject
             Bind<IRepositoriosLocalidades>().To<RepositoriosLocalidades>();
             Bind<IServicioLocalidades>().To<ServiciosLocalidades>();
 
+            Bind<IRepositoriosTiposDocumentos>().To<RepositoriosTiposDocumentos>();
+            Bind<IServiciosTiposDocumentos>().To<ServiciosTiposDocumentos>();
+
+            Bind<IRepositoriosClientes>().To<RepositoriosClientes>();
+            Bind<IServiciosClientes>().To<ServiciosClientes>();
+
+            Bind<IRepositoriosPropiedades>().To<RepositorioPropiedad>();
+            Bind<IServiciosPropiedades>().To<ServiciosPropiedades>();
+
+            Bind<IRepositoriosTiposOperaciones>().To<RepositoriosTiposOperaciones>();
+            Bind<IServiciosTiposOperaciones>().To<ServiciosTiposOperaciones>();
+
+            Bind<IRepositoriosTiposPropiedades>().To<RepositoriosTiposPropiedades>();
+            Bind<IServiciosTiposPropiedades>().To<ServiciosTiposPropiedades>();
+
+
 
         }
     }

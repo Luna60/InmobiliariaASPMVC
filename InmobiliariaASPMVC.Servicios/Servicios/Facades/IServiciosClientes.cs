@@ -9,11 +9,12 @@ namespace InmobiliariaASPMVC.Servicios.Servicios.Facades
 {
     public interface IServiciosClientes
     {
-        List<ClienteListDto> GetLista();
+        List<ClienteListDto> GetLista(string provincia);
         void Guardar(ClienteEditDto clienteDto);
         bool Existe(ClienteEditDto clienteEditDto);
         ClienteEditDto GetClientePorId(int? id);
         void Borrar(int ClienteId);
+        //List<ClienteListDto> GetLista();
 
     }
 }

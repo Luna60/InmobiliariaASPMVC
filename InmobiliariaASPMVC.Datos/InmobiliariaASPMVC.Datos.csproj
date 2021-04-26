@@ -56,17 +56,22 @@
   <ItemGroup>
     <Compile Include="EntityTypeConfiguration\ClienteEntityTypeConfiguration.cs" />
     <Compile Include="EntityTypeConfiguration\LocalidadEntityTypeConfiguration.cs" />
+    <Compile Include="EntityTypeConfiguration\PropiedadEntityTypeConfiguration.cs" />
     <Compile Include="EntityTypeConfiguration\ProvinciaEntityTypeConfiguration.cs" />
     <Compile Include="EntityTypeConfiguration\TipoDocumentoEntityTypeConfiguration.cs" />
+    <Compile Include="EntityTypeConfiguration\TipoOperacionEntityTypeConfiguration.cs" />
+    <Compile Include="EntityTypeConfiguration\TipoPropiedadEntityTypeConfiguration.cs" />
     <Compile Include="InmobiliariaDbContext.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\Facades\IRepositoriosClientes.cs" />
     <Compile Include="Repositorios\Facades\IRepositoriosLocalidades.cs" />
+    <Compile Include="Repositorios\Facades\IRepositoriosPropiedades.cs" />
     <Compile Include="Repositorios\Facades\IRepositoriosProvincias.cs" />
     <Compile Include="Repositorios\Facades\IRepositoriosTiposDocumentos.cs" />
     <Compile Include="Repositorios\Facades\IRepositoriosTiposOperaciones.cs" />
     <Compile Include="Repositorios\Facades\IRepositoriosTiposPropiedades.cs" />
+    <Compile Include="Repositorios\RepositorioPropiedad.cs" />
     <Compile Include="Repositorios\RepositoriosClientes.cs" />
     <Compile Include="Repositorios\RepositoriosLocalidades.cs" />
     <Compile Include="Repositorios\RepositoriosProvincias.cs" />

@@ -10,11 +10,12 @@ namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
 {
     public interface IRepositoriosClientes
     {
-        List<ClienteListDto> GetLista();
+        List<ClienteListDto> GetLista(string provincia);
         void Guardar(Cliente cliente);
         ClienteEditDto GetClientePorId(int? id);
         void Borrar(int ClienteId);
         bool Existe(Cliente Cliente);
+        //List<ClienteListDto> GetLista();
 
     }
 }

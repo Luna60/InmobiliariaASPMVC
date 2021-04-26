@@ -62,18 +62,18 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public List<LocalidadListDto> GetLista()
-        {
-            try
-            {
-                return _repositorio.GetLista();
-            }
-            catch (Exception e)
-            {
+        //public List<LocalidadListDto> GetLista()
+        //{
+        //    try
+        //    {
+        //        return _repositorio.GetLista(null);
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                throw new Exception(e.Message);
-            }
-        }
+        //        throw new Exception(e.Message);
+        //    }
+        //}
 
         public LocalidadEditDto GetLocalidadPorId(int? id)
         {

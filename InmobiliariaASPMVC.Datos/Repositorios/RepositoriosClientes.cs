@@ -68,65 +68,78 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             }
         }
 
-        public List<ClienteListDto> GetLista()
+        public List<ClienteListDto> GetLista(string provincia)
         {
+  
+
             try
             {
-                var lista = _context.Clientes
-                    .Include(c => c.Provincia)
-                    .Include(c => c.Localidad)
-                    .Select(c => new ClienteListDto
-                    {
-                        ClienteId = c.ClienteId,
-                        Apellido = c.Apellido,
-                        NroDocumento = c.NroDocumento,
-                        Provincia = c.Provincia.NombreProvincia,
-                        Localidad = c.Localidad.NombreLocalidad,
-                        TelefonoMovil = c.TelefonoMovil
-                    }).ToList();
-                return lista;
-            }
+                if (provincia == null)
+                {
+                    var lista = _context.Clientes
+                        .Include(c => c.Provincia)
+                        .Include(c => c.Localidad)
+                .Select(c => new ClienteListDto
+                {
+                    ClienteId = c.ClienteId,
+                    Apellido = c.Apellido,
+                    NroDocumento = c.NroDocumento,
+                    Provincia = c.Provincia.NombreProvincia,
+                    Localidad = c.Localidad.NombreLocalidad,
+                    TelefonoMovil = c.TelefonoMovil
+                }).ToList();
+                    return lista;
 
-            catch (Exception )
+                }
+                else
+                {
+                    var lista = _context.Clientes
+                        .Include(c => c.Provincia)
+                        .Include(c => c.Localidad)
+                        .Where(c => c.Provincia.NombreProvincia == provincia)
+                        .Select(c => new ClienteListDto
+                        {
+                            ClienteId = c.ClienteId,
+                            Apellido = c.Apellido,
+                            NroDocumento = c.NroDocumento,
+                            Provincia = c.Provincia.NombreProvincia,
+                            Localidad = c.Localidad.NombreLocalidad,
+                            TelefonoMovil = c.TelefonoMovil
+                        }).ToList();
+                    return lista;
+
+                }
+            }
+            catch (Exception e)
             {
+
                 throw new Exception("Error al intentar leer los Clientes");
             }
-
-            //try
-            //{
-            //    if (provincia == null)
-            //    {
-            //        var lista = _context.Clientes
-            //            .Include(c => c.Provincia)
-            //    .Select(c => new ClienteListDto
-            //    {
-            //        ClienteId = c.ClienteId,
-            //        NombreLocalidad = p.NombreLocalidad,
-            //        Provincia = p.Provincia.NombreProvincia,
-            //    }).ToList();
-            //        return lista;
-
-            //    }
-            //    else
-            //    {
-            //        var lista = _context.Localidades.Include(p => p.Provincia)
-            //            .Where(p => p.Provincia.NombreProvincia == provincia)
-            //            .Select(p => new LocalidadListDto
-            //            {
-            //                LocalidadId = p.LocalidadId,
-            //                NombreLocalidad = p.NombreLocalidad,
-            //                Provincia = p.Provincia.NombreProvincia,
-            //            }).ToList();
-            //        return lista;
-
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-
-            //    throw new Exception("Error al intentar leer las Localidades");
-            //}
         }
+
+        //public List<ClienteListDto> GetLista()
+        //{
+        //    try
+        //    {
+        //        var lista = _context.Clientes
+        //            .Include(c => c.Provincia)
+        //            .Include(c => c.Localidad)
+        //            .Select(c => new ClienteListDto
+        //            {
+        //                ClienteId = c.ClienteId,
+        //                Apellido = c.Apellido,
+        //                NroDocumento = c.NroDocumento,
+        //                Provincia = c.Provincia.NombreProvincia,
+        //                Localidad = c.Localidad.NombreLocalidad,
+        //                TelefonoMovil = c.TelefonoMovil
+        //            }).ToList();
+        //        return lista;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw new Exception("Error al intentar leer los Clientes");
+        //    }
+        //}
 
         public void Guardar(Cliente cliente)
         {
@@ -149,9 +162,11 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
 
                     clienteInDb.ProvinciaId = cliente.ProvinciaId;
                     clienteInDb.LocalidadId = cliente.LocalidadId;
+
                     clienteInDb.TelefonoFijo = cliente.TelefonoFijo;
                     clienteInDb.TelefonoMovil = cliente.TelefonoMovil;
                     clienteInDb.CorreoElectronico = cliente.CorreoElectronico;
+                    //TelefonoFijo = reader[8] == DBNull.Value ? String.Empty : reader.GetString(8),
 
                     _context.Entry(clienteInDb).State = EntityState.Modified;
                 }
