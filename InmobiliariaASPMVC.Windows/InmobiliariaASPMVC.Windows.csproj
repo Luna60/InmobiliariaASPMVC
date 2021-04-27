@@ -170,6 +170,18 @@
     <Compile Include="FrmTiposPropiedades.Designer.cs">
       <DependentUpon>FrmTiposPropiedades.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVentas.Designer.cs">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVentasAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVentasAE.Designer.cs">
+      <DependentUpon>FrmVentasAE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Herper\Herper.cs" />
     <Compile Include="Mapeador\AutoMapperConfig.cs" />
     <Compile Include="Ninject\Bindings.cs" />
@@ -229,6 +241,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposPropiedades.resx">
       <DependentUpon>FrmTiposPropiedades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVentas.resx">
+      <DependentUpon>FrmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVentasAE.resx">
+      <DependentUpon>FrmVentasAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
