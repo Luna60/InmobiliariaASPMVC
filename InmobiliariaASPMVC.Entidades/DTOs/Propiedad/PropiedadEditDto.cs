@@ -42,32 +42,6 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Propiedad
         public string Observacion { get; set; }
         public string Imagen { get; set; }
 
-        public PropiedadEditDto propiedadDto;
-
-        public LocalidadListDto localidadDto;
-        public TipoOperacionListDto tipoOperacionDto;
-        public TipoPropiedadListDto tipoPropiedadDto;
-        public ClienteListDto clienteDto;
-
-        public LocalidadListDto GetLocalidad()
-        {
-            return localidadDto;
-        }
-
-        public PropiedadEditDto GetTipoOperacion()
-        {
-            return propiedadDto;
-        }
-
-        public PropiedadEditDto GetTipoPropiedad()
-        {
-            return propiedadDto;
-        }
-
-        public PropiedadEditDto GetCliente()
-        {
-            return propiedadDto;
-        }
 
     }
 }

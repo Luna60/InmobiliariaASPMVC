@@ -43,10 +43,10 @@ namespace InmobiliariaASPMVC.Windows
         }
 
 
-        public FrmPropiedades()
-        {
-            InitializeComponent();
-        }
+        //public FrmPropiedades()
+        //{
+        //    InitializeComponent();
+        //}
 
         private void tsbCerrar_Click(object sender, EventArgs e)
         {

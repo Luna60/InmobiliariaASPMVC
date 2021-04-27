@@ -46,17 +46,13 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Propiedad
         //como tengo un Id de otra tabla, lo debo de apuntar a la tabla correspondiente
         public List<ClienteListViewModel> Cliente { get; set; }
 
-
-        [Required(ErrorMessage = "El campo {0} es Obligatorio")]
-        [StringLength(50, ErrorMessage = "El campo {0} debe tener entre {2} y {1} caracteres", MinimumLength = 3)]
-        [Display(Name = "Fecha Ingreso")]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [DataType(DataType.Date)]
         public DateTime FechaIngreso { get; set; }
 
 
 
-        [Required(ErrorMessage = "El campo {0} es Obligatorio")]
-        [StringLength(50, ErrorMessage = "El campo {0} debe tener entre {2} y {1} caracteres", MinimumLength = 3)]
-        [Display(Name = "Disponible")]
+        //[Display(Name = "Disponible")]
         public bool Disponible { get; set; }
 
 
@@ -87,10 +83,10 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Propiedad
         public string Departamento { get; set; }
 
 
-        [Display(Name = "Jardin")]
+        //[Display(Name = "Jardin")]
         public bool Jardin { get; set; }
 
-        [Display(Name = "Garage")]
+        //[Display(Name = "Garage")]
         public bool Garage { get; set; }
 
 

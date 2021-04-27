@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Datos.EntityTypeConfiguration
 {
-    class TipoPropiedadEntityTypeConfiguration : EntityTypeConfiguration<TipoPropiedad>
+    public class TipoPropiedadEntityTypeConfiguration : EntityTypeConfiguration<TipoPropiedad>
     {
 
         public TipoPropiedadEntityTypeConfiguration()

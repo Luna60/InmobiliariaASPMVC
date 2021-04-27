@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(22, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 94);
+            this.label2.Location = new System.Drawing.Point(22, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // txtLocalidad
             // 
-            this.txtLocalidad.Location = new System.Drawing.Point(77, 29);
+            this.txtLocalidad.Location = new System.Drawing.Point(87, 30);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(189, 20);
             this.txtLocalidad.TabIndex = 2;
@@ -68,15 +68,19 @@
             // 
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FormattingEnabled = true;
-            this.cbProvincia.Location = new System.Drawing.Point(77, 91);
+            this.cbProvincia.Location = new System.Drawing.Point(87, 92);
             this.cbProvincia.Name = "cbProvincia";
             this.cbProvincia.Size = new System.Drawing.Size(189, 21);
             this.cbProvincia.TabIndex = 3;
             // 
             // btnOk
             // 
+            this.btnOk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOk.FlatAppearance.BorderSize = 2;
+            this.btnOk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Guardar;
-            this.btnOk.Location = new System.Drawing.Point(15, 211);
+            this.btnOk.Location = new System.Drawing.Point(25, 212);
             this.btnOk.MaximumSize = new System.Drawing.Size(84, 62);
             this.btnOk.MinimumSize = new System.Drawing.Size(84, 62);
             this.btnOk.Name = "btnOk";
@@ -89,8 +93,12 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 2;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Cerrarr;
-            this.btnCancelar.Location = new System.Drawing.Point(182, 211);
+            this.btnCancelar.Location = new System.Drawing.Point(192, 212);
             this.btnCancelar.MaximumSize = new System.Drawing.Size(84, 62);
             this.btnCancelar.MinimumSize = new System.Drawing.Size(84, 62);
             this.btnCancelar.Name = "btnCancelar";

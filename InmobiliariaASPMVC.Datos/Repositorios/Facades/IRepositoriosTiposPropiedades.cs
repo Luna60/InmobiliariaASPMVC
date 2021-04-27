@@ -1,4 +1,5 @@
 ﻿using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
     {
         List<TipoPropiedadListDto> GetLista();
         TipoPropiedadEditDto GetTipoPropiedadPorId(int? id);
+        void Guardar(TipoPropiedad tipoPropiedad);
+        void Borrar(int? id);
+        bool Existe(TipoPropiedad tipoPropiedad);
 
     }
 }

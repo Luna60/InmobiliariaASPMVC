@@ -39,7 +39,7 @@
             // 
             // txtTipoDocumento
             // 
-            this.txtTipoDocumento.Location = new System.Drawing.Point(131, 47);
+            this.txtTipoDocumento.Location = new System.Drawing.Point(131, 26);
             this.txtTipoDocumento.Name = "txtTipoDocumento";
             this.txtTipoDocumento.Size = new System.Drawing.Size(221, 20);
             this.txtTipoDocumento.TabIndex = 7;
@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 50);
+            this.label1.Location = new System.Drawing.Point(18, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 6;
@@ -55,8 +55,12 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCerrar.FlatAppearance.BorderSize = 2;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Cerrarr;
-            this.btnCerrar.Location = new System.Drawing.Point(243, 99);
+            this.btnCerrar.Location = new System.Drawing.Point(243, 137);
             this.btnCerrar.MaximumSize = new System.Drawing.Size(84, 62);
             this.btnCerrar.MinimumSize = new System.Drawing.Size(84, 62);
             this.btnCerrar.Name = "btnCerrar";
@@ -69,8 +73,12 @@
             // 
             // btnOk
             // 
+            this.btnOk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOk.FlatAppearance.BorderSize = 2;
+            this.btnOk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Guardar;
-            this.btnOk.Location = new System.Drawing.Point(41, 99);
+            this.btnOk.Location = new System.Drawing.Point(41, 137);
             this.btnOk.MaximumSize = new System.Drawing.Size(84, 62);
             this.btnOk.MinimumSize = new System.Drawing.Size(84, 62);
             this.btnOk.Name = "btnOk";
@@ -98,6 +106,7 @@
             this.MaximumSize = new System.Drawing.Size(384, 266);
             this.MinimumSize = new System.Drawing.Size(384, 266);
             this.Name = "FrmTiposDocumentosAE";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar un Tipo de Documento:";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

@@ -31,25 +31,41 @@
             this.btnProvincias = new System.Windows.Forms.Button();
             this.btnLocalidades = new System.Windows.Forms.Button();
             this.btnTipoDoc = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnTipoPro = new System.Windows.Forms.Button();
+            this.btnTipoOpe = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProvincias
             // 
-            this.btnProvincias.Location = new System.Drawing.Point(12, 31);
+            this.btnProvincias.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnProvincias.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnProvincias.FlatAppearance.BorderSize = 2;
+            this.btnProvincias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnProvincias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProvincias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProvincias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnProvincias.Location = new System.Drawing.Point(12, 12);
             this.btnProvincias.MaximumSize = new System.Drawing.Size(93, 38);
             this.btnProvincias.MinimumSize = new System.Drawing.Size(93, 38);
             this.btnProvincias.Name = "btnProvincias";
             this.btnProvincias.Size = new System.Drawing.Size(93, 38);
             this.btnProvincias.TabIndex = 0;
             this.btnProvincias.Text = "Provincias";
-            this.btnProvincias.UseVisualStyleBackColor = true;
+            this.btnProvincias.UseVisualStyleBackColor = false;
             this.btnProvincias.Click += new System.EventHandler(this.btnProvincias_Click);
             // 
             // btnLocalidades
             // 
-            this.btnLocalidades.Location = new System.Drawing.Point(175, 31);
+            this.btnLocalidades.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLocalidades.FlatAppearance.BorderSize = 2;
+            this.btnLocalidades.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnLocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocalidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocalidades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLocalidades.Location = new System.Drawing.Point(242, 12);
             this.btnLocalidades.MaximumSize = new System.Drawing.Size(93, 38);
             this.btnLocalidades.MinimumSize = new System.Drawing.Size(93, 38);
             this.btnLocalidades.Name = "btnLocalidades";
@@ -61,7 +77,13 @@
             // 
             // btnTipoDoc
             // 
-            this.btnTipoDoc.Location = new System.Drawing.Point(12, 109);
+            this.btnTipoDoc.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTipoDoc.FlatAppearance.BorderSize = 2;
+            this.btnTipoDoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnTipoDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoDoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTipoDoc.Location = new System.Drawing.Point(127, 300);
             this.btnTipoDoc.MaximumSize = new System.Drawing.Size(93, 38);
             this.btnTipoDoc.MinimumSize = new System.Drawing.Size(93, 38);
             this.btnTipoDoc.Name = "btnTipoDoc";
@@ -71,45 +93,91 @@
             this.btnTipoDoc.UseVisualStyleBackColor = true;
             this.btnTipoDoc.Click += new System.EventHandler(this.btnTipoDoc_Click);
             // 
-            // button1
+            // btnCliente
             // 
-            this.button1.Location = new System.Drawing.Point(175, 109);
-            this.button1.MaximumSize = new System.Drawing.Size(93, 38);
-            this.button1.MinimumSize = new System.Drawing.Size(93, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Clientes";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCliente.FlatAppearance.BorderSize = 2;
+            this.btnCliente.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCliente.Location = new System.Drawing.Point(127, 12);
+            this.btnCliente.MaximumSize = new System.Drawing.Size(93, 38);
+            this.btnCliente.MinimumSize = new System.Drawing.Size(93, 38);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(93, 38);
+            this.btnCliente.TabIndex = 3;
+            this.btnCliente.Text = "Clientes";
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
-            // button2
+            // pictureBox1
             // 
-            this.button2.Location = new System.Drawing.Point(91, 199);
-            this.button2.MaximumSize = new System.Drawing.Size(93, 38);
-            this.button2.MinimumSize = new System.Drawing.Size(93, 38);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 38);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Propiedades";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.image;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(347, 350);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnTipoPro
+            // 
+            this.btnTipoPro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTipoPro.FlatAppearance.BorderSize = 2;
+            this.btnTipoPro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnTipoPro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoPro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTipoPro.Location = new System.Drawing.Point(12, 300);
+            this.btnTipoPro.MaximumSize = new System.Drawing.Size(93, 38);
+            this.btnTipoPro.MinimumSize = new System.Drawing.Size(93, 38);
+            this.btnTipoPro.Name = "btnTipoPro";
+            this.btnTipoPro.Size = new System.Drawing.Size(93, 38);
+            this.btnTipoPro.TabIndex = 6;
+            this.btnTipoPro.Text = "Tipos de Propiedades";
+            this.btnTipoPro.UseVisualStyleBackColor = true;
+            this.btnTipoPro.Click += new System.EventHandler(this.btnTipoPro_Click_1);
+            // 
+            // btnTipoOpe
+            // 
+            this.btnTipoOpe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTipoOpe.FlatAppearance.BorderSize = 2;
+            this.btnTipoOpe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnTipoOpe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoOpe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoOpe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTipoOpe.Location = new System.Drawing.Point(242, 300);
+            this.btnTipoOpe.MaximumSize = new System.Drawing.Size(93, 38);
+            this.btnTipoOpe.MinimumSize = new System.Drawing.Size(93, 38);
+            this.btnTipoOpe.Name = "btnTipoOpe";
+            this.btnTipoOpe.Size = new System.Drawing.Size(93, 38);
+            this.btnTipoOpe.TabIndex = 7;
+            this.btnTipoOpe.Text = "Tipos de Operaciones";
+            this.btnTipoOpe.UseVisualStyleBackColor = true;
+            this.btnTipoOpe.Click += new System.EventHandler(this.btnTipoOpe_Click);
             // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 295);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(347, 350);
+            this.Controls.Add(this.btnTipoOpe);
+            this.Controls.Add(this.btnTipoPro);
+            this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.btnTipoDoc);
             this.Controls.Add(this.btnLocalidades);
             this.Controls.Add(this.btnProvincias);
-            this.MaximumSize = new System.Drawing.Size(313, 334);
-            this.MinimumSize = new System.Drawing.Size(313, 334);
+            this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(363, 389);
+            this.MinimumSize = new System.Drawing.Size(363, 389);
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal:";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -119,8 +187,10 @@
         private System.Windows.Forms.Button btnProvincias;
         private System.Windows.Forms.Button btnLocalidades;
         private System.Windows.Forms.Button btnTipoDoc;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCliente;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnTipoPro;
+        private System.Windows.Forms.Button btnTipoOpe;
     }
 }
 

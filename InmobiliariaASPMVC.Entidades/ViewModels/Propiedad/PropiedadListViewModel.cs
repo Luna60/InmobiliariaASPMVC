@@ -21,7 +21,6 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Propiedad
         public string Cliente { get; set; }
 
 
-        //[Display(Name = "TelefonoMovil")]
         public bool Disponible { get; set; }
 
         [Display(Name = "Localidades")]

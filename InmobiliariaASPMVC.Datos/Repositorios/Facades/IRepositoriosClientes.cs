@@ -15,7 +15,6 @@ namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
         ClienteEditDto GetClientePorId(int? id);
         void Borrar(int ClienteId);
         bool Existe(Cliente Cliente);
-        //List<ClienteListDto> GetLista();
 
     }
 }

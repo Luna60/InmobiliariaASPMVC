@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace InmobiliariaASPMVC.Datos.Repositorios
@@ -16,6 +18,32 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
         {
             _context = context;
             _mapper = Mapeador.Mapeador.CrearMapper();
+        }
+
+        public void Borrar(int? id)
+        {
+            try
+            {
+                var tipoProInDb = _context.TiposPropiedades
+                    .SingleOrDefault(tp => tp.TipoPropiedadId == id);
+                _context.Entry(tipoProInDb).State = EntityState.Deleted;
+                //_context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al borrar un Tipo de Propiedad");
+            }
+        }
+
+        public bool Existe(TipoPropiedad tipoPropiedad)
+        {
+            if (tipoPropiedad.TipoPropiedadId == 0)
+            {
+                return _context.TiposPropiedades.Any(tp => tp.DescripcionTP == tipoPropiedad.DescripcionTP);
+            }
+
+            return _context.TiposPropiedades.Any(tp =>
+                tp.DescripcionTP == tipoPropiedad.DescripcionTP && tp.TipoPropiedadId != tipoPropiedad.TipoPropiedadId);
         }
 
         public List<TipoPropiedadListDto> GetLista()
@@ -48,6 +76,32 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             {
 
                 throw new Exception("Error al querer traer el Tipo de Propiedad");
+            }
+        }
+
+        public void Guardar(TipoPropiedad tipoPropiedad)
+        {
+            try
+            {
+                if (tipoPropiedad.TipoPropiedadId == 0)
+                {
+                    _context.TiposPropiedades.Add(tipoPropiedad);
+                }
+                else 
+                {
+                    var tipoProInDb = _context.TiposPropiedades
+                        .SingleOrDefault(tp => tp.TipoPropiedadId == tipoPropiedad.TipoPropiedadId);
+                    tipoProInDb.DescripcionTP = tipoPropiedad.DescripcionTP;
+                    _context.Entry(tipoProInDb).State = EntityState.Modified;
+                }
+
+                //_context.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Error al agregar/editar un Tipo de Propiedad");
             }
         }
     }

@@ -1,0 +1,44 @@
+﻿@model InmobiliariaASPMVC.Entidades.ViewModels.TipoPropiedad.TipoPropiedadEditViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Desea borrar este Tipo Propiedad?</h3>
+<div>
+    @*<h4>TipoPropiedadEditViewModel</h4>*@
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescripcionTP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescripcionTP)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.TipoPropiedadId)
+
+        @*////Forma de reservar el id Provincia en la Vista, hay que recordar que esto viene todo lleno
+            ////y cuando vuelve al servidor, el estado lo pierde, entonces yo debo reservar el Id de Provincia,
+            ////eso lo logro mediante un HiddenFor..*@
+        @*//Los Hidden son campos ocultos, entonces reservo esto,
+            //para despues tenerlo alla, y si quiera que el modelo
+            //este completo, tambien podria hacer un Hidden de NombreProvincia.*@
+
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver", "Index", "", new { @class = "btn btn-success" })
+        </div>
+    }
+</div>

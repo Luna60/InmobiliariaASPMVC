@@ -47,12 +47,14 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             if (propiedad.PropiedadId == 0)
             {
                 return _context.Propiedades.Any(c => c.Direccion == propiedad.Direccion
-                && c.Disponible == propiedad.Disponible && c.FechaIngreso == propiedad.FechaIngreso);
+                && c.Disponible == propiedad.Disponible && c.FechaIngreso == propiedad.FechaIngreso
+                 && c.LocalidadId== propiedad.LocalidadId);
             }
 
             return _context.Propiedades.Any(
                 c => c.Direccion == propiedad.Direccion
                 && c.Disponible == propiedad.Disponible && c.FechaIngreso == propiedad.FechaIngreso
+                && c.LocalidadId == propiedad.LocalidadId
                 && c.PropiedadId != propiedad.PropiedadId);
         }
 
@@ -72,6 +74,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 .Select(c => new PropiedadListDto
                 {
                     PropiedadId = c.PropiedadId,
+
                     Disponible = c.Disponible,
                     TipoPropiedad = c.TipoPropiedad.DescripcionTP,
                     TipoOperacion = c.TipoOperacion.DescripcionTO,
@@ -125,7 +128,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             }
             catch (Exception)
             {
-                throw new Exception("Error al intentar leer las Propiedades");
+                throw new Exception("Error al intentar leer la Propiedad");
             }
         }
 
@@ -142,6 +145,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     var propiedadInDb = _context
                         .Propiedades
                         .SingleOrDefault(c => c.PropiedadId == propiedad.PropiedadId);
+
                     propiedadInDb.DescripcionP = propiedad.DescripcionP;
                     propiedadInDb.TipoPropiedadId = propiedad.TipoPropiedadId;
                     propiedadInDb.TipoOperacionId = propiedad.TipoOperacionId;
@@ -168,7 +172,6 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     propiedadInDb.CostoOperacion = propiedad.CostoOperacion;
                     propiedadInDb.Imagen = propiedad.Imagen;
 
-                    //TelefonoFijo = reader[8] == DBNull.Value ? String.Empty : reader.GetString(8),
 
                     _context.Entry(propiedadInDb).State = EntityState.Modified;
                 }

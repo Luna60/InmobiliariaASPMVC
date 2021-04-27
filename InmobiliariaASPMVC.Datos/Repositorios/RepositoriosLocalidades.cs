@@ -110,7 +110,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 throw new Exception("Error al intentar leer las Localidades");
             }
         }
-            public LocalidadEditDto GetLocalidadPorId(int? id)
+        public LocalidadEditDto GetLocalidadPorId(int? id)
         {
             try
             {

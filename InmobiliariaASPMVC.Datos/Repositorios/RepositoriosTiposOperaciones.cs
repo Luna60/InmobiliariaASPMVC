@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +20,32 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
         {
             _context = context;
             _mapper = Mapeador.Mapeador.CrearMapper();
+        }
+
+        public void Borrar(int? id)
+        {
+            try
+            {
+                var tipoOpeInDb = _context.TiposOperaciones
+                    .SingleOrDefault(tp => tp.TipoOperacionId == id);
+                _context.Entry(tipoOpeInDb).State = EntityState.Deleted;
+                //_context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al borrar un Tipo de Operacion");
+            }
+        }
+
+        public bool Existe(TipoOperacion tipoOperacion)
+        {
+            if (tipoOperacion.TipoOperacionId == 0)
+            {
+                return _context.TiposOperaciones.Any(tp => tp.DescripcionTO == tipoOperacion.DescripcionTO);
+            }
+
+            return _context.TiposOperaciones.Any(tp =>
+                tp.DescripcionTO == tipoOperacion.DescripcionTO && tp.TipoOperacionId != tipoOperacion.TipoOperacionId);
         }
 
         public List<TipoOperacionListDto> GetLista()
@@ -50,6 +78,32 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             {
 
                 throw new Exception("Error al querer traer el Tipo de Operación");
+            }
+        }
+
+        public void Guardar(TipoOperacion tipoOperacion)
+        {
+            try
+            {
+                if (tipoOperacion.TipoOperacionId == 0)
+                {
+                    _context.TiposOperaciones.Add(tipoOperacion);
+                }
+                else 
+                {
+                    var tipoOpeInDb = _context.TiposOperaciones
+                        .SingleOrDefault(tp => tp.TipoOperacionId == tipoOperacion.TipoOperacionId);
+                    tipoOpeInDb.DescripcionTO = tipoOperacion.DescripcionTO;
+                    _context.Entry(tipoOpeInDb).State = EntityState.Modified;
+                }
+
+                //_context.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Error al agregar/editar un Tipo de Operacion");
             }
         }
     }

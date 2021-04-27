@@ -31,7 +31,7 @@ namespace InmobiliariaASPMVC.Windows
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCliente_Click(object sender, EventArgs e)
         {
             FrmClientes frm = DI.Create<FrmClientes>();
             frm.ShowDialog(this);
@@ -39,9 +39,17 @@ namespace InmobiliariaASPMVC.Windows
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void btnTipoOpe_Click(object sender, EventArgs e)
         {
-            FrmPropiedades frm = DI.Create<FrmPropiedades>();
+            FrmTiposOperaciones frm = DI.Create<FrmTiposOperaciones>();
+            frm.ShowDialog(this);
+
+        }
+
+        private void btnTipoPro_Click_1(object sender, EventArgs e)
+        {
+            FrmTiposPropiedades frm = DI.Create<FrmTiposPropiedades>();
             frm.ShowDialog(this);
 
         }

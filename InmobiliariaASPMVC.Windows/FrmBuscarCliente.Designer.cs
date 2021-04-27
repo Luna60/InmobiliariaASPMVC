@@ -34,14 +34,16 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbProvincia
             // 
             this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvincia.FormattingEnabled = true;
-            this.cbProvincia.Location = new System.Drawing.Point(77, 18);
+            this.cbProvincia.Location = new System.Drawing.Point(104, 31);
             this.cbProvincia.Name = "cbProvincia";
             this.cbProvincia.Size = new System.Drawing.Size(196, 21);
             this.cbProvincia.TabIndex = 6;
@@ -49,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Location = new System.Drawing.Point(39, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 5;
@@ -57,8 +59,12 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 2;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Buscarr;
-            this.btnBuscar.Location = new System.Drawing.Point(15, 177);
+            this.btnBuscar.Location = new System.Drawing.Point(42, 262);
             this.btnBuscar.MaximumSize = new System.Drawing.Size(84, 62);
             this.btnBuscar.MinimumSize = new System.Drawing.Size(84, 62);
             this.btnBuscar.Name = "btnBuscar";
@@ -71,8 +77,12 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancel.FlatAppearance.BorderSize = 2;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Cerrarr;
-            this.btnCancel.Location = new System.Drawing.Point(189, 177);
+            this.btnCancel.Location = new System.Drawing.Point(216, 262);
             this.btnCancel.MaximumSize = new System.Drawing.Size(84, 62);
             this.btnCancel.MinimumSize = new System.Drawing.Size(84, 62);
             this.btnCancel.Name = "btnCancel";
@@ -87,22 +97,36 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.image;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(347, 350);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmBuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 295);
+            this.ClientSize = new System.Drawing.Size(347, 350);
             this.ControlBox = false;
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cbProvincia);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(313, 334);
-            this.MinimumSize = new System.Drawing.Size(313, 334);
+            this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(363, 389);
+            this.MinimumSize = new System.Drawing.Size(363, 389);
             this.Name = "FrmBuscarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Cliente:";
             this.Load += new System.EventHandler(this.FrmBuscarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +139,6 @@
         private System.Windows.Forms.ComboBox cbProvincia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

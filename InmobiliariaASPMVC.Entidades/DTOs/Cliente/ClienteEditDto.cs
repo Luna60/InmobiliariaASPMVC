@@ -25,16 +25,5 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Cliente
         public string TelefonoMovil { get; set; }
         public string CorreoElectronico { get; set; }
 
-        public ClienteEditDto clienteDto;
-
-        public ClienteEditDto GetLocalidad()
-        {
-            return clienteDto;
-        }
-
-        public ClienteEditDto GetTipoDocumento()
-        {
-            return clienteDto;
-        }
     }
 }

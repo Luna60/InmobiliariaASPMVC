@@ -154,6 +154,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     var clienteInDb = _context
                         .Clientes
                         .SingleOrDefault(c => c.ClienteId == cliente.ClienteId);
+
                     clienteInDb.Nombre = cliente.Nombre;
                     clienteInDb.Apellido = cliente.Apellido;
                     clienteInDb.TipoDocumentoId = cliente.TipoDocumentoId;
@@ -166,7 +167,6 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     clienteInDb.TelefonoFijo = cliente.TelefonoFijo;
                     clienteInDb.TelefonoMovil = cliente.TelefonoMovil;
                     clienteInDb.CorreoElectronico = cliente.CorreoElectronico;
-                    //TelefonoFijo = reader[8] == DBNull.Value ? String.Empty : reader.GetString(8),
 
                     _context.Entry(clienteInDb).State = EntityState.Modified;
                 }

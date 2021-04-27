@@ -153,6 +153,8 @@
     <Compile Include="Controllers\PropiedadesController.cs" />
     <Compile Include="Controllers\ProvinciasController.cs" />
     <Compile Include="Controllers\TiposDocumentosController.cs" />
+    <Compile Include="Controllers\TiposOperacionesController.cs" />
+    <Compile Include="Controllers\TiposPropiedadesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,6 +216,14 @@
     <Content Include="Views\Propiedades\Create.cshtml" />
     <Content Include="Views\Propiedades\Edit.cshtml" />
     <Content Include="Views\Propiedades\Delete.cshtml" />
+    <Content Include="Views\TiposOperaciones\Index.cshtml" />
+    <Content Include="Views\TiposPropiedades\Index.cshtml" />
+    <Content Include="Views\TiposPropiedades\Create.cshtml" />
+    <Content Include="Views\TiposPropiedades\Delete.cshtml" />
+    <Content Include="Views\TiposOperaciones\Delete.cshtml" />
+    <Content Include="Views\TiposPropiedades\Edit.cshtml" />
+    <Content Include="Views\TiposOperaciones\Edit.cshtml" />
+    <Content Include="Views\TiposOperaciones\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -222,6 +232,8 @@
     <Folder Include="Views\Propiedad\" />
     <Folder Include="Views\Provincia\" />
     <Folder Include="Views\TipoDocumento\" />
+    <Folder Include="Views\TipoOperacioness\" />
+    <Folder Include="Views\TiposPropiedadess\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

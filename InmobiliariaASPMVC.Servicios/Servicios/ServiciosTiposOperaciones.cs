@@ -2,6 +2,7 @@
 using InmobiliariaASPMVC.Datos;
 using InmobiliariaASPMVC.Datos.Repositorios.Facades;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Servicios.Servicios.Facades;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,32 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             _mapper = Mapeador.Mapeador.CrearMapper();
             _unitOfWork = unitOfWork;
 
+        }
+
+        public void Borrar(int? id)
+        {
+            try
+            {
+                _repositorio.Borrar(id);
+                _unitOfWork.Save();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool Existe(TipoOperacionEditDto tipoOperacion)
+        {
+            try
+            {
+                TipoOperacion tipoO = _mapper.Map<TipoOperacion>(tipoOperacion);
+                return _repositorio.Existe(tipoO);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public List<TipoOperacionListDto> GetLista()
@@ -52,7 +79,20 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
+        public void Guardar(TipoOperacionEditDto tipoOperacion)
+        {
+            try
+            {
+                TipoOperacion tipoO = _mapper.Map<TipoOperacion>(tipoOperacion);
+                _repositorio.Guardar(tipoO);
+                _unitOfWork.Save();
+                tipoOperacion.TipoOperacionId = tipoO.TipoOperacionId;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
 
-
+            }
+        }
     }
 }

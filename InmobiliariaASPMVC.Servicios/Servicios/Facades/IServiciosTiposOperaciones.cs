@@ -11,6 +11,9 @@ namespace InmobiliariaASPMVC.Servicios.Servicios.Facades
     {
         List<TipoOperacionListDto> GetLista();
         TipoOperacionEditDto GetTipoOperacionPorId(int? id);
+        void Guardar(TipoOperacionEditDto tipoOperacion);
+        void Borrar(int? id);
+        bool Existe(TipoOperacionEditDto tipoOperacion);
 
     }
 }

@@ -60,7 +60,11 @@ namespace InmobiliariaASPMVC.Web.Controllers
         {
             PropiedadEditViewModel propiedadVm = new PropiedadEditViewModel
             {
-                //Activo = true,
+                Disponible = true,
+                Jardin = true,
+                Garage = true,
+                Cliente = _mapper
+                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null)),
                 Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista()),
                 Localidad = _mapper
@@ -69,8 +73,6 @@ namespace InmobiliariaASPMVC.Web.Controllers
                     .Map<List<TipoPropiedadListViewModel>>(_servicioTipoPropiedad.GetLista()),
                 TipoOperacion = _mapper
                     .Map<List<TipoOperacionListViewModel>>(_servicioTipoOperacion.GetLista()),
-                Cliente = _mapper
-                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null))
 
 
             };
@@ -85,6 +87,9 @@ namespace InmobiliariaASPMVC.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
+                propiedadEditVm.Cliente = _mapper
+                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
+
                 propiedadEditVm.Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
@@ -109,6 +114,9 @@ namespace InmobiliariaASPMVC.Web.Controllers
             {
                 ModelState.AddModelError(string.Empty, "Propiedad existente...");
 
+                propiedadEditVm.Cliente = _mapper
+                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
+
                 propiedadEditVm.Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
@@ -121,8 +129,6 @@ namespace InmobiliariaASPMVC.Web.Controllers
                 propiedadEditVm.TipoOperacion = _mapper
                     .Map<List<TipoOperacionListViewModel>>(_servicioTipoOperacion.GetLista());
 
-                propiedadEditVm.Cliente = _mapper
-                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
 
 
 
@@ -139,6 +145,10 @@ namespace InmobiliariaASPMVC.Web.Controllers
             catch (Exception e)
             {
                 ModelState.AddModelError(string.Empty, e.Message);
+
+                propiedadEditVm.Cliente = _mapper
+                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
+
                 propiedadEditVm.Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
@@ -151,8 +161,6 @@ namespace InmobiliariaASPMVC.Web.Controllers
                 propiedadEditVm.TipoOperacion = _mapper
                     .Map<List<TipoOperacionListViewModel>>(_servicioTipoOperacion.GetLista());
 
-                propiedadEditVm.Cliente = _mapper
-                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
 
 
                 return View(propiedadEditVm);
@@ -176,6 +184,9 @@ namespace InmobiliariaASPMVC.Web.Controllers
             }
             PropiedadEditViewModel propiedadVm = _mapper.Map<PropiedadEditViewModel>(propiedadDto);
 
+            propiedadVm.Cliente = _mapper
+                .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
+
             propiedadVm.Provincia = _mapper
                 .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
@@ -188,8 +199,6 @@ namespace InmobiliariaASPMVC.Web.Controllers
             propiedadVm.TipoOperacion = _mapper
                 .Map<List<TipoOperacionListViewModel>>(_servicioTipoOperacion.GetLista());
 
-            propiedadVm.Cliente = _mapper
-                .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
 
 
             return View(propiedadVm);
@@ -201,6 +210,10 @@ namespace InmobiliariaASPMVC.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
+
+                propiedadVm.Cliente = _mapper
+                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
+
                 propiedadVm.Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
@@ -212,9 +225,6 @@ namespace InmobiliariaASPMVC.Web.Controllers
 
                 propiedadVm.TipoOperacion = _mapper
                     .Map<List<TipoOperacionListViewModel>>(_servicioTipoOperacion.GetLista());
-
-                propiedadVm.Cliente = _mapper
-                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
 
                 return View(propiedadVm);
             }
@@ -224,6 +234,9 @@ namespace InmobiliariaASPMVC.Web.Controllers
             {
                 ModelState.AddModelError(string.Empty, "Propiedad existente :/ ");
 
+                propiedadVm.Cliente = _mapper
+                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
+
                 propiedadVm.Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
@@ -236,8 +249,6 @@ namespace InmobiliariaASPMVC.Web.Controllers
                 propiedadVm.TipoOperacion = _mapper
                     .Map<List<TipoOperacionListViewModel>>(_servicioTipoOperacion.GetLista());
 
-                propiedadVm.Cliente = _mapper
-                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
 
 
 
@@ -255,6 +266,9 @@ namespace InmobiliariaASPMVC.Web.Controllers
             {
                 ModelState.AddModelError(string.Empty, e.Message);
 
+                propiedadVm.Cliente = _mapper
+                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
+
                 propiedadVm.Provincia = _mapper
                     .Map<List<ProvinciaListViewModel>>(_servicioProvincia.GetLista());
 
@@ -267,8 +281,6 @@ namespace InmobiliariaASPMVC.Web.Controllers
                 propiedadVm.TipoOperacion = _mapper
                     .Map<List<TipoOperacionListViewModel>>(_servicioTipoOperacion.GetLista());
 
-                propiedadVm.Cliente = _mapper
-                    .Map<List<ClienteListViewModel>>(_servicioClientes.GetLista(null));
 
                 return View(propiedadVm);
 

@@ -40,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 51);
+            this.label1.Location = new System.Drawing.Point(37, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 2;
@@ -48,15 +48,19 @@
             // 
             // txtProvincia
             // 
-            this.txtProvincia.Location = new System.Drawing.Point(90, 48);
+            this.txtProvincia.Location = new System.Drawing.Point(100, 25);
             this.txtProvincia.Name = "txtProvincia";
             this.txtProvincia.Size = new System.Drawing.Size(221, 20);
             this.txtProvincia.TabIndex = 3;
             // 
             // btnCerrar
             // 
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCerrar.FlatAppearance.BorderSize = 2;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Cerrarr;
-            this.btnCerrar.Location = new System.Drawing.Point(227, 100);
+            this.btnCerrar.Location = new System.Drawing.Point(237, 134);
             this.btnCerrar.MaximumSize = new System.Drawing.Size(84, 62);
             this.btnCerrar.MinimumSize = new System.Drawing.Size(84, 62);
             this.btnCerrar.Name = "btnCerrar";
@@ -69,8 +73,12 @@
             // 
             // btnOk
             // 
+            this.btnOk.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOk.FlatAppearance.BorderSize = 2;
+            this.btnOk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Guardar;
-            this.btnOk.Location = new System.Drawing.Point(90, 100);
+            this.btnOk.Location = new System.Drawing.Point(40, 134);
             this.btnOk.MaximumSize = new System.Drawing.Size(84, 62);
             this.btnOk.MinimumSize = new System.Drawing.Size(84, 62);
             this.btnOk.Name = "btnOk";

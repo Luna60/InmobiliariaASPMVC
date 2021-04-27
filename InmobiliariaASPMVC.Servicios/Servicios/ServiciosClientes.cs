@@ -77,19 +77,6 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        //public List<ClienteListDto> GetLista()
-        //{
-        //    try
-        //    {
-        //        return _repositorio.GetLista();
-        //    }
-        //    catch (Exception e)
-        //    {
-
-        //        throw new Exception(e.Message);
-        //    }
-        //}
-
         public void Guardar(ClienteEditDto clienteDto)
         {
             try

@@ -1,4 +1,5 @@
 ﻿using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
+using InmobiliariaASPMVC.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,9 @@ namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
     {
         List<TipoOperacionListDto> GetLista();
         TipoOperacionEditDto GetTipoOperacionPorId(int? id);
+        void Guardar(TipoOperacion tipoOperacion);
+        void Borrar(int? id);
+        bool Existe(TipoOperacion tipoOperacion);
 
     }
 }

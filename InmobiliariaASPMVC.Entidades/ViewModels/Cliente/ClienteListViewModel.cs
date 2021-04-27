@@ -11,13 +11,10 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Cliente
     {
         public int ClienteId { get; set; }
 
-        //[Display(Name = "Apellido")]
         public string Apellido { get; set; }
 
-        //[Display(Name = "Nro.Documento")]
         public string NroDocumento { get; set; }
 
-        //[Display(Name = "TelefonoMovil")]
         public string TelefonoMovil { get; set; }
 
         [Display(Name = "Localidades")]

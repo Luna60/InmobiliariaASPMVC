@@ -32,15 +32,10 @@
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.cmnProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbBorrar = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsbBuscar = new System.Windows.Forms.ToolStripButton();
-            this.tsbActualizar = new System.Windows.Forms.ToolStripButton();
-            this.tsbImprimir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -87,32 +82,12 @@
             this.tsbBorrar,
             this.tsbEditar,
             this.toolStripSeparator1,
-            this.tsbBuscar,
-            this.tsbActualizar,
-            this.toolStripSeparator2,
-            this.tsbImprimir,
-            this.toolStripSeparator3,
             this.tsbCerrar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(633, 62);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 62);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 62);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 62);
             // 
             // tsbNuevo
             // 
@@ -147,35 +122,10 @@
             this.tsbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
-            // tsbBuscar
+            // toolStripSeparator1
             // 
-            this.tsbBuscar.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Buscarr;
-            this.tsbBuscar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBuscar.Name = "tsbBuscar";
-            this.tsbBuscar.Size = new System.Drawing.Size(46, 59);
-            this.tsbBuscar.Text = "Buscar";
-            this.tsbBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // tsbActualizar
-            // 
-            this.tsbActualizar.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Actualizarr;
-            this.tsbActualizar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbActualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbActualizar.Name = "tsbActualizar";
-            this.tsbActualizar.Size = new System.Drawing.Size(63, 59);
-            this.tsbActualizar.Text = "Actualizar";
-            this.tsbActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // tsbImprimir
-            // 
-            this.tsbImprimir.Image = global::InmobiliariaASPMVC.Windows.Properties.Resources.Imprimirr;
-            this.tsbImprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbImprimir.Name = "tsbImprimir";
-            this.tsbImprimir.Size = new System.Drawing.Size(57, 59);
-            this.tsbImprimir.Text = "Imprimir";
-            this.tsbImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 62);
             // 
             // tsbCerrar
             // 
@@ -196,6 +146,8 @@
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.MaximumSize = new System.Drawing.Size(649, 329);
+            this.MinimumSize = new System.Drawing.Size(649, 329);
             this.Name = "FrmProvincias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Provincias:";
@@ -219,11 +171,6 @@
         private System.Windows.Forms.ToolStripButton tsbBorrar;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tsbBuscar;
-        private System.Windows.Forms.ToolStripButton tsbActualizar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton tsbImprimir;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsbCerrar;
     }
 }
