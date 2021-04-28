@@ -115,8 +115,8 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Propiedad
         public decimal CostoOperacion { get; set; }
 
 
-        [Display(Name = "Observacion")]
-        public string Observacion { get; set; }
+        [Display(Name = "Observaciones")]
+        public string Observaciones { get; set; }
 
         [Display(Name = "Imagen")]
         public string Imagen { get; set; }

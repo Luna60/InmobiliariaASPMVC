@@ -47,13 +47,13 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             if (propiedad.PropiedadId == 0)
             {
                 return _context.Propiedades.Any(c => c.Direccion == propiedad.Direccion
-                && c.Disponible == propiedad.Disponible && c.FechaIngreso == propiedad.FechaIngreso
+                && c.Disponible == propiedad.Disponible /*&& c.FechaIngreso == propiedad.FechaIngreso*/
                  && c.LocalidadId== propiedad.LocalidadId);
             }
 
             return _context.Propiedades.Any(
                 c => c.Direccion == propiedad.Direccion
-                && c.Disponible == propiedad.Disponible && c.FechaIngreso == propiedad.FechaIngreso
+                && c.Disponible == propiedad.Disponible /*&& c.FechaIngreso == propiedad.FechaIngreso*/
                 && c.LocalidadId == propiedad.LocalidadId
                 && c.PropiedadId != propiedad.PropiedadId);
         }
@@ -168,7 +168,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     propiedadInDb.ProvinciaId = propiedad.ProvinciaId;
                     propiedadInDb.LocalidadId = propiedad.LocalidadId;
 
-                    propiedadInDb.Observacion = propiedad.Observacion;
+                    propiedadInDb.Observaciones = propiedad.Observaciones;
                     propiedadInDb.CostoOperacion = propiedad.CostoOperacion;
                     propiedadInDb.Imagen = propiedad.Imagen;
 

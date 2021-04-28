@@ -40,7 +40,7 @@ namespace InmobiliariaASPMVC.Windows
                 }
 
                 propiedadDto.DescripcionP = txtDescripcionP.Text;
-                propiedadDto.Observacion = txtObservacion.Text;
+                propiedadDto.Observaciones = txtObservacion.Text;
 
                 //propiedadDto.CostoOperacion = txtCosto.Text;
                 propiedadDto.CostoOperacion = decimal.Parse(nudCosto.Text);
@@ -216,7 +216,7 @@ namespace InmobiliariaASPMVC.Windows
 
                 nudCosto.Value = propiedadDto.CostoOperacion;
                 //propiedadDto.CostoOperacion = decimal.Parse(nudCosto.Text);
-                txtObservacion.Text = propiedadDto.Observacion;
+                txtObservacion.Text = propiedadDto.Observaciones;
                 txtImagen.Text = propiedadDto.Imagen;
 
             }

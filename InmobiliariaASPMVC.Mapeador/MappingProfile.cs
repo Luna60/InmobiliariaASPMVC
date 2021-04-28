@@ -8,7 +8,9 @@ using InmobiliariaASPMVC.Entidades.DTOs.TipoDocumento;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
 using InmobiliariaASPMVC.Entidades.DTOs.Venta;
+using InmobiliariaASPMVC.Entidades.ViewModels.Carrito;
 using InmobiliariaASPMVC.Entidades.Entidades;
+using InmobiliariaASPMVC.Entidades.ViewModels.Carrito;
 using InmobiliariaASPMVC.Entidades.ViewModels.Cliente;
 using InmobiliariaASPMVC.Entidades.ViewModels.ItemVenta;
 using InmobiliariaASPMVC.Entidades.ViewModels.Localidad;
@@ -33,6 +35,7 @@ namespace InmobiliariaASPMVC.Mapeador
             LoadTipoOperacionMapping();
             LoadTipoDocumentoMapping();
 
+            LoadCarritoMapping();
             LoadItemVentasMapping();
             LoadVentasMapping();
 
@@ -154,6 +157,19 @@ namespace InmobiliariaASPMVC.Mapeador
             CreateMap<VentaEditDto, VentaListDto>();
         }
 
+        private void LoadCarritoMapping()
+        {
+            CreateMap<ItemCarrito, ItemCarritoListViewModel>()
+                .ForMember(dest => dest.PropiedadListViewModel, act => act.MapFrom(src => src.Propiedad));
+
+
+            CreateMap<Propiedad, PropiedadListViewModel>()
+            .ForMember(dest => dest.Cliente, act => act.MapFrom(src => src.Cliente.Apellido));
+
+            CreateMap<Carrito, CarritoListViewModel>()
+                .ForMember(dest => dest.Items, act => act.MapFrom(src => src.listaItems));
+
+        }
 
     }
 }

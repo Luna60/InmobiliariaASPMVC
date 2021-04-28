@@ -400,7 +400,7 @@
             // 
             this.nudAmbientes.Location = new System.Drawing.Point(480, 212);
             this.nudAmbientes.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});
@@ -412,7 +412,7 @@
             // 
             this.nudCosto.Location = new System.Drawing.Point(138, 206);
             this.nudCosto.Maximum = new decimal(new int[] {
-            10000,
+            100000000,
             0,
             0,
             0});

@@ -20,8 +20,8 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Venta
         [DataType(DataType.Date)]
         public DateTime FechaVenta { get; set; }
 
-        [Display(Name = "Precio Total")]
-        public decimal Total { get; set; }
+        //[Display(Name = "Precio Total")]
+        //public decimal Total { get; set; }
 
         //[Display(Name = "Estado Vta.")]
         //public EstadoVenta EstadoVenta { get; set; }

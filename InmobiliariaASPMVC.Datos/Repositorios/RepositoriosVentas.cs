@@ -36,7 +36,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                         VentaId = nv.VentaId,
                         Cliente = nv.Cliente.Apellido,
                         FechaVenta = nv.FechaVenta,
-                        Total = nv.Total
+                        //Total = nv.Total
                     }).ToList();
 
                 return ventas;
@@ -60,7 +60,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                         VentaId = nv.VentaId,
                         Cliente = nv.Cliente.Apellido,
                         FechaVenta = nv.FechaVenta,
-                        Total = nv.Total
+                        //Total = nv.Total
                     }).SingleOrDefault(v => v.VentaId == ventaId);
 
                 return venta;
@@ -84,7 +84,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     var ventaInDb = _context.Ventas.SingleOrDefault(v => v.VentaId == venta.VentaId);
                     ventaInDb.ClienteId = venta.ClienteId;
                     ventaInDb.FechaVenta = venta.FechaVenta;
-                    ventaInDb.Total = venta.Total;
+                    //ventaInDb.Total = venta.Total;
                     _context.Entry(ventaInDb).State = EntityState.Modified;
                 }
             }

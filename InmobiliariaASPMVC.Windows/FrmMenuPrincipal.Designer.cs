@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTipoPro = new System.Windows.Forms.Button();
             this.btnTipoOpe = new System.Windows.Forms.Button();
+            this.btnPropiedad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,12 +160,32 @@
             this.btnTipoOpe.UseVisualStyleBackColor = true;
             this.btnTipoOpe.Click += new System.EventHandler(this.btnTipoOpe_Click);
             // 
+            // btnPropiedad
+            // 
+            this.btnPropiedad.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPropiedad.FlatAppearance.BorderSize = 2;
+            this.btnPropiedad.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnPropiedad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnPropiedad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPropiedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPropiedad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPropiedad.Location = new System.Drawing.Point(27, 129);
+            this.btnPropiedad.MaximumSize = new System.Drawing.Size(93, 38);
+            this.btnPropiedad.MinimumSize = new System.Drawing.Size(93, 38);
+            this.btnPropiedad.Name = "btnPropiedad";
+            this.btnPropiedad.Size = new System.Drawing.Size(93, 38);
+            this.btnPropiedad.TabIndex = 8;
+            this.btnPropiedad.Text = "Propiedades";
+            this.btnPropiedad.UseVisualStyleBackColor = true;
+            this.btnPropiedad.Click += new System.EventHandler(this.btnPropiedad_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(347, 350);
+            this.Controls.Add(this.btnPropiedad);
             this.Controls.Add(this.btnTipoOpe);
             this.Controls.Add(this.btnTipoPro);
             this.Controls.Add(this.btnCliente);
@@ -191,6 +212,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnTipoPro;
         private System.Windows.Forms.Button btnTipoOpe;
+        private System.Windows.Forms.Button btnPropiedad;
     }
 }
 

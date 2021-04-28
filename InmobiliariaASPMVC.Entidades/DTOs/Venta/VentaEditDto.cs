@@ -12,7 +12,7 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Venta
         public int VentaId { get; set; }
         public int ClienteId { get; set; }
         public DateTime FechaVenta { get; set; }
-        public decimal Total { get; set; }
+        //public decimal Total { get; set; }
         public List<ItemVentaEditDto> ItemVentas { get; set; } = new List<ItemVentaEditDto>();
 
 

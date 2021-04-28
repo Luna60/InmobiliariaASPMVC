@@ -39,7 +39,7 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Propiedad
         public int ProvinciaId { get; set; }
 
         public decimal CostoOperacion { get; set; }
-        public string Observacion { get; set; }
+        public string Observaciones { get; set; }
         public string Imagen { get; set; }
 
 

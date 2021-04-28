@@ -12,6 +12,7 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.ItemVenta
         public string Venta { get; set; }
         public string Propiedad { get; set; }
         public decimal PrecioUnitario { get; set; }
+        public decimal Total => PrecioUnitario + PrecioUnitario;
 
     }
 }

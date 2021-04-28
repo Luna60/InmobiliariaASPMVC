@@ -78,7 +78,7 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                         VentaId = venta.VentaId,
                         Cliente = venta.Cliente,
                         FechaVenta = venta.FechaVenta,
-                        Total = venta.Total
+                        //Total = venta.Total
                     };
                     _repositorio.Guardar(venta1);
                     _unitOfWork.Save();
