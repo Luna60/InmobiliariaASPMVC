@@ -34,6 +34,7 @@
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +53,7 @@
     <Compile Include="Servicios\Facades\IServiciosTiposDocumentos.cs" />
     <Compile Include="Servicios\Facades\IServiciosTiposOperaciones.cs" />
     <Compile Include="Servicios\Facades\IServiciosTiposPropiedades.cs" />
+    <Compile Include="Servicios\Facades\IServiciosVentas.cs" />
     <Compile Include="Servicios\ServiciosClientes.cs" />
     <Compile Include="Servicios\ServiciosLocalidades.cs" />
     <Compile Include="Servicios\ServiciosPropiedades.cs" />
@@ -59,6 +61,7 @@
     <Compile Include="Servicios\ServiciosTiposDocumentos.cs" />
     <Compile Include="Servicios\ServiciosTiposOperaciones.cs" />
     <Compile Include="Servicios\ServiciosTiposPropiedades.cs" />
+    <Compile Include="Servicios\ServiciosVentas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InmobiliariaASPMVC.Datos\InmobiliariaASPMVC.Datos.csproj">

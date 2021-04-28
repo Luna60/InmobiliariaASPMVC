@@ -33,6 +33,8 @@ namespace InmobiliariaASPMVC.Datos
         public DbSet<TipoOperacion> TiposOperaciones { get; set; }
         public DbSet<TipoDocumento> TiposDocumentos{ get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<ItemVenta> ItemVentas { get; set; }
+        public DbSet<Venta> Ventas { get; set; }
 
     }
 }

@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="DTOs\Cliente\ClienteEditDto.cs" />
     <Compile Include="DTOs\Cliente\ClienteListDto.cs" />
+    <Compile Include="DTOs\ItemVenta\ItemVentaEditDto.cs" />
+    <Compile Include="DTOs\ItemVenta\ItemVentaListDto.cs" />
     <Compile Include="DTOs\Localidad\LocalidadEditDto.cs" />
     <Compile Include="DTOs\Localidad\LocalidadListDto.cs" />
     <Compile Include="DTOs\Propiedad\PropiedadEditDto.cs" />
@@ -56,16 +58,21 @@
     <Compile Include="DTOs\TipoOperacion\TipoOperacionListDto.cs" />
     <Compile Include="DTOs\TipoPropiedad\TipoPropiedadEditDto.cs" />
     <Compile Include="DTOs\TipoPropiedad\TipoPropiedadListDto.cs" />
+    <Compile Include="DTOs\Venta\VentaEditDto.cs" />
+    <Compile Include="DTOs\Venta\VentaListDto.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\ItemVenta.cs" />
     <Compile Include="Entidades\Localidad.cs" />
     <Compile Include="Entidades\Propiedad.cs" />
     <Compile Include="Entidades\Provincia.cs" />
     <Compile Include="Entidades\TipoDocumento.cs" />
     <Compile Include="Entidades\TipoOperacion.cs" />
     <Compile Include="Entidades\TipoPropiedad.cs" />
+    <Compile Include="Entidades\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Cliente\ClienteEditViewModel.cs" />
     <Compile Include="ViewModels\Cliente\ClienteListViewModel.cs" />
+    <Compile Include="ViewModels\ItemVenta\ItemVentaListViewModel.cs" />
     <Compile Include="ViewModels\Localidad\LocalidadEditViewModel.cs" />
     <Compile Include="ViewModels\Localidad\LocalidadListViewModel.cs" />
     <Compile Include="ViewModels\Propiedad\PropiedadEditViewModel.cs" />
@@ -78,6 +85,8 @@
     <Compile Include="ViewModels\TipoOperacion\TipoOperacionListViewModel.cs" />
     <Compile Include="ViewModels\TipoPropiedad\TipoPropiedadEditViewModel.cs" />
     <Compile Include="ViewModels\TipoPropiedad\TipoPropiedadListViewModel.cs" />
+    <Compile Include="ViewModels\Venta\VentaDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Venta\VentaListViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

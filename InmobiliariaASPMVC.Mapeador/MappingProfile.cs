@@ -1,19 +1,23 @@
 ﻿using AutoMapper;
 using InmobiliariaASPMVC.Entidades.DTOs.Cliente;
+using InmobiliariaASPMVC.Entidades.DTOs.ItemVenta;
 using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
 using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
 using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoDocumento;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
+using InmobiliariaASPMVC.Entidades.DTOs.Venta;
 using InmobiliariaASPMVC.Entidades.Entidades;
 using InmobiliariaASPMVC.Entidades.ViewModels.Cliente;
+using InmobiliariaASPMVC.Entidades.ViewModels.ItemVenta;
 using InmobiliariaASPMVC.Entidades.ViewModels.Localidad;
 using InmobiliariaASPMVC.Entidades.ViewModels.Propiedad;
 using InmobiliariaASPMVC.Entidades.ViewModels.Provincia;
 using InmobiliariaASPMVC.Entidades.ViewModels.TipoDocumento;
 using InmobiliariaASPMVC.Entidades.ViewModels.TipoOperacion;
 using InmobiliariaASPMVC.Entidades.ViewModels.TipoPropiedad;
+using InmobiliariaASPMVC.Entidades.ViewModels.Venta;
 
 namespace InmobiliariaASPMVC.Mapeador
 {
@@ -28,6 +32,10 @@ namespace InmobiliariaASPMVC.Mapeador
             LoadTipoPropiedadMapping();
             LoadTipoOperacionMapping();
             LoadTipoDocumentoMapping();
+
+            LoadItemVentasMapping();
+            LoadVentasMapping();
+
 
         }
 
@@ -111,6 +119,41 @@ namespace InmobiliariaASPMVC.Mapeador
             CreateMap<ClienteEditDto, ClienteListDto>();
 
         }
+
+
+        private void LoadItemVentasMapping()
+        {
+            CreateMap<ItemVenta, ItemVentaListDto>()
+                .ForMember(dest => dest.Propiedad, act => act.MapFrom(src => src.Propiedad.DescripcionP));
+
+
+            CreateMap<ItemVenta, ItemVentaEditDto>()
+                .ForMember(dest => dest.Propiedad, act => act.MapFrom(src => src.Propiedad.DescripcionP)).ReverseMap();
+            CreateMap<ItemVentaListDto, ItemVentaListViewModel>();
+            CreateMap<ItemVentaEditDto, ItemVentaListDto>().ForMember(dest => dest.Propiedad,
+                act => act.MapFrom(src => src.Propiedad.TipoPropiedad));
+        }
+
+        private void LoadVentasMapping()
+        {
+            //CreateMap<Venta, VentaListDto>()
+            //    .ForMember(dest => dest.ItemsVentas, act => act.MapFrom(src => src.ItemsVentas)).ReverseMap();
+            //CreateMap<Venta, VentaEditDto>()
+            //    .ForMember(dest => dest.ItemsVentas, act => act.MapFrom(src => src.ItemsVentas)).ReverseMap();
+            CreateMap<Venta, VentaListDto>();
+
+            //CreateMap<Venta, VentaListDto>().ForMember(dest=>dest.ItemsVentas, act=>act.MapFrom(src=>src.ItemsVentas))
+            //    .ReverseMap();
+            CreateMap<Venta, VentaEditDto>()
+                .ReverseMap();
+            CreateMap<VentaListDto, VentaDetailsViewModel>();
+
+            CreateMap<VentaListDto, VentaDetailsViewModel>()
+                .ForMember(dest => dest.Detalles, act => act.MapFrom(src => src.ItemVentas));
+            CreateMap<VentaListDto, VentaListViewModel>();
+            CreateMap<VentaEditDto, VentaListDto>();
+        }
+
 
     }
 }

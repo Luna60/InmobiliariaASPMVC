@@ -92,24 +92,24 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             }
         }
 
-        public List<LocalidadListDto> GetLista()
-        {
-            try
-            {
-                var lista = _context.Localidades.Include(p => p.Provincia)
-                    .Select(p => new LocalidadListDto
-                    {
-                        LocalidadId = p.LocalidadId,
-                        NombreLocalidad = p.NombreLocalidad,
-                        Provincia = p.Provincia.NombreProvincia,
-                    }).ToList();
-                return lista;
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Error al intentar leer las Localidades");
-            }
-        }
+        //public List<LocalidadListDto> GetLista()
+        //{
+        //    try
+        //    {
+        //        var lista = _context.Localidades.Include(p => p.Provincia)
+        //            .Select(p => new LocalidadListDto
+        //            {
+        //                LocalidadId = p.LocalidadId,
+        //                NombreLocalidad = p.NombreLocalidad,
+        //                Provincia = p.Provincia.NombreProvincia,
+        //            }).ToList();
+        //        return lista;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw new Exception("Error al intentar leer las Localidades");
+        //    }
+        //}
         public LocalidadEditDto GetLocalidadPorId(int? id)
         {
             try
