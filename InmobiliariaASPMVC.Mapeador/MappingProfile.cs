@@ -164,7 +164,7 @@ namespace InmobiliariaASPMVC.Mapeador
 
 
             CreateMap<Propiedad, PropiedadListViewModel>()
-            .ForMember(dest => dest.Cliente, act => act.MapFrom(src => src.Cliente.Apellido));
+            .ForMember(dest => dest.TipoPropiedad, act => act.MapFrom(src => src.TipoPropiedad.DescripcionTP));
 
             CreateMap<Carrito, CarritoListViewModel>()
                 .ForMember(dest => dest.Items, act => act.MapFrom(src => src.listaItems));

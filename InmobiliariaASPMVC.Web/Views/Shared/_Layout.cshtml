@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
@@ -21,21 +21,40 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Propiedades", "Index", "Propiedades")</li>*@
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Provincias", "Index", "Provincias")</li>
                     <li>@Html.ActionLink("Localidades", "Index", "Localidades")</li>
-                    <li>@Html.ActionLink("TiposDocumentos", "Index", "TiposDocumentos")</li>
-                    <li>@Html.ActionLink("TiposPropiedades", "Index", "TiposPropiedades")</li>
-                    <li>@Html.ActionLink("TiposOperaciones", "Index", "TiposOperaciones")</li>
+                    <li>@Html.ActionLink("Propiedades", "Index", "Propiedades")</li>
                     <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                    <li>@Html.ActionLink("Ventas", "Index", "Ventas")</li>
 
-                    </ul>
+                    @Html.Action("Summary", "Carrito")
+
+
+                </ul>
             </div>
         </div>
     </div>
+    @*PROBANDO*@
+@*<li class="nav-item dropdown active">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Archivos
+    </a>
+    <a class="dropdown-item" href="@Html.ActionLink("Clientes", "Index", "Clientes")"></a>
+    <a class="dropdown-item" href="@Html.ActionLink("Propiedades", "Index", "Propiedades")">Propiedades</a>
+    <a class="dropdown-item" href="@Html.ActionLink("Provincias", "Index", "Provincias")">Provincias</a>
+    <a class="dropdown-item" href="@Html.ActionLink("TiposDocumentos", "Index", "TiposDocumentos")">TiposDocumentos</a>
+    <a class="dropdown-item" href="@Html.ActionLink("Localidades", "Index", "Localidades")">Localidades</a>
+    <a class="dropdown-item" href="@Html.ActionLink("TiposPropiedades", "Index", "TiposPropiedades")">TiposPropiedades</a>
+    <a class="dropdown-item" href="@Html.ActionLink("TiposOperaciones", "Index", "TiposOperaciones")">TiposOperaciones</a>
+
+
+</li>*@
+    @*PROBANDO*@
+
     <div class="container body-content">
         @RenderBody()
         <hr />

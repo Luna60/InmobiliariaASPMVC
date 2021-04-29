@@ -76,6 +76,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     PropiedadId = c.PropiedadId,
 
                     Disponible = c.Disponible,
+                    CostoOperacion = c.CostoOperacion,
                     TipoPropiedad = c.TipoPropiedad.DescripcionTP,
                     TipoOperacion = c.TipoOperacion.DescripcionTO,
                     Cliente = c.Cliente.Apellido,
@@ -100,6 +101,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 {
                     PropiedadId = c.PropiedadId,
                     Disponible = c.Disponible,
+                    CostoOperacion = c.CostoOperacion,
                     TipoPropiedad = c.TipoPropiedad.DescripcionTP,
                     TipoOperacion = c.TipoOperacion.DescripcionTO,
                     Cliente = c.Cliente.Apellido,

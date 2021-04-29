@@ -103,10 +103,10 @@ namespace InmobiliariaASPMVC.Windows
 
             }
 
-            if (string.IsNullOrEmpty(nudCosto.Text.Trim()))
+            if (string.IsNullOrEmpty(nudCosto.Text))
             {
                 valido = false;
-                errorProvider1.SetError(nudCosto, "Debe ingresar el Costo de la Operacion");
+                errorProvider1.SetError(nudCosto, "Debe ingresar un Costo");
 
             }
 
@@ -148,11 +148,10 @@ namespace InmobiliariaASPMVC.Windows
 
             }
 
-            if (string.IsNullOrEmpty(nudAmbientes.Text) )
+            if (string.IsNullOrEmpty(nudAmbientes.Text))
             {
                 valido = false;
                 errorProvider1.SetError(nudAmbientes, "Debe ingresar cantidad de Ambientes");
-
             }
 
 

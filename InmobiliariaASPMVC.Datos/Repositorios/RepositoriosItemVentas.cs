@@ -50,6 +50,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 itemInDb.VentaId = itemVenta.VentaId;
                 itemInDb.PropiedadId = itemVenta.PropiedadId;
                 itemInDb.PrecioUnitario = itemVenta.PrecioUnitario;
+                itemInDb.Total = itemVenta.Total;
 
                 _context.Entry(itemInDb).State = EntityState.Modified;
 

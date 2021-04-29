@@ -34,7 +34,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     .Select(nv => new VentaListDto()
                     {
                         VentaId = nv.VentaId,
-                        Cliente = nv.Cliente.Apellido,
+                        Cliente = nv.Cliente.Apellido,//
                         FechaVenta = nv.FechaVenta,
                         //Total = nv.Total
                     }).ToList();

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<InmobiliariaASPMVC.Entidades.ViewModels.Propiedad.PropiedadListViewModel>
+
+@*@{
+    ViewBag.Title = "_ListaProductos";
+}*@
+
+@*<h2>_ListaProductos</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoPropiedad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoOperacion)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Cliente)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Disponible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostoOperacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Localidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPropiedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoOperacion)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Cliente)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Disponible)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoOperacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Localidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Provincia)
+            </td>
+            <td>
+
+            </td>
+            @using (Html.BeginForm("AddToCart", "Carrito"))
+            {
+                <div class="btn-group">
+                    @Html.ActionLink("Edit", "Edit", "Propiedades", new { id = item.PropiedadId }, new { @class = "btn btn-warning" })
+                    @*@Html.ActionLink("Details", "Details","Productos", new { id = item.ProductoId }, new { @class = "btn btn-info" })*@
+                    @Html.ActionLink("Borrar", "Delete", "Propiedades", new { id = item.PropiedadId }, new { @class = "btn btn-danger" })
+
+                    @*<div style="float: right">*@
+                        @Html.HiddenFor(modelitem => item.PropiedadId)
+                        @Html.Hidden("propiedadId", item.PropiedadId)
+                        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                        <input type="submit" class="btn btn-default" value="Agregar" />
+                    @*</div>*@
+                </div>
+          }
+
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+    }
+
+</table>

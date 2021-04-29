@@ -40,6 +40,9 @@ namespace InmobiliariaASPMVC.Windows.Ninject
             Bind<IRepositoriosTiposPropiedades>().To<RepositoriosTiposPropiedades>();
             Bind<IServiciosTiposPropiedades>().To<ServiciosTiposPropiedades>();
 
+            Bind<IRepositoriosVentas>().To<RepositoriosVentas>();
+            Bind<IRepositoriosItemVentas>().To<RepositoriosItemVentas>();
+            Bind<IServiciosVentas>().To<ServiciosVentas>();
 
 
         }

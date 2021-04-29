@@ -14,6 +14,11 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Propiedad
         [Display(Name = "Tipo de Propiedad")]
         public string TipoPropiedad { get; set; }
 
+        [Display(Name = "Descripcion de propiedad")]
+
+        public string DescripcionP { get; set; }
+
+
         [Display(Name = "Tipo de Operacion")]
         public string TipoOperacion { get; set; }
 
@@ -22,6 +27,8 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Propiedad
 
 
         public bool Disponible { get; set; }
+        public decimal CostoOperacion { get; set; }
+
 
         [Display(Name = "Localidades")]
         public string Localidad { get; set; }

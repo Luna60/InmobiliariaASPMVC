@@ -16,15 +16,19 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
     {
         private readonly InmobiliariaDbContext _context;
         private readonly IRepositoriosVentas _repositorio;
+        private readonly IRepositoriosClientes _repositorioCliente;
+
         private readonly IRepositoriosItemVentas _repositorioItems;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
         public ServiciosVentas(InmobiliariaDbContext context, IRepositoriosVentas repositorio,
+            IRepositoriosClientes repositorioCliente,
             IRepositoriosItemVentas repositorioItems, IUnitOfWork unitOfWork)
         {
             _context = context;
             _repositorio = repositorio;
+            _repositorioCliente = repositorioCliente;
             _repositorioItems = repositorioItems;
             _unitOfWork = unitOfWork;
             _mapper = Mapeador.Mapeador.CrearMapper();
@@ -90,7 +94,7 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                             VentaId = venta1.VentaId,
                             PropiedadId = item.Propiedad.PropiedadId,
                             PrecioUnitario = item.PrecioUnitario,
-                            //Cantidad = item.Cantidad
+                            Total = item.Total
                         };
 
 

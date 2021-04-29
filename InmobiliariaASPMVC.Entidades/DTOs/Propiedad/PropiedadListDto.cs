@@ -10,9 +10,10 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Propiedad
     {
         public int PropiedadId { get; set; }
         public string Cliente { get; set; }
+        public string DescripcionP { get; set; }
 
         public bool Disponible { get; set; }
-
+        public decimal CostoOperacion { get; set; }
         public string TipoOperacion { get; set; }
 
         public string TipoPropiedad { get; set; }

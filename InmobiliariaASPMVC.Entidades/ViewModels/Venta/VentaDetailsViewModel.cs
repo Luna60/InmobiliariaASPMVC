@@ -13,8 +13,8 @@ namespace InmobiliariaASPMVC.Entidades.ViewModels.Venta
         [Display(Name = "Vta. Nro.")]
         public int VentaId { get; set; }
 
-        [Display(Name = "Cliente")]
-        public string Cliente { get; set; }
+        //[Display(Name = "Cliente")]
+        //public string Cliente { get; set; }
 
         [Display(Name = "Fecha Vta.")]
         [DataType(DataType.Date)]
