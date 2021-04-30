@@ -28,9 +28,8 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Propiedad
             return this.MemberwiseClone();
         }
 
-        //public override string ToString()
-        //{
-        //    //return $"{CostoOperacion + ValorPropiedad}";
-        //}
+
+
+
     }
 }

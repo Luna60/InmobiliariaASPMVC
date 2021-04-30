@@ -175,7 +175,7 @@ namespace InmobiliariaASPMVC.Mapeador
         private void LoadCarritoMapping()
         {
             CreateMap<ItemCarrito, ItemCarritoListViewModel>()
-                .ForMember(dest => dest.PropiedadListViewModel, act => act.MapFrom(src => src.Propiedad));
+                .ForMember(dest => dest.PropiedadListViewModel, act => act.MapFrom(src => src.Propiedad.DescripcionP));
 
 
             CreateMap<Propiedad, PropiedadListViewModel>()

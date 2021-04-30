@@ -120,10 +120,10 @@ namespace InmobiliariaASPMVC.Windows.Herper
 
         }
 
-        public static void CargarComboPropiedades(string tipoSeleccionado, ref ComboBox combo)// 
+        public static void CargarComboPropiedades(string tipoSeleccionado, ref ComboBox combo)//  
         {
             IServiciosPropiedades servicioPropiedad = DI.Create<IServiciosPropiedades>();
-            var lista = servicioPropiedad.GetLista(tipoSeleccionado);////null
+            var lista = servicioPropiedad.GetLista(tipoSeleccionado);////
             var defaultPropiedad = new PropiedadListDto
             {
                 PropiedadId = 0,

@@ -136,6 +136,8 @@
             this.cbTipoPropiedad.Name = "cbTipoPropiedad";
             this.cbTipoPropiedad.Size = new System.Drawing.Size(171, 21);
             this.cbTipoPropiedad.TabIndex = 26;
+            this.cbTipoPropiedad.SelectedIndexChanged += new System.EventHandler(this.cbTipoPropiedad_SelectedIndexChanged);
+
             // 
             // label4
             // 

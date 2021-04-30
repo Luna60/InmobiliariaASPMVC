@@ -125,14 +125,17 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
         {
             try
             {
+                // return _mapper
+                //.Map<PropiedadEditDto>(_context.Propiedades.Include(c => c.TipoPropiedad)
+                //.SingleOrDefault(c => c.PropiedadId == id));
+
                 return _mapper
                     .Map<PropiedadEditDto>(_context.Propiedades
-                                            .Include(p => p.TipoPropiedad)
-                        .Include(p => p.TipoOperacion)
-                        .Include(p => p.Localidad)
-                        .Include(p => p.Provincia)
-                        .Include(p => p.Cliente)
-
+                        .Include(c => c.TipoPropiedad)
+                        .Include(c => c.TipoOperacion)
+                        .Include(c => c.Localidad)
+                        .Include(c => c.Provincia)
+                        .Include(c => c.Cliente)
                         .SingleOrDefault(c => c.PropiedadId == id));
             }
             catch (Exception)

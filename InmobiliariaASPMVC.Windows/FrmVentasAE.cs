@@ -4,6 +4,8 @@ using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
 using InmobiliariaASPMVC.Entidades.DTOs.Venta;
 using InmobiliariaASPMVC.Entidades.Entidades;
+using InmobiliariaASPMVC.Servicios.Servicios;
+using InmobiliariaASPMVC.Servicios.Servicios.Facades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,15 +20,17 @@ namespace InmobiliariaASPMVC.Windows
 {
     public partial class FrmVentasAE : Form
     {
-        public FrmVentasAE()
+        public FrmVentasAE(IServiciosPropiedades serviciosPropiedades, IServiciosTiposPropiedades servicioTiposPropiedades)
         {
+            _serviciosPropiedades = serviciosPropiedades;
             InitializeComponent();
         }
 
 
         private Carrito carrito = new Carrito();
         private IMapper _mapper;
-
+        private IServiciosPropiedades _serviciosPropiedades;
+        private IServiciosTiposPropiedades _servicioTiposPropiedades;
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -52,6 +56,33 @@ namespace InmobiliariaASPMVC.Windows
 
         private void cbTipoPropiedad_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //if (cbTipoPropiedad.SelectedIndex > 0)
+            //{
+
+            //    var tipoSeleccionado = (TipoPropiedadListDto)cbTipoPropiedad.SelectedItem;
+
+            //    tipoSeleccionado.TipoPropiedadId =  _servicioTiposPropiedades.GetPropiedadPorId();
+            //    //IServiciosPropiedades servicioPropiedad = DI.Create<IServiciosPropiedades>();
+            //    var lista = _serviciosPropiedades.GetLista(tipoSeleccionado);////
+            //    var defaultPropiedad = new PropiedadListDto
+            //    {
+            //        PropiedadId = 0,
+            //        DescripcionP = " <Seleccione una Propiedad> "
+            //    };
+            //    lista.Insert(0, defaultPropiedad);
+            //    combo.DataSource = lista;
+            //    combo.ValueMember = "PropiedadId";
+            //    combo.DisplayMember = "DescripcionP";
+            //    combo.SelectedIndex = 0;
+
+            //    cbPropiedades.Enabled = true;
+
+            //}
+            //else
+            //{
+            //    cbPropiedades.DataSource = null;
+            //    cbPropiedades.Enabled = false;
+            //}
             if (cbTipoPropiedad.SelectedIndex > 0)
             {
 
