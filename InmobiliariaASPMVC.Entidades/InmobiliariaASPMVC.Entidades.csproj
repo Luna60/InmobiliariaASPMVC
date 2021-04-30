@@ -56,6 +56,7 @@
     <Compile Include="DTOs\TipoDocumento\TipoDocumentoListDto.cs" />
     <Compile Include="DTOs\TipoOperacion\TipoOperacionEditDto.cs" />
     <Compile Include="DTOs\TipoOperacion\TipoOperacionListDto.cs" />
+    <Compile Include="DTOs\TipoPropiedad\TipoPropiedadDetailsDto.cs" />
     <Compile Include="DTOs\TipoPropiedad\TipoPropiedadEditDto.cs" />
     <Compile Include="DTOs\TipoPropiedad\TipoPropiedadListDto.cs" />
     <Compile Include="DTOs\Venta\VentaEditDto.cs" />
@@ -79,7 +80,9 @@
     <Compile Include="ViewModels\ItemVenta\ItemVentaListViewModel.cs" />
     <Compile Include="ViewModels\Localidad\LocalidadEditViewModel.cs" />
     <Compile Include="ViewModels\Localidad\LocalidadListViewModel.cs" />
+    <Compile Include="ViewModels\Propiedad\PropiedadDetailsViewModel.cs" />
     <Compile Include="ViewModels\Propiedad\PropiedadEditViewModel.cs" />
+    <Compile Include="ViewModels\Propiedad\PropiedadFilterListViewModel.cs" />
     <Compile Include="ViewModels\Propiedad\PropiedadListViewModel.cs" />
     <Compile Include="ViewModels\Provincia\ProvinciaEditViewModel.cs" />
     <Compile Include="ViewModels\Provincia\ProvinciaListViewModel.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="ViewModels\TipoDocumento\TipoDocumentoListViewModel.cs" />
     <Compile Include="ViewModels\TipoOperacion\TipoOperacionEditViewModel.cs" />
     <Compile Include="ViewModels\TipoOperacion\TipoOperacionListViewModel.cs" />
+    <Compile Include="ViewModels\TipoPropiedad\TipoPropiedadDetailsViewModel.cs" />
     <Compile Include="ViewModels\TipoPropiedad\TipoPropiedadEditViewModel.cs" />
     <Compile Include="ViewModels\TipoPropiedad\TipoPropiedadListViewModel.cs" />
     <Compile Include="ViewModels\Venta\VentaDetailsViewModel.cs" />

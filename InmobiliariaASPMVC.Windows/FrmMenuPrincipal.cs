@@ -60,5 +60,12 @@ namespace InmobiliariaASPMVC.Windows
             frm.ShowDialog(this);
 
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            FrmVentas frm = DI.Create<FrmVentas>();
+            frm.ShowDialog(this);
+
+        }
     }
 }

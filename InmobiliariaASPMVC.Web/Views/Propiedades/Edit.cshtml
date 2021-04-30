@@ -96,42 +96,41 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.Cochera, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.Cochera, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Cochera, "", new { @class = "text-danger" })
+        @Html.EditorFor(model => model.Cochera, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Cochera, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.LocalidadId, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.DropDownListFor(model => model.LocalidadId, new SelectList(Model.Localidad, "LocalidadId", "NombreLocalidad"),
-            " Seleccione una Localidad ", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.LocalidadId, "", new { @class = "text-danger" })
+        @Html.DropDownListFor(model => model.LocalidadId, new SelectList(Model.Localidad, "LocalidadId", "NombreLocalidad"),
+        " Seleccione una Localidad ", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.LocalidadId, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.ProvinciaId, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.DropDownListFor(model => model.ProvinciaId, new SelectList(Model.Provincia, "ProvinciaId", "NombreProvincia"),
-            " Seleccione una Provincia ", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.ProvinciaId, "", new { @class = "text-danger" })
+        @Html.DropDownListFor(model => model.ProvinciaId, new SelectList(Model.Provincia, "ProvinciaId", "NombreProvincia"),
+        " Seleccione una Provincia ", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ProvinciaId, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.CostoOperacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.CostoOperacion, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.CostoOperacion, "", new { @class = "text-danger" })
+        @Html.EditorFor(model => model.CostoOperacion, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.CostoOperacion, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Observaciones, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
+        @Html.EditorFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Imagen, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.EditorFor(model => model.Imagen, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Imagen, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.ValorPropiedad, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.ValorPropiedad, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ValorPropiedad, "", new { @class = "text-danger" })
     </div>
-
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Guardar" class="btn btn-warning" />

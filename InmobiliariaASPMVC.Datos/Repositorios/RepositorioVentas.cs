@@ -11,16 +11,15 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Datos.Repositorios
 {
-    public class RepositoriosVentas : IRepositoriosVentas
+    public class RepositorioVentas : IRepositorioVentas
     {
         private readonly InmobiliariaDbContext _context;
         private readonly IMapper _mapper;
 
-        public RepositoriosVentas(InmobiliariaDbContext context)
+        public RepositorioVentas(InmobiliariaDbContext context)
         {
             _context = context;
             _mapper = Mapeador.Mapeador.CrearMapper();
-
         }
 
         public List<VentaListDto> GetLista()
@@ -34,9 +33,9 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     .Select(nv => new VentaListDto()
                     {
                         VentaId = nv.VentaId,
-                        Cliente = nv.Cliente.Apellido,//
                         FechaVenta = nv.FechaVenta,
-                        //Total = nv.Total
+                        //ModalidadVenta = nv.ModalidadVenta,
+                        //EstadoVenta = nv.EstadoVenta
                     }).ToList();
 
                 return ventas;
@@ -58,9 +57,9 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                     .Select(nv => new VentaListDto()
                     {
                         VentaId = nv.VentaId,
-                        Cliente = nv.Cliente.Apellido,
                         FechaVenta = nv.FechaVenta,
-                        //Total = nv.Total
+                        //ModalidadVenta = nv.ModalidadVenta,
+                        //EstadoVenta = nv.EstadoVenta
                     }).SingleOrDefault(v => v.VentaId == ventaId);
 
                 return venta;
@@ -82,9 +81,9 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 else
                 {
                     var ventaInDb = _context.Ventas.SingleOrDefault(v => v.VentaId == venta.VentaId);
-                    ventaInDb.ClienteId = venta.ClienteId;
+                    //ventaInDb.EstadoVenta = venta.EstadoVenta;
+                    //ventaInDb.ModalidadVenta = venta.ModalidadVenta;
                     ventaInDb.FechaVenta = venta.FechaVenta;
-                    //ventaInDb.Total = venta.Total;
                     _context.Entry(ventaInDb).State = EntityState.Modified;
                 }
             }
@@ -93,7 +92,6 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
 
                 throw new Exception(e.Message);
             }
-
         }
     }
 }

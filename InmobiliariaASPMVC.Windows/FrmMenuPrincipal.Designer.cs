@@ -36,6 +36,7 @@
             this.btnTipoPro = new System.Windows.Forms.Button();
             this.btnTipoOpe = new System.Windows.Forms.Button();
             this.btnPropiedad = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,12 +180,32 @@
             this.btnPropiedad.UseVisualStyleBackColor = true;
             this.btnPropiedad.Click += new System.EventHandler(this.btnPropiedad_Click);
             // 
+            // btnVentas
+            // 
+            this.btnVentas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVentas.FlatAppearance.BorderSize = 2;
+            this.btnVentas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVentas.Location = new System.Drawing.Point(242, 129);
+            this.btnVentas.MaximumSize = new System.Drawing.Size(93, 38);
+            this.btnVentas.MinimumSize = new System.Drawing.Size(93, 38);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(93, 38);
+            this.btnVentas.TabIndex = 9;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(347, 350);
+            this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnPropiedad);
             this.Controls.Add(this.btnTipoOpe);
             this.Controls.Add(this.btnTipoPro);
@@ -213,6 +234,7 @@
         private System.Windows.Forms.Button btnTipoPro;
         private System.Windows.Forms.Button btnTipoOpe;
         private System.Windows.Forms.Button btnPropiedad;
+        private System.Windows.Forms.Button btnVentas;
     }
 }
 

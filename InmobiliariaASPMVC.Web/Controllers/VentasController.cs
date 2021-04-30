@@ -11,11 +11,11 @@ namespace InmobiliariaASPMVC.Web.Controllers
 {
     public class VentasController : Controller
     {
-        private readonly IServiciosVentas _servicio;
+        private readonly IServicioVentas _servicio;
 
         private readonly IMapper _mapper;
 
-        public VentasController(IServiciosVentas servicio)
+        public VentasController(IServicioVentas servicio)
         {
             _servicio = servicio;
             _mapper = Mapeador.Mapeador.CrearMapper();

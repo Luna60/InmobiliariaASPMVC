@@ -63,17 +63,18 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtImagen = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.nudAmbientes = new System.Windows.Forms.NumericUpDown();
             this.nudCosto = new System.Windows.Forms.NumericUpDown();
             this.nudSuperficieTerreno = new System.Windows.Forms.NumericUpDown();
             this.nudSuperficieEdificada = new System.Windows.Forms.NumericUpDown();
+            this.nudValorPropiedad = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmbientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSuperficieTerreno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSuperficieEdificada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudValorPropiedad)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -274,7 +275,7 @@
             // chDisponible
             // 
             this.chDisponible.AutoSize = true;
-            this.chDisponible.Location = new System.Drawing.Point(380, 122);
+            this.chDisponible.Location = new System.Drawing.Point(381, 100);
             this.chDisponible.Name = "chDisponible";
             this.chDisponible.Size = new System.Drawing.Size(75, 17);
             this.chDisponible.TabIndex = 56;
@@ -284,7 +285,7 @@
             // chGarage
             // 
             this.chGarage.AutoSize = true;
-            this.chGarage.Location = new System.Drawing.Point(601, 122);
+            this.chGarage.Location = new System.Drawing.Point(602, 100);
             this.chGarage.Name = "chGarage";
             this.chGarage.Size = new System.Drawing.Size(61, 17);
             this.chGarage.TabIndex = 57;
@@ -294,7 +295,7 @@
             // chJardin
             // 
             this.chJardin.AutoSize = true;
-            this.chJardin.Location = new System.Drawing.Point(494, 122);
+            this.chJardin.Location = new System.Drawing.Point(495, 100);
             this.chJardin.Name = "chJardin";
             this.chJardin.Size = new System.Drawing.Size(54, 17);
             this.chJardin.TabIndex = 58;
@@ -379,23 +380,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtImagen
-            // 
-            this.txtImagen.Location = new System.Drawing.Point(694, 68);
-            this.txtImagen.Multiline = true;
-            this.txtImagen.Name = "txtImagen";
-            this.txtImagen.Size = new System.Drawing.Size(189, 79);
-            this.txtImagen.TabIndex = 70;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(691, 19);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(45, 13);
-            this.label17.TabIndex = 69;
-            this.label17.Text = "Imagen:";
-            // 
             // nudAmbientes
             // 
             this.nudAmbientes.Location = new System.Drawing.Point(480, 212);
@@ -444,18 +428,39 @@
             this.nudSuperficieEdificada.Size = new System.Drawing.Size(120, 20);
             this.nudSuperficieEdificada.TabIndex = 74;
             // 
+            // nudValorPropiedad
+            // 
+            this.nudValorPropiedad.Location = new System.Drawing.Point(507, 143);
+            this.nudValorPropiedad.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.nudValorPropiedad.Name = "nudValorPropiedad";
+            this.nudValorPropiedad.Size = new System.Drawing.Size(155, 20);
+            this.nudValorPropiedad.TabIndex = 76;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(378, 145);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 13);
+            this.label18.TabIndex = 75;
+            this.label18.Text = "Valor de la Propiedad:";
+            // 
             // FrmPropiedadAE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.nudValorPropiedad);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.nudSuperficieEdificada);
             this.Controls.Add(this.nudSuperficieTerreno);
             this.Controls.Add(this.nudCosto);
             this.Controls.Add(this.nudAmbientes);
-            this.Controls.Add(this.txtImagen);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txtObservacion);
             this.Controls.Add(this.label15);
@@ -496,6 +501,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSuperficieTerreno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSuperficieEdificada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudValorPropiedad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,11 +542,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox txtImagen;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.NumericUpDown nudCosto;
         private System.Windows.Forms.NumericUpDown nudAmbientes;
         private System.Windows.Forms.NumericUpDown nudSuperficieEdificada;
         private System.Windows.Forms.NumericUpDown nudSuperficieTerreno;
+        private System.Windows.Forms.NumericUpDown nudValorPropiedad;
+        private System.Windows.Forms.Label label18;
     }
 }

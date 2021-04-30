@@ -48,11 +48,17 @@ namespace InmobiliariaASPMVC.Web.Controllers
 
 
         // GET: Propiedades
-        public ActionResult Index(string provincia)
+        public ActionResult Index(string tipoPropiedad=null)
         {
-            var listaDto = _servicio.GetLista(provincia);
+            var listaDto = _servicio.GetLista(tipoPropiedad);
             var listaVm = _mapper.Map<List<PropiedadListViewModel>>(listaDto);
-            return View(listaVm);
+
+            var propiedadFilterVm = new PropiedadFilterListViewModel
+            {
+                Propiedad = listaVm,
+                TipoPropiedad = _mapper.Map<List<TipoPropiedadListViewModel>>(_servicioTipoPropiedad.GetLista())
+            };
+            return View(propiedadFilterVm);
         }
 
         [HttpGet]

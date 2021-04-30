@@ -1,16 +1,15 @@
 ﻿using InmobiliariaASPMVC.Entidades.DTOs.Venta;
-using InmobiliariaASPMVC.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
+namespace InmobiliariaASPMVC.Servicios.Servicios.Facades
 {
-    public interface IRepositoriosVentas
+    public interface IServicioVentas
     {
-        void Guardar(Venta venta);
+        void Guardar(VentaEditDto ventaDto);
         VentaListDto GetVentaPorId(int ventaId);
         List<VentaListDto> GetLista();
 

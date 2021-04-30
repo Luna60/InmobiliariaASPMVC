@@ -66,7 +66,6 @@ namespace InmobiliariaASPMVC.Windows
                 propiedadDto.Direccion = txtDireccion.Text;
                 propiedadDto.Departamento = txtDepartamento.Text;
                 propiedadDto.Cochera = txtCochera.Text;
-                propiedadDto.Imagen = txtImagen.Text;
 
 
                 propiedadDto.ClienteId = ((ClienteListDto)cbCliente.SelectedItem).ClienteId;
@@ -153,6 +152,11 @@ namespace InmobiliariaASPMVC.Windows
                 valido = false;
                 errorProvider1.SetError(nudAmbientes, "Debe ingresar cantidad de Ambientes");
             }
+            if (string.IsNullOrEmpty(nudValorPropiedad.Text))
+            {
+                valido = false;
+                errorProvider1.SetError(nudValorPropiedad, "Debe ingresar el Valor de la Propiedad");
+            }
 
 
             return valido;
@@ -216,7 +220,6 @@ namespace InmobiliariaASPMVC.Windows
                 nudCosto.Value = propiedadDto.CostoOperacion;
                 //propiedadDto.CostoOperacion = decimal.Parse(nudCosto.Text);
                 txtObservacion.Text = propiedadDto.Observaciones;
-                txtImagen.Text = propiedadDto.Imagen;
 
             }
 

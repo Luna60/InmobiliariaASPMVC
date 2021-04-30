@@ -14,6 +14,7 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Propiedad
 
         public bool Disponible { get; set; }
         public decimal CostoOperacion { get; set; }
+
         public string TipoOperacion { get; set; }
 
         public string TipoPropiedad { get; set; }
@@ -22,11 +23,14 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Propiedad
         public string Localidad { get; set; }
 
         public string Provincia { get; set; }
-
         public object Clone()
         {
             return this.MemberwiseClone();
         }
 
+        //public override string ToString()
+        //{
+        //    //return $"{CostoOperacion + ValorPropiedad}";
+        //}
     }
 }

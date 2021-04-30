@@ -4,44 +4,42 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tu Eleccion</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <thead>
         <tr>
-            <th>PrecioUni</th>
+            <th>Valor</th>
             <th>Propiedad </th>
             <th class="text-right">Precio</th>
             <th class="text-right">SubTotal</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var item in Model.Items)
-        {
+
+    @foreach (var item in Model.Items)
+    {
             <tr>
-                @*<td>@item.PrecioUni</td>*@
-                <td>@item.PropiedadListViewModel.TipoPropiedad</td>
+                <td>@item.Valor</td>
+                <td>@item.PropiedadListViewModel.DescripcionP</td>
                 <td class="text-right">@item.PropiedadListViewModel.CostoOperacion</td>
-                <td class="text-right">@(item.PropiedadListViewModel.CostoOperacion + item.PrecioUni)</td>
+                <td class="text-right">@(item.PropiedadListViewModel.CostoOperacion + item.Valor)</td>
                 <td>
                     @using (Html.BeginForm("RemoveFromCart", "Carrito"))
                     {
-                        @Html.Hidden("PropiedadId", item.PropiedadListViewModel.PropiedadId)
+                        @Html.Hidden("propiedadId", item.PropiedadListViewModel.PropiedadId)
                         @Html.HiddenFor(x => x.ReturnUrl)
-                        <input type="submit" class="btn btn-sm btn-danger" value="Eliminar" />}
+                        <input type="submit" class="btn btn-sm btn-danger" value="Eliminar" />
+                    }
                 </td>
             </tr>
-}
-    </tbody>
+    }
     <tfoot>
         <tr>
-            @*<td colspan="3" class="text-right"> <strong>Total:</strong></td>*@
-            <td class="text-right"><strong>@Model.Items.Sum(i => i.PrecioUni + i.PropiedadListViewModel.CostoOperacion)</strong> </td>
+            <td colspan="3" class="text-right"> <strong>Total:</strong></td>
+            <td class="text-right"><strong>@Model.Items.Sum(i => i.Valor + i.PropiedadListViewModel.CostoOperacion)</strong> </td>
         </tr>
     </tfoot>
+
 </table>
 <div class="text-center">
     <a href="@Model.ReturnUrl" class="btn btn-success">Continuar comprando</a>

@@ -58,11 +58,11 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                 && c.PropiedadId != propiedad.PropiedadId);
         }
 
-        public List<PropiedadListDto> GetLista(string provincia)
+        public List<PropiedadListDto> GetLista(string tipoPropiedad)
         {
             try
             {
-                if (provincia == null)
+                if (tipoPropiedad == null)
                 {
                     var lista = _context.Propiedades
                         .Include(c => c.Provincia)
@@ -77,6 +77,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
 
                     Disponible = c.Disponible,
                     CostoOperacion = c.CostoOperacion,
+
                     TipoPropiedad = c.TipoPropiedad.DescripcionTP,
                     TipoOperacion = c.TipoOperacion.DescripcionTO,
                     Cliente = c.Cliente.Apellido,
@@ -96,7 +97,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
                         .Include(c => c.TipoPropiedad)
                         .Include(c => c.Cliente)
 
-                        .Where(c => c.Provincia.NombreProvincia == provincia)
+                        .Where(c => c.TipoPropiedad.DescripcionTP == tipoPropiedad)
                 .Select(c => new PropiedadListDto
                 {
                     PropiedadId = c.PropiedadId,
@@ -126,6 +127,12 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             {
                 return _mapper
                     .Map<PropiedadEditDto>(_context.Propiedades
+                                            .Include(p => p.TipoPropiedad)
+                        .Include(p => p.TipoOperacion)
+                        .Include(p => p.Localidad)
+                        .Include(p => p.Provincia)
+                        .Include(p => p.Cliente)
+
                         .SingleOrDefault(c => c.PropiedadId == id));
             }
             catch (Exception)
@@ -172,7 +179,6 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
 
                     propiedadInDb.Observaciones = propiedad.Observaciones;
                     propiedadInDb.CostoOperacion = propiedad.CostoOperacion;
-                    propiedadInDb.Imagen = propiedad.Imagen;
 
 
                     _context.Entry(propiedadInDb).State = EntityState.Modified;

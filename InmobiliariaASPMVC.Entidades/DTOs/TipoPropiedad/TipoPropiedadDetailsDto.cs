@@ -7,16 +7,10 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad
 {
-    public class TipoPropiedadListDto : ICloneable
+    public class TipoPropiedadDetailsDto
     {
-        public int TipoPropiedadId { get; set; }
-        public string DescripcionTP { get; set; }
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-
-
+        public TipoPropiedadListDto Tipo { get; set; }
+        public List<PropiedadListDto> PropiedadListDto { get; set; }
 
     }
 }

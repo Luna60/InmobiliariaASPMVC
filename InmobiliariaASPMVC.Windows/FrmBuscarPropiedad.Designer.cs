@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.cbProvincia = new System.Windows.Forms.ComboBox();
+            this.cbTipoPropiedad = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -39,23 +39,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbProvincia
+            // cbTipoPropiedad
             // 
-            this.cbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProvincia.FormattingEnabled = true;
-            this.cbProvincia.Location = new System.Drawing.Point(104, 33);
-            this.cbProvincia.Name = "cbProvincia";
-            this.cbProvincia.Size = new System.Drawing.Size(196, 21);
-            this.cbProvincia.TabIndex = 10;
+            this.cbTipoPropiedad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoPropiedad.FormattingEnabled = true;
+            this.cbTipoPropiedad.Location = new System.Drawing.Point(115, 33);
+            this.cbTipoPropiedad.Name = "cbTipoPropiedad";
+            this.cbTipoPropiedad.Size = new System.Drawing.Size(196, 21);
+            this.cbTipoPropiedad.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 36);
+            this.label1.Location = new System.Drawing.Point(12, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Provincia:  ";
+            this.label1.Text = "Tipo de Propiedad:";
             // 
             // btnBuscar
             // 
@@ -116,7 +116,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.cbProvincia);
+            this.Controls.Add(this.cbTipoPropiedad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.MaximumSize = new System.Drawing.Size(363, 389);
@@ -136,7 +136,7 @@
 
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.ComboBox cbProvincia;
+        private System.Windows.Forms.ComboBox cbTipoPropiedad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox1;

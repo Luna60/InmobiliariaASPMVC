@@ -1,4 +1,5 @@
 ﻿using InmobiliariaASPMVC.Entidades.DTOs.Provincia;
+using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +19,9 @@ namespace InmobiliariaASPMVC.Windows
             InitializeComponent();
         }
 
-        public ProvinciaListDto GetProvincia()
+        public TipoPropiedadListDto GetTipoPropiedad()
         {
-            return provinciaDto;
+            return tipoPropiedadDto;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -29,13 +30,13 @@ namespace InmobiliariaASPMVC.Windows
 
         }
 
-        public ProvinciaListDto provinciaDto;
+        public TipoPropiedadListDto tipoPropiedadDto;
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (ValidarDatos())
             {
-                provinciaDto = cbProvincia.SelectedItem as ProvinciaListDto;
+                tipoPropiedadDto = cbTipoPropiedad.SelectedItem as TipoPropiedadListDto;
                 DialogResult = DialogResult.OK;
             }
 
@@ -46,10 +47,10 @@ namespace InmobiliariaASPMVC.Windows
         {
             bool valido = true;
             errorProvider1.Clear();
-            if (cbProvincia.SelectedIndex == 0)
+            if (cbTipoPropiedad.SelectedIndex == 0)
             {
                 valido = false;
-                errorProvider1.SetError(cbProvincia, "Debe seleccionar una Provincia");
+                errorProvider1.SetError(cbTipoPropiedad, "Debe seleccionar un Tipo de Propiedad");
             }
 
             return valido;
@@ -57,8 +58,9 @@ namespace InmobiliariaASPMVC.Windows
 
         private void FrmBuscarPropiedad_Load(object sender, EventArgs e)
         {
-            Herper.Herper.CargarComboProvincias(ref cbProvincia);
+            Herper.Herper.CargarComboTiposPropiedades(ref cbTipoPropiedad);
 
         }
+
     }
 }

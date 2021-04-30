@@ -10,11 +10,10 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.ItemVenta
     public class ItemVentaListDto
     {
         public int ItemVentaId { get; set; }
-        //public string Venta { get; set; }
         public string Propiedad { get; set; }
+        public decimal Valor { get; set; }
         public decimal PrecioUnitario { get; set; }
-        public decimal Total => Propiedadd.CostoOperacion + PrecioUnitario;
 
-        public PropiedadListDto Propiedadd;
+        public decimal Total => Valor + PrecioUnitario;
     }
 }

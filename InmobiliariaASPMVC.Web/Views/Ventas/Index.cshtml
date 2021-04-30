@@ -4,25 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<div>
+<h2>Lista de Provincias</h2>
 
-    <a href="@Url.Action("Create","Ventas")" class="btn btn-primary" style="float:right">Nuevo</a>
-    <h2>Lista de Ventas</h2>
-    @*<a href="@Url.Action("Create","Provincias")">Nuevo</a>*@@*otra forma de poner el boton nuevo, pero sin recuadro*@
-    @*<a href="#" class="btn btn-primary" style="float:right">Nuevo</a>*@@*otra forma*@
-
-</div>
-<hr />
-@*con este bloque logro que aparesca el mensaje de Exito, luego de Agregar una Provincia*@
-
-@if (TempData["Msg"] != null)
-{
-    var msg = TempData["Msg"].ToString();
-    <div class="alert alert-sucess alert-dismisible">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Exito! </strong>@msg
-    </div>
-}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -36,19 +22,19 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.VentaId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FechaVenta)
-    </td>
-    <td>
-        <!--@Html.ActionLink("Edit", "Edit", new { id = item.VentaId }, new { @class = "btn btn-warning" }) |-->
-        @*@Html.ActionLink("Details", "Details", new { id = item.VentaId }, new { @class = "btn btn-info" }) |*@
-        <!--@Html.ActionLink("Delete", "Delete", new { id = item.VentaId }, new { @class = "btn btn-danger" })-->
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VentaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVenta)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
     }
 
 </table>

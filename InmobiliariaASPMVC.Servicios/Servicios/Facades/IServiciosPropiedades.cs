@@ -9,7 +9,7 @@ namespace InmobiliariaASPMVC.Servicios.Servicios.Facades
 {
     public interface IServiciosPropiedades
     {
-        List<PropiedadListDto> GetLista(string provincia);
+        List<PropiedadListDto> GetLista(string tipoPropiedad);
         void Guardar(PropiedadEditDto propiedadDto);
         bool Existe(PropiedadEditDto propiedadEditDto);
         PropiedadEditDto GetPropiedadPorId(int? id);

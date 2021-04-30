@@ -8,6 +8,7 @@ using InmobiliariaASPMVC.Entidades.DTOs.Localidad;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoOperacion;
 using InmobiliariaASPMVC.Entidades.DTOs.TipoPropiedad;
 using InmobiliariaASPMVC.Entidades.DTOs.Cliente;
+using InmobiliariaASPMVC.Entidades.DTOs.Propiedad;
 
 namespace InmobiliariaASPMVC.Windows.Herper
 {
@@ -118,6 +119,25 @@ namespace InmobiliariaASPMVC.Windows.Herper
             combo.SelectedIndex = 0;
 
         }
+
+        public static void CargarComboPropiedades(string tipoSeleccionado, ref ComboBox combo)// 
+        {
+            IServiciosPropiedades servicioPropiedad = DI.Create<IServiciosPropiedades>();
+            var lista = servicioPropiedad.GetLista(tipoSeleccionado);////null
+            var defaultPropiedad = new PropiedadListDto
+            {
+                PropiedadId = 0,
+                DescripcionP = " <Seleccione una Propiedad> "
+            };
+            lista.Insert(0, defaultPropiedad);
+            combo.DataSource = lista;
+            combo.ValueMember = "PropiedadId";
+            combo.DisplayMember = "DescripcionP";
+            combo.SelectedIndex = 0;
+
+        }
+
+
 
     }
 }

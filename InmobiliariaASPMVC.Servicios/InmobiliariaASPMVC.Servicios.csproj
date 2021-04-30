@@ -53,7 +53,7 @@
     <Compile Include="Servicios\Facades\IServiciosTiposDocumentos.cs" />
     <Compile Include="Servicios\Facades\IServiciosTiposOperaciones.cs" />
     <Compile Include="Servicios\Facades\IServiciosTiposPropiedades.cs" />
-    <Compile Include="Servicios\Facades\IServiciosVentas.cs" />
+    <Compile Include="Servicios\Facades\IServicioVentas.cs" />
     <Compile Include="Servicios\ServiciosClientes.cs" />
     <Compile Include="Servicios\ServiciosLocalidades.cs" />
     <Compile Include="Servicios\ServiciosPropiedades.cs" />
@@ -61,7 +61,7 @@
     <Compile Include="Servicios\ServiciosTiposDocumentos.cs" />
     <Compile Include="Servicios\ServiciosTiposOperaciones.cs" />
     <Compile Include="Servicios\ServiciosTiposPropiedades.cs" />
-    <Compile Include="Servicios\ServiciosVentas.cs" />
+    <Compile Include="Servicios\ServicioVentas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InmobiliariaASPMVC.Datos\InmobiliariaASPMVC.Datos.csproj">

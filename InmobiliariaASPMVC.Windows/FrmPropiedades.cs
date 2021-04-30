@@ -181,10 +181,10 @@ namespace InmobiliariaASPMVC.Windows
                 return;
             }
 
-            var provinciaDto = frm.GetProvincia();
+            var tipoPropiedadDto = frm.GetTipoPropiedad();
             try
             {
-                lista = _servicio.GetLista(provinciaDto.NombreProvincia);
+                lista = _servicio.GetLista(tipoPropiedadDto.DescripcionTP);
                 MostrarDatosEnGrilla();
             }
             catch (Exception exception)

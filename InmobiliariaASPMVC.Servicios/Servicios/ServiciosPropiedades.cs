@@ -52,11 +52,11 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
             }
         }
 
-        public List<PropiedadListDto> GetLista(string provincia)
+        public List<PropiedadListDto> GetLista(string tipoPropiedad)
         {
             try
             {
-                return _repositorio.GetLista(provincia);
+                return _repositorio.GetLista(tipoPropiedad);
             }
             catch (Exception e)
             {

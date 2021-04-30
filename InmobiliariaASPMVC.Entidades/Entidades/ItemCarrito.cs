@@ -9,7 +9,7 @@ namespace InmobiliariaASPMVC.Entidades.Entidades
     public class ItemCarrito
     {
         public Propiedad Propiedad { get; set; }
-        public decimal PrecioUni { get; set; }
+        public decimal Valor { get; set; }
 
     }
 }

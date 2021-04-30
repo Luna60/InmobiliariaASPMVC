@@ -14,7 +14,7 @@ namespace InmobiliariaASPMVC.Entidades.Entidades
         {
             return listaItems;
         }
-        public void AgregarAlCarrito(Propiedad propiedad, decimal precioUni)
+        public void AgregarAlCarrito(Propiedad propiedad, decimal valor)
         {
             var item = listaItems.SingleOrDefault(i => i.Propiedad.PropiedadId == propiedad.PropiedadId);
             if (item == null)
@@ -22,14 +22,14 @@ namespace InmobiliariaASPMVC.Entidades.Entidades
                 listaItems.Add(new ItemCarrito
                 {
                     Propiedad = propiedad,
-                    PrecioUni = precioUni
-                    //Cantidad = cantidad
+                    Valor = valor
+
                 });
             }
-            else
-            {
-                item.PrecioUni++;
-            }
+            //else
+            //{
+            //    //item.Cantidad++;
+            //}
         }
 
         public void EliminarDelCarrito(Propiedad propiedad)
@@ -39,7 +39,7 @@ namespace InmobiliariaASPMVC.Entidades.Entidades
 
         public decimal TotalCarrito()
         {
-            return listaItems.Sum(i => i.PrecioUni + i.Propiedad.CostoOperacion);//(i => i.Cantidad * i.Producto.Precio);
+            return listaItems.Sum(i => i.Valor + i.Propiedad.CostoOperacion);
         }
 
         public void VaciarCarrito()

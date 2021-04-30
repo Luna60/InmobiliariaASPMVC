@@ -11,18 +11,16 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Datos.Repositorios
 {
-    public class RepositoriosItemVentas : IRepositoriosItemVentas
+    public class RepositorioItemVentas : IRepositorioItemVentas
     {
         private readonly InmobiliariaDbContext _context;
         private readonly IMapper _mapper;
 
-        public RepositoriosItemVentas(InmobiliariaDbContext context)
+        public RepositorioItemVentas(InmobiliariaDbContext context)
         {
             _context = context;
             _mapper = Mapeador.Mapeador.CrearMapper();
-
         }
-
 
         public List<ItemVentaListDto> GetLista(int ventaId)
         {
@@ -47,10 +45,11 @@ namespace InmobiliariaASPMVC.Datos.Repositorios
             else
             {
                 var itemInDb = _context.ItemVentas.SingleOrDefault(iv => iv.ItemVentaId == itemVenta.ItemVentaId);
-                itemInDb.VentaId = itemVenta.VentaId;
+                itemInDb.Valor = itemVenta.Valor;
+                //itemInDb.VentaId = itemVenta.VentaId;
+
                 itemInDb.PropiedadId = itemVenta.PropiedadId;
                 itemInDb.PrecioUnitario = itemVenta.PrecioUnitario;
-                itemInDb.Total = itemVenta.Total;
 
                 _context.Entry(itemInDb).State = EntityState.Modified;
 

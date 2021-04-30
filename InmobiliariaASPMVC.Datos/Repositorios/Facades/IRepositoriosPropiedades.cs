@@ -10,7 +10,7 @@ namespace InmobiliariaASPMVC.Datos.Repositorios.Facades
 {
     public interface IRepositoriosPropiedades
     {
-        List<PropiedadListDto> GetLista(string provincia);
+        List<PropiedadListDto> GetLista(string tipoPropiedad);
         void Guardar(Propiedad propiedad);
         PropiedadEditDto GetPropiedadPorId(int? id);
         bool Existe(Propiedad propiedad);

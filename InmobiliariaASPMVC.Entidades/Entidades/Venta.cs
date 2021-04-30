@@ -9,12 +9,9 @@ namespace InmobiliariaASPMVC.Entidades.Entidades
     public class Venta
     {
         public int VentaId { get; set; }
-        //public int ClienteId { get; set; }
         public DateTime FechaVenta { get; set; }
-        //public decimal Total { get; set; }
-        public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; }
-
+        //public ModalidadVenta ModalidadVenta { get; set; }
+        //public EstadoVenta EstadoVenta { get; set; }
         public List<ItemVenta> ItemVentas { get; set; } = new List<ItemVenta>();
 
     }

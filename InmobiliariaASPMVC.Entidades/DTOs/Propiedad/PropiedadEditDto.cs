@@ -40,7 +40,6 @@ namespace InmobiliariaASPMVC.Entidades.DTOs.Propiedad
 
         public decimal CostoOperacion { get; set; }
         public string Observaciones { get; set; }
-        public string Imagen { get; set; }
 
 
     }

@@ -31,9 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.cmnNroVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmnCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmnFechaVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -64,9 +62,7 @@
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cmnNroVenta,
-            this.cmnCliente,
-            this.cmnFechaVenta,
-            this.cmnTotal});
+            this.cmnFechaVenta});
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatos.Location = new System.Drawing.Point(0, 0);
             this.dgvDatos.MultiSelect = false;
@@ -84,26 +80,12 @@
             this.cmnNroVenta.Name = "cmnNroVenta";
             this.cmnNroVenta.ReadOnly = true;
             // 
-            // cmnCliente
-            // 
-            this.cmnCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cmnCliente.HeaderText = "Cliente";
-            this.cmnCliente.Name = "cmnCliente";
-            this.cmnCliente.ReadOnly = true;
-            // 
             // cmnFechaVenta
             // 
             this.cmnFechaVenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cmnFechaVenta.HeaderText = "Fecha de Venta";
             this.cmnFechaVenta.Name = "cmnFechaVenta";
             this.cmnFechaVenta.ReadOnly = true;
-            // 
-            // cmnTotal
-            // 
-            this.cmnTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cmnTotal.HeaderText = "Total";
-            this.cmnTotal.Name = "cmnTotal";
-            this.cmnTotal.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -131,6 +113,7 @@
             this.tsbNuevo.Size = new System.Drawing.Size(46, 59);
             this.tsbNuevo.Text = "Nuevo";
             this.tsbNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
             // toolStripSeparator1
             // 
@@ -145,6 +128,7 @@
             this.tsbDetalles.Size = new System.Drawing.Size(52, 59);
             this.tsbDetalles.Text = "Detalles";
             this.tsbDetalles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbDetalles.Click += new System.EventHandler(this.tsbDetalles_Click);
             // 
             // toolStripSeparator2
             // 
@@ -200,6 +184,7 @@
             this.Name = "FrmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Ventas:";
+            this.Load += new System.EventHandler(this.FrmVentas_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -223,8 +208,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsbCerrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmnNroVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cmnCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmnFechaVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cmnTotal;
     }
 }

@@ -12,32 +12,21 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaASPMVC.Servicios.Servicios
 {
-    public class ServiciosVentas : IServiciosVentas
+    public class ServicioVentas : IServicioVentas
     {
         private readonly InmobiliariaDbContext _context;
-        private readonly IRepositoriosVentas _repositorio;
-        private readonly IRepositoriosClientes _repositorioCliente;
-
-        private readonly IRepositoriosItemVentas _repositorioItems;
-        private readonly IMapper _mapper;
+        private readonly IRepositorioVentas _repositorio;
+        private readonly IRepositorioItemVentas _repositorioItems;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public ServiciosVentas(InmobiliariaDbContext context, IRepositoriosVentas repositorio,
-            IRepositoriosClientes repositorioCliente,
-            IRepositoriosItemVentas repositorioItems, IUnitOfWork unitOfWork)
+        public ServicioVentas(InmobiliariaDbContext context, IRepositorioVentas repositorio,
+            IRepositorioItemVentas repositorioItems, IUnitOfWork unitOfWork)
         {
             _context = context;
             _repositorio = repositorio;
-            _repositorioCliente = repositorioCliente;
             _repositorioItems = repositorioItems;
             _unitOfWork = unitOfWork;
-            _mapper = Mapeador.Mapeador.CrearMapper();
-
-        }
-
-        public ServiciosVentas(InmobiliariaDbContext context)
-        {
-            _context = context;
             _mapper = Mapeador.Mapeador.CrearMapper();
         }
 
@@ -80,9 +69,9 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                     var venta1 = new Venta()
                     {
                         VentaId = venta.VentaId,
-                        Cliente = venta.Cliente,
                         FechaVenta = venta.FechaVenta,
-                        //Total = venta.Total
+                        //ModalidadVenta = venta.ModalidadVenta,
+                        //EstadoVenta = venta.EstadoVenta
                     };
                     _repositorio.Guardar(venta1);
                     _unitOfWork.Save();
@@ -94,7 +83,7 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
                             VentaId = venta1.VentaId,
                             PropiedadId = item.Propiedad.PropiedadId,
                             PrecioUnitario = item.PrecioUnitario,
-                            Total = item.Total
+                            Valor = item.Valor
                         };
 
 
@@ -112,7 +101,6 @@ namespace InmobiliariaASPMVC.Servicios.Servicios
 
                 }
             }
-
         }
     }
 }

@@ -1,7 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "VentaGuardada";
-}
+﻿@{ ViewBag.Title = "VentaGuardada"; }
+
 
 <h2 style="text-align: center">Items de Venta Guardados </h2>
 <table style="margin: 0px auto">
@@ -14,6 +12,6 @@
 @using (Html.BeginForm())
 {
 <div style="padding: 10px 0px; text-align: center">
-    <td style="margin-left: 9px;">@Html.ActionLink("Generar Pdf", "GeneratePdf", "Carrito", new { id = @ViewBag.VentaId }, new { @class = "btn btn-warning", @target = "_blank" })</td>
-    <td style="margin-left: 9px;">@Html.ActionLink("Volver", "Index", "Productos", "", new { @class = "btn btn-success" })</td>
+    @*<td style="margin-left: 9px;">@Html.ActionLink("Generar Pdf", "GeneratePdf", "Carrito", new { id = @ViewBag.VentaId }, new { @class = "btn btn-warning", @target = "_blank" })</td>*@
+    <td style="margin-left: 9px;">@Html.ActionLink("Volver", "Index", "Propiedades", "", new { @class = "btn btn-success" })</td>
 </div>}

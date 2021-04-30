@@ -6,6 +6,6 @@
 </div>
 <div class="navbar-text navbar-right">
     <b>Tu carrito:</b>
-    @Model.GetItems().Sum(i => i.PrecioUni) item(s),
-    $@Model.GetItems().Sum(i => i.Propiedad.CostoOperacion + i.PrecioUni)
+    @Model.GetItems().Sum(i => i.Valor) item(s),
+    $@Model.GetItems().Sum(i => i.Propiedad.CostoOperacion + i.Valor)
 </div>
